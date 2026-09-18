@@ -1,0 +1,21 @@
+{
+  "release": "v0.1.0",
+  "scope": "offline training and checkpoint lifecycle only",
+  "command": "lightjev demo --output-dir runs/release-smoke --steps 8",
+  "platform": "Darwin arm64",
+  "versions": {
+    "python": "3.12.11",
+    "torch": "2.14.0",
+    "transformers": "5.17.0",
+    "safetensors": "0.8.0"
+  },
+  "steps": 8,
+  "best_step": 1,
+  "questions": 12,
+  "checkpoint_roundtrip": "passed",
+  "pytest": "33 passed",
+  "quality_claim": false,
+  "demo_accuracy": 0.5,
+  "demo_target_cross_entropy": 0.6931472102760368,
+  "quality_note": "Chance-level demo results; this is a lifecycle test, not a trained capability release."
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lightjev"
+version = "0.1.0"
+description = "Train small language backbones to make typed decisions with candidate probabilities."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{name = "RongxinAI"}]
+dependencies = ["torch>=2.5,<3", "transformers>=4.51.3,<6", "safetensors>=0.4,<1", "numpy>=1.26,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "build>=1"]
+
+[project.scripts]
+lightjev = "lightjev.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/rongxinzy/LightJev"
+Repository = "https://github.com/rongxinzy/LightJev"
+Issues = "https://github.com/rongxinzy/LightJev/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lightjev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

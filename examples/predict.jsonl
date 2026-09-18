@@ -1,0 +1,2 @@
+{"id":"ticket-1","group_id":"thread-1","state":"The same order was charged twice.","question":"Which team should handle this ticket?","kind":"choice","candidates":["Billing: charges and refunds","Technical: product faults","Other or insufficient information"]}
+{"id":"sensor-1","group_id":"sensor-scene-1","state":"The sensor is active.","question":"Is the sensor active?","kind":"boolean","candidates":["false","true"]}

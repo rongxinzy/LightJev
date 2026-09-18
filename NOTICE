@@ -1,0 +1,8 @@
+LightJev
+Copyright 2026 RongxinAI contributors
+
+An independent implementation inspired by the decision-model interface described
+by TypeSafe AI and the open research direction explored by TianyuCodings/NanoJev.
+LightJev is not affiliated with TypeSafe AI. No official Jev training recipe,
+model weights, or calibration guarantees are claimed. Upstream model licenses
+apply separately to any pretrained backbones selected by users.
