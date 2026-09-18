@@ -7,9 +7,31 @@
 
 LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it into a finite-candidate decision model. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. Train the backbone and a small scoring head with cross-entropy or Brier loss.
 
-**v0.1 is a research toolkit release.** It includes an executable offline training demo, not a broadly trained decision checkpoint. The demo verifies the training and inference pipeline; it is not a capability benchmark.
+**[Download LightJev-0.6B-v0.1](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)** — trained Qwen3-0.6B scoring weights, tokenizer, frozen gold-only data, training histories, and both CE/Brier evaluation reports. The published CE checkpoint was selected at step 250 using development CE before held-out results were inspected.
 
-A real Qwen3-0.6B CE/Brier training comparison is **in progress** on a frozen, programmatically labeled subset of NanoJev-Data. No completed capability result or released trained weights is claimed yet. See the [reproduction protocol](docs/training-release.md) and [data provenance](docs/data.md).
+Raw hard-label accuracy is **79.57% on test (656 questions)** and **72.44% on source-defined OOD (352)**. Exact soft-distribution squared L2 is **0.003132 / 0.003964** respectively. These are synthetic-task, single-seed results. Catalog lookup and smart-home rules are stronger than grid and tic-tac-toe judgments; this is not a broadly capable business decision model. [Full results and limitations](docs/results-v0.1.md).
+
+## Use the trained checkpoint
+
+After installing LightJev (below), install `huggingface_hub` and use the custom prediction API:
+
+```python
+from huggingface_hub import snapshot_download
+from lightjev.inference import predict
+
+checkpoint = snapshot_download("rongxinzy/LightJev-0.6B-v0.1")
+records = [{
+    "id": "example-1", "group_id": "example",
+    "state": "Home log: user wants the dining room fan set to on; access=yes; occupants=2; clock=20:00.",
+    "question": "Select exactly the room and device named in the request. Ignore authorization and occupancy for this question.",
+    "kind": "choice", "candidates": ["balcony speaker", "dining room fan"],
+}]
+print(predict(checkpoint, records, device="cpu"))
+```
+
+This example is the first question from the frozen test split, shown in its original task format; it is not a new generalization test. A separate hand-written cooling-rule probe failed, as recorded in [limitations](docs/results-v0.1.md#additional-manual-probe).
+
+This is a **custom LightJev scoring checkpoint**, not an ordinary chat model or an `AutoModelForCausalLM` checkpoint. Use `device="cuda"` for GPU inference. Prediction defaults to raw probabilities; temperature scaling is optional and did not improve the selected CE model's held-out CE/ECE. Inputs over 256 tokens per candidate fail explicitly. [Reproduce training](docs/training-release.md) · [Data attribution](docs/data.md).
 
 ## Quick start — no model download
 

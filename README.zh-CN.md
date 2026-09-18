@@ -6,9 +6,31 @@
 
 标准预训练底座采用 **Qwen3-0.6B**。输入上下文、问题和候选描述，输出完整候选分布与选中值。支持 Choice、Boolean 和有序 Score，使用交叉熵或 Brier loss 训练底座与共享评分头。
 
-**v0.1 是研究工具包，尚未发布经过广泛任务训练的决策权重。** 自带 CPU 离线示例验证真实训练、checkpoint 保存、重新加载、推理和评测；不把小型示例结果作为通用能力证明。
+**[下载 LightJev-0.6B-v0.1](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)**：包含训练后的 Qwen3-0.6B 评分权重、tokenizer、冻结程序真值数据、训练记录及 CE/Brier 两组评测。发布 CE 的第 250 步 checkpoint，在查看最终测试结果前按开发集 CE 选定。
 
-真实 Qwen3-0.6B 的 CE/Brier 对照训练**正在进行**，使用固定版本 NanoJev-Data 的程序真值子集。当前尚无已完成的能力结果或已发布训练权重声明。详见[复现协议](docs/training-release.md)与[数据来源](docs/data.md)。
+原始概率的硬标签准确率为 **test 79.57%（656 题）/ 来源定义 OOD 72.44%（352 题）**；精确软分布的平方 L2 分别为 **0.003132 / 0.003964**。这是合成任务、单种子研究结果。目录检索和智能家居规则较强，网格与井字棋状态判断较弱，尚不能称为通用业务决策模型。[完整结果与限制](docs/results-v0.1.md)。
+
+## 使用训练权重
+
+安装 LightJev（见下方）及 `huggingface_hub`，使用自定义推理接口：
+
+```python
+from huggingface_hub import snapshot_download
+from lightjev.inference import predict
+
+checkpoint = snapshot_download("rongxinzy/LightJev-0.6B-v0.1")
+records = [{
+    "id": "example-1", "group_id": "example",
+    "state": "Home log: user wants the dining room fan set to on; access=yes; occupants=2; clock=20:00.",
+    "question": "Select exactly the room and device named in the request. Ignore authorization and occupancy for this question.",
+    "kind": "choice", "candidates": ["balcony speaker", "dining room fan"],
+}]
+print(predict(checkpoint, records, device="cpu"))
+```
+
+示例取自冻结 test 的第一题，保留原始任务格式，不作为新的泛化证明。另一个手写降温规则抽查失败，已记录在[局限](docs/results-v0.1.md#additional-manual-probe)中。
+
+这是 **LightJev 自定义评分 checkpoint**，不能当普通聊天模型用 `AutoModelForCausalLM` 加载。GPU 推理可改为 `device="cuda"`。默认输出未经温度缩放的概率；温度拟合在选中 CE 模型的最终测试 CE/ECE 上没有带来改善，因此不自动应用。每个候选超过 256 tokens 会明确报错。[复现训练](docs/training-release.md) · [数据归因](docs/data.md)。
 
 ## 快速运行
 

@@ -1,2 +1,2 @@
 """LightJev: trainable, finite-candidate decision models."""
-__version__ = "0.1.0"
+__version__ = "0.1.1"

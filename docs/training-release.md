@@ -1,6 +1,6 @@
 # Qwen3-0.6B research training protocol
 
-Status: the first real-backbone CE/Brier comparison is in progress. This document specifies the reproducible protocol; it does not claim completed training, released model weights, or measured capability. The scope is synthetic rules, lookup, game-state judgments, and exact random-draw probabilities.
+The real-backbone CE/Brier comparison is complete. [Weights and evidence](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1) accompany the [held-out results](results-v0.1.md). The scope is synthetic rules, lookup, game-state judgments, and exact random-draw probabilities. CE step 250 was selected by development cross-entropy before held-out reports; Brier selected step 320. Step numbers are global and include the 20 head-only updates. The selected CE checkpoint contains 20 head-only plus 230 full-model updates (4,000 sampled questions); the completed 20+300 budget sampled 5,120 questions per arm.
 
 ## Inputs and preparation
 
@@ -46,6 +46,10 @@ Repeat for the independently trained Brier checkpoint and a fresh evaluation dir
 
 Report hard-label accuracy, Brier, reliability and selective risk separately from exact soft-distribution cross-entropy and squared L2. Include results by family, raw and calibrated distributions, the selected training step, artifact hashes and environment versions. Keep unsuccessful outcomes too. This single-seed experiment cannot establish general superiority over NanoJev, Jev, or other baselines.
 
+## Completed run environment
+
+Each arm ran on one NVIDIA RTX 6000D with Python 3.12.3, PyTorch 2.13.0+cu130, Transformers 5.16.0.dev0 and safetensors 0.8.0. Completed runs use FP32 master parameters and Adam moments with BF16 autocast; released weights and final evaluation are FP32. Training code revision: `8d41e9de5e0e86b5d162484df1b593fbee924112`; evaluation revision: `0f85c0b57d2b78fd02bd66cb6e1c6f48392d8001`. Two early trials inherited BF16 master weights from the base checkpoint and were stopped before selection, then restarted with explicit FP32 parameters. Their configurations and logs remain under `training/*-aborted-nativebf16`; they were not included in model selection.
+
 ## Release contents
 
-Once verified, a release should contain the complete LightJev checkpoint and tokenizer, model/base revision and license references, exact training configuration, data transformation and attribution, environment records, and complete evaluation reports. State the custom LightJev loading API: these scoring weights are not an ordinary autoregressive chat checkpoint. Do not include credentials, source teacher payloads, or private host data. A model card should distinguish completed measurements from planned work and avoid treating softmax normalization or fitted temperature as a calibration guarantee.
+The release contains the complete LightJev checkpoint and tokenizer, model/base revision and license references, exact training configuration, data transformation and attribution, environment records, and complete evaluation reports. State the custom LightJev loading API: these scoring weights are not an ordinary autoregressive chat checkpoint. Do not include credentials, source teacher payloads, or private host data. A model card should distinguish completed measurements from planned work and avoid treating softmax normalization or fitted temperature as a calibration guarantee.
