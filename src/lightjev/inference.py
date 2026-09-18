@@ -17,6 +17,9 @@ def load_checkpoint(path, device="cpu"):
     backbone_config = AutoConfig.from_pretrained(path / "backbone", local_files_only=True,
                                                  trust_remote_code=False)
     model = DecisionModel(AutoModel.from_config(backbone_config, trust_remote_code=False))
+    # Configs can inherit BF16; promote before copying FP32 checkpoint tensors
+    # so load_state_dict never rounds trained weights through BF16 storage.
+    model.float()
     model.load_state_dict(load_file(str(path / "model.safetensors")), strict=True)
     model.to(device).eval()
     tokenizer = AutoTokenizer.from_pretrained(path / "tokenizer", local_files_only=True,
