@@ -18,7 +18,19 @@ Raw hard-label accuracy is **79.57% on test (656 questions)** and **72.44% on so
 
 ## Use the trained checkpoint
 
-After installing LightJev (below), install `huggingface_hub` and use the custom prediction API:
+### Installation and first run
+
+Use Python 3.10 or newer (Python 3.12 was used for validation):
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install 'git+https://github.com/rongxinzy/LightJev.git@v0.1.1' huggingface_hub
+```
+
+On Windows, activate with `.venv\Scripts\activate`. CPU inference works without CUDA. For NVIDIA GPU inference, install a CUDA-enabled PyTorch build compatible with your driver; check `python -c "import torch; print(torch.cuda.is_available())"` before selecting `device="cuda"`.
+
+The public checkpoint requires no HF token. First download includes about **2.38 GB of FP32 weights**, plus tokenizer and metadata; later calls reuse the Hugging Face disk cache. Runtime memory exceeds the weight-file size; no minimum RAM/VRAM requirement has been benchmarked. Save the Python example below as `example.py`, then run `python example.py`.
 
 ```python
 from huggingface_hub import snapshot_download
@@ -37,6 +49,48 @@ print(predict(checkpoint, records, device="cpu"))
 This example is the first question from the frozen test split, shown in its original task format; it is not a new generalization test. A separate hand-written cooling-rule probe failed, as recorded in [limitations](docs/results-v0.1.md#additional-manual-probe).
 
 This is a **custom LightJev scoring checkpoint**, not an ordinary chat model or an `AutoModelForCausalLM` checkpoint. Use `device="cuda"` for GPU inference. Prediction defaults to raw probabilities; temperature scaling is optional and did not improve the selected CE model's held-out CE/ECE. Inputs over 256 tokens per candidate fail explicitly. [Reproduce training](docs/training-release.md) · [Data attribution](docs/data.md).
+
+### Input, output and multiple questions
+
+Every input record needs nonempty string fields `id`, `group_id`, `state`, `question`, plus `kind` and `candidates`. `target` is optional for inference; omit it for your own requests. Candidates must be 2–255 unique, nonempty strings.
+
+| `kind` | Candidates | Additional output |
+|---|---|---|
+| `choice` | Candidate descriptions | — |
+| `boolean` | Exactly `["false", "true"]` in this order | — |
+| `score` | Descriptions ordered from low to high | `expectation`: probability-weighted ordinal index |
+
+`predict()` returns a list in input order. The example's verified CPU result selects `dining room fan`, with probabilities approximately `[0.000000076, 0.99999988]`; small numerical differences across devices are expected. Each result contains `id`, `kind`, `candidates`, `probabilities`, `selected`, zero-based `selected_index`, and `temperature`.
+
+Pass several records in one `predict(checkpoint, records, device="cuda")` call to share model loading. **Each call loads the model again, and records inside a call are processed sequentially**; this is not a persistent server or a cross-question GPU batching API. The download cache avoids downloading again, not loading weights into memory again. A long-running service needs a wrapper that retains `load_checkpoint()`'s model/tokenizer and implements the same encoding, scoring and per-question softmax.
+
+The 256-token limit applies to the **entire formatted input for each candidate**, including state, question, candidate and prompt text. Shorten oversized inputs explicitly. Default `temperature=1` is unchanged; the released fitted temperature worsened the selected model's held-out CE/ECE.
+
+### Command-line inference with JSONL
+
+After the Python example has defined `checkpoint` and `records`, save them locally:
+
+```python
+import json
+from pathlib import Path
+
+Path("checkpoint-path.txt").write_text(checkpoint, encoding="utf-8")
+Path("input.jsonl").write_text(
+    "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in records),
+    encoding="utf-8",
+)
+```
+
+On a POSIX shell:
+
+```bash
+lightjev predict --checkpoint "$(cat checkpoint-path.txt)" \
+  --input input.jsonl --output predictions.json --device cpu
+```
+
+Use `--device cuda` for a compatible GPU. Input is one JSON object per line with unique IDs; output is a JSON array. For offline inference, use the previously downloaded local checkpoint path; the loader requires `manifest.json`, `model.safetensors`, `backbone/` and `tokenizer/`, and does not fetch missing files.
+
+**Backend status:** the published interface uses PyTorch/Transformers. Direct `vllm serve` loading is not implemented or validated. Do not load these scoring weights through `AutoModelForCausalLM` or a chat-completions API.
 
 ## Quick start — no model download
 

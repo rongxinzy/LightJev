@@ -18,7 +18,19 @@
 
 ## 使用训练权重
 
-安装 LightJev（见下方）及 `huggingface_hub`，使用自定义推理接口：
+### 安装与首次运行
+
+使用 Python 3.10 或更新版本（实际验证使用 Python 3.12）：
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install 'git+https://github.com/rongxinzy/LightJev.git@v0.1.1' huggingface_hub
+```
+
+Windows 使用 `.venv\Scripts\activate` 激活环境。CPU 推理无需 CUDA；NVIDIA GPU 推理需要与驱动兼容的 CUDA 版 PyTorch。先运行 `python -c "import torch; print(torch.cuda.is_available())"`，确认后再使用 `device="cuda"`。
+
+公开权重无需 HF token。首次下载包含约 **2.38 GB 的 FP32 权重**及 tokenizer、元数据；后续复用 Hugging Face 磁盘缓存。运行时内存需求高于权重文件大小，目前没有测定最低内存/显存要求。将下方 Python 示例保存为 `example.py`，执行 `python example.py`。
 
 ```python
 from huggingface_hub import snapshot_download
@@ -37,6 +49,48 @@ print(predict(checkpoint, records, device="cpu"))
 示例取自冻结 test 的第一题，保留原始任务格式，不作为新的泛化证明。另一个手写降温规则抽查失败，已记录在[局限](docs/results-v0.1.md#additional-manual-probe)中。
 
 这是 **LightJev 自定义评分 checkpoint**，不能当普通聊天模型用 `AutoModelForCausalLM` 加载。GPU 推理可改为 `device="cuda"`。默认输出未经温度缩放的概率；温度拟合在选中 CE 模型的最终测试 CE/ECE 上没有带来改善，因此不自动应用。每个候选超过 256 tokens 会明确报错。[复现训练](docs/training-release.md) · [数据归因](docs/data.md)。
+
+### 输入、输出与多题调用
+
+每条输入必须包含非空字符串 `id`、`group_id`、`state`、`question`，以及 `kind` 和 `candidates`。推理无需 `target`，自己的请求可直接省略。候选必须为 2–255 个互不重复的非空字符串。
+
+| `kind` | 候选格式 | 额外输出 |
+|---|---|---|
+| `choice` | 自定义候选描述 | — |
+| `boolean` | 严格按顺序填写 `["false", "true"]` | — |
+| `score` | 按等级从低到高排列描述 | `expectation`：概率加权的等级索引 |
+
+`predict()` 按输入顺序返回列表。上方示例已在 CPU 验证，选择 `dining room fan`，概率约为 `[0.000000076, 0.99999988]`；不同设备可能有少量数值差异。每条输出包含 `id`、`kind`、`candidates`、`probabilities`、`selected`、从 0 开始的 `selected_index` 和 `temperature`。
+
+多道题可放入同一次 `predict(checkpoint, records, device="cuda")` 调用，共用一次模型加载。**每次调用都会重新加载模型，调用内部仍逐题执行**，并非跨题 GPU 批处理或常驻服务。磁盘缓存避免重复下载，但不会让模型常驻内存。常驻服务需自行保留 `load_checkpoint()` 返回的 model/tokenizer，并实现相同的编码、评分与每题 softmax。
+
+256-token 限制针对**每个候选的完整格式化输入**，包括 state、question、候选和提示文本，超长需主动缩短。默认 `temperature=1`；已发布的温度拟合会使选中模型的最终测试 CE/ECE 变差。
+
+### JSONL 命令行推理
+
+执行上方 Python 示例、得到 `checkpoint` 和 `records` 后，可保存为本地文件：
+
+```python
+import json
+from pathlib import Path
+
+Path("checkpoint-path.txt").write_text(checkpoint, encoding="utf-8")
+Path("input.jsonl").write_text(
+    "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in records),
+    encoding="utf-8",
+)
+```
+
+在 POSIX shell 中运行：
+
+```bash
+lightjev predict --checkpoint "$(cat checkpoint-path.txt)" \
+  --input input.jsonl --output predictions.json --device cpu
+```
+
+GPU 可改为 `--device cuda`。输入每行一个 JSON 对象、ID 不重复；输出为 JSON 数组。离线使用已下载的本地 checkpoint 路径，需要保留 `manifest.json`、`model.safetensors`、`backbone/` 和 `tokenizer/`；加载器不会联网补下载缺失文件。
+
+**推理后端状态：** 当前使用 PyTorch/Transformers，尚未实现或验证直接 `vllm serve` 加载，也不能作为普通聊天权重通过 `AutoModelForCausalLM` 或 chat-completions API 使用。
 
 ## 快速运行
 
