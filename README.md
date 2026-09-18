@@ -9,6 +9,8 @@ LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it in
 
 **v0.1 is a research toolkit release.** It includes an executable offline training demo, not a broadly trained decision checkpoint. The demo verifies the training and inference pipeline; it is not a capability benchmark.
 
+A real Qwen3-0.6B CE/Brier training comparison is **in progress** on a frozen, programmatically labeled subset of NanoJev-Data. No completed capability result or released trained weights is claimed yet. See the [reproduction protocol](docs/training-release.md) and [data provenance](docs/data.md).
+
 ## Quick start — no model download
 
 ```bash
@@ -104,6 +106,6 @@ CI runs on CPU with Hub access disabled for tests and the demo. It uploads a dem
 
 ## Related work and license
 
-Inspired by [TypeSafe AI's Jev](https://typesafe.ai/) and [NanoJev](https://github.com/TianyuCodings/NanoJev). LightJev is an independent implementation and is not affiliated with TypeSafe AI. We do not claim to reproduce its unpublished architecture or RLCD training recipe. No NanoJev weights, datasets, benchmark numbers, or implementation files are redistributed here.
+Inspired by [TypeSafe AI's Jev](https://typesafe.ai/) and [NanoJev](https://github.com/TianyuCodings/NanoJev). LightJev is an independent implementation and is not affiliated with TypeSafe AI. We do not claim to reproduce its unpublished architecture or RLCD training recipe. The Qwen training experiment uses a converted subset of [C-Tianyu/NanoJev-Data](https://huggingface.co/datasets/C-Tianyu/NanoJev-Data), with every source row declaring CC0-1.0. Only programmatic gold targets are retained; Jev teacher outputs are excluded. NanoJev weights and implementation files are not used. Our independent implementation does not imply independently authored training data. See [data attribution and conversion](docs/data.md).
 
 Apache-2.0 for LightJev code. Pretrained backbones and external datasets retain their respective licenses. See [NOTICE](NOTICE).

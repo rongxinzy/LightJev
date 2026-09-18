@@ -34,6 +34,14 @@ def main():
     train.add_argument('--seed', type=int, default=17)
     train.add_argument('--max-length', type=int, default=512)
     train.add_argument('--device', default='cpu')
+    train.add_argument('--head-steps', type=int, default=0)
+    train.add_argument('--head-lr', type=float)
+    train.add_argument('--head-warmup-lr', type=float, default=1e-3)
+    train.add_argument('--eval-every', type=int, default=1)
+    train.add_argument('--grad-accum-steps', type=int, default=1)
+    train.add_argument('--precision', choices=['fp32', 'bf16'], default='fp32')
+    train.add_argument('--gradient-checkpointing', action='store_true')
+    train.add_argument('--selection-metric', choices=['ce', 'brier'], default='ce')
     pred = sub.add_parser('predict', help='Load a local checkpoint; emit normalized candidate scores')
     pred.add_argument('--checkpoint', required=True)
     pred.add_argument('--input', required=True)
@@ -56,7 +64,11 @@ def main():
             result = run_train(args.train, args.dev, args.output_dir, model_name=args.model,
                                steps=args.steps, batch_size=args.batch_size, lr=args.lr,
                                loss=args.loss, seed=args.seed, max_length=args.max_length,
-                               device=args.device, revision=args.revision)
+                               device=args.device, revision=args.revision, head_steps=args.head_steps,
+                               head_lr=args.head_lr, head_warmup_lr=args.head_warmup_lr,
+                               eval_every=args.eval_every, grad_accum_steps=args.grad_accum_steps,
+                               precision=args.precision, gradient_checkpointing=args.gradient_checkpointing,
+                               selection_metric=args.selection_metric)
         elif args.command == 'predict':
             from .schema import load_records
             from .inference import predict

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Opt-in real Qwen smoke: one full-parameter update and checkpoint roundtrip.
 
-Downloads ~1.2 GB of pretrained weights; training uses considerably more memory.
+Downloads ~1.5 GB of pretrained weights; training uses considerably more memory.
 This is not a quality benchmark and is intentionally excluded from offline CI.
 """
 import argparse

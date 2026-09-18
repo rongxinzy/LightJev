@@ -6,3 +6,13 @@ by TypeSafe AI and the open research direction explored by TianyuCodings/NanoJev
 LightJev is not affiliated with TypeSafe AI. No official Jev training recipe,
 model weights, or calibration guarantees are claimed. Upstream model licenses
 apply separately to any pretrained backbones selected by users.
+
+Training-data attribution
+The Qwen3-0.6B experiment uses C-Tianyu / TianyuCodings NanoJev-Data,
+https://huggingface.co/datasets/C-Tianyu/NanoJev-Data, revision
+87061eb91e8fc687e9b046454afdcc5551e3eff7. Every stage1 source record declares
+CC0-1.0 in metadata; the upstream repository has no blanket license declaration.
+The preparation script converts questions to LightJev records and retains only
+programmatic deterministic or exact conditional-distribution targets. Teacher
+outputs are excluded. These records are not relabeled as Apache-2.0 data.
+See docs/data.md for hashes, exclusions, and attribution details.

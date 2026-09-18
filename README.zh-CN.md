@@ -8,6 +8,8 @@
 
 **v0.1 是研究工具包，尚未发布经过广泛任务训练的决策权重。** 自带 CPU 离线示例验证真实训练、checkpoint 保存、重新加载、推理和评测；不把小型示例结果作为通用能力证明。
 
+真实 Qwen3-0.6B 的 CE/Brier 对照训练**正在进行**，使用固定版本 NanoJev-Data 的程序真值子集。当前尚无已完成的能力结果或已发布训练权重声明。详见[复现协议](docs/training-release.md)与[数据来源](docs/data.md)。
+
 ## 快速运行
 
 ```bash
@@ -70,6 +72,6 @@ python scripts/verify_qwen.py --output-dir runs/qwen-smoke --device cpu
 
 ## 来源与许可
 
-研究方向参考 [TypeSafe Jev](https://typesafe.ai/) 与 [NanoJev](https://github.com/TianyuCodings/NanoJev)。本项目独立实现，未重新发布 NanoJev 代码、数据、权重或实验成绩；与 TypeSafe 无隶属关系，也不宣称复现其未公开的 RLCD 配方。
+研究方向参考 [TypeSafe Jev](https://typesafe.ai/) 与 [NanoJev](https://github.com/TianyuCodings/NanoJev)。本项目代码独立实现，Qwen 训练实验使用 [C-Tianyu/NanoJev-Data](https://huggingface.co/datasets/C-Tianyu/NanoJev-Data) 的转换子集；每条来源记录声明 CC0-1.0，仅保留程序真值，排除 Jev 教师输出。未使用 NanoJev 权重与实现文件，独立代码不意味着训练数据也是自建。本项目与 TypeSafe 无隶属关系，也不宣称复现其未公开的 RLCD 配方。
 
 代码使用 Apache-2.0。外部底座和数据各自遵循原许可证。
