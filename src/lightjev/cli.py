@@ -2,6 +2,7 @@
 import argparse
 import json
 from pathlib import Path
+from .defaults import DEFAULT_MODEL
 
 
 def _emit(value, output):
@@ -24,7 +25,7 @@ def main():
     train.add_argument('--train', required=True)
     train.add_argument('--dev', required=True)
     train.add_argument('--output-dir', required=True)
-    train.add_argument('--model', default='Qwen/Qwen3-0.6B')
+    train.add_argument('--model', default=DEFAULT_MODEL)
     train.add_argument('--revision')
     train.add_argument('--steps', type=int, default=20)
     train.add_argument('--batch-size', type=int, default=2)

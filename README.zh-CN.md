@@ -4,7 +4,7 @@
 
 [English](README.md) · [数据格式](docs/data.md) · [架构](docs/design.md) · [评测](docs/evaluation.md)
 
-输入上下文、问题和候选描述，输出完整候选分布与选中值。支持 Choice、Boolean 和有序 Score，使用交叉熵或 Brier loss 训练底座与共享评分头。
+标准预训练底座采用 **Qwen3-0.6B**。输入上下文、问题和候选描述，输出完整候选分布与选中值。支持 Choice、Boolean 和有序 Score，使用交叉熵或 Brier loss 训练底座与共享评分头。
 
 **v0.1 是研究工具包，尚未发布经过广泛任务训练的决策权重。** 自带 CPU 离线示例验证真实训练、checkpoint 保存、重新加载、推理和评测；不把小型示例结果作为通用能力证明。
 
@@ -44,7 +44,7 @@ lightjev train \
   --loss ce --max-length 512 --device cuda
 ```
 
-这是预训练底座接入方法，尚不是已经公布的 Qwen 实验成绩。训练会下载模型并进行全参更新；可加 `--revision` 固定模型版本。显存取决于候选数、长度和 batch，当前不承诺具体显存下限。
+默认底座固定为 `Qwen/Qwen3-0.6B`，版本 `c1899de289a04d12100db370d81485cdf75e47ca`。训练会下载模型并进行全参更新；可加 `--revision` 覆盖版本，其他模型或本地路径不会被套用这一版本。训练命令不代表已经验证模型能力。显存取决于候选数、长度和 batch，当前不承诺具体显存下限。
 
 ```bash
 lightjev predict --checkpoint runs/qwen-ce --input data/test.jsonl \
@@ -53,6 +53,14 @@ lightjev evaluate --input data/test.jsonl --predictions runs/predictions.json
 ```
 
 `calibrate` 可在独立校准集预测上拟合温度，再用 `predict --temperature` 应用于测试集。不要把测试集用于拟合。
+
+## 验证真实 Qwen 底座
+
+```bash
+python scripts/verify_qwen.py --output-dir runs/qwen-smoke --device cpu
+```
+
+这项接入检查会下载真实权重，完成一次全参数更新、checkpoint 保存和重新加载。使用六条手写样本，仅验证接入与训练链路，不证明能力或校准效果。它与极小随机模型的离线示例分开，需要足够内存及首次下载。
 
 ## 当前边界
 

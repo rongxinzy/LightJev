@@ -5,7 +5,7 @@
 [![CI](https://github.com/rongxinzy/LightJev/actions/workflows/ci.yml/badge.svg)](https://github.com/rongxinzy/LightJev/actions/workflows/ci.yml)
 [简体中文](README.zh-CN.md) · [Data format](docs/data.md) · [Design](docs/design.md) · [Evaluation](docs/evaluation.md)
 
-LightJev turns a text backbone into a finite-candidate decision model. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. Train the backbone and a small scoring head with cross-entropy or Brier loss.
+LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it into a finite-candidate decision model. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. Train the backbone and a small scoring head with cross-entropy or Brier loss.
 
 **v0.1 is a research toolkit release.** It includes an executable offline training demo, not a broadly trained decision checkpoint. The demo verifies the training and inference pipeline; it is not a capability benchmark.
 
@@ -52,9 +52,17 @@ lightjev train \
   --loss ce --max-length 512 --device cuda
 ```
 
-Pass `--revision <commit>` to pin a Hub backbone. This command downloads that backbone and performs full-parameter training. GPU memory depends on candidate count and input length; the CLI defaults to CPU and does not schedule jobs on remote hosts. The Qwen command is an integration recipe, not a published LightJev Qwen training result.
+The default backbone is pinned to `Qwen/Qwen3-0.6B` revision `c1899de289a04d12100db370d81485cdf75e47ca`. Pass `--revision <commit>` to override it; other model IDs and local paths are not assigned this Qwen commit. This command downloads that backbone and performs full-parameter training. GPU memory depends on candidate count and input length; the CLI defaults to CPU and does not schedule jobs on remote hosts. The Qwen command is a training recipe, not a published capability result.
 
 For a direct probability-loss control, use a fresh output directory with `--loss brier`, holding the dataset, seed, steps, and backbone fixed. No RL implementation or proprietary RLCD equivalence is claimed.
+
+### Verify the real Qwen backbone
+
+```bash
+python scripts/verify_qwen.py --output-dir runs/qwen-smoke --device cpu
+```
+
+This opt-in integration check downloads the pinned Qwen weights, performs one full-parameter training update, and saves/reloads a decision checkpoint. It uses six small hand-written examples and is not a quality or calibration benchmark. Unlike the tiny offline demo, it requires substantial memory and a first-time model download.
 
 ## Predict, evaluate, calibrate
 

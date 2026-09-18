@@ -7,6 +7,7 @@ import random
 from pathlib import Path
 
 import torch
+from .defaults import DEFAULT_MODEL, resolve_revision
 
 
 def decision_loss(logits, targets, loss="ce"):
@@ -49,7 +50,7 @@ def _evaluate(model, records, tokenizer, max_length, device, batch_size):
     return {name: value / len(records) for name, value in totals.items()}
 
 
-def train(train_path, dev_path, output_dir, model_name="Qwen/Qwen3-0.6B",
+def train(train_path, dev_path, output_dir, model_name=DEFAULT_MODEL,
           steps=20, batch_size=2, lr=1e-5, loss="ce", seed=17,
           max_length=512, device="cpu", revision=None):
     from safetensors.torch import save_file
@@ -76,15 +77,18 @@ def train(train_path, dev_path, output_dir, model_name="Qwen/Qwen3-0.6B",
         torch.cuda.manual_seed_all(seed)
     torch.use_deterministic_algorithms(True, warn_only=True)
     rng = random.Random(seed)
-    tokenizer = AutoTokenizer.from_pretrained(model_name, revision=revision, trust_remote_code=False)
+    effective_revision = resolve_revision(model_name, revision)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, revision=effective_revision, trust_remote_code=False)
     if tokenizer.pad_token_id is None:
         if tokenizer.eos_token_id is None:
             raise ValueError("tokenizer needs padding or EOS token")
         tokenizer.pad_token = tokenizer.eos_token
-    backbone = AutoModel.from_pretrained(model_name, revision=revision, trust_remote_code=False)
+    backbone = AutoModel.from_pretrained(model_name, revision=effective_revision, trust_remote_code=False)
+    # Decision training consumes hidden states, not an autoregressive KV cache.
+    backbone.config.use_cache = False
     model = DecisionModel(backbone).to(device)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr)
-    config = {"format_version": 1, "base_model": model_name, "requested_revision": revision,
+    config = {"format_version": 1, "base_model": model_name, "requested_revision": revision, "effective_revision": effective_revision,
               "resolved_revision": getattr(backbone.config, "_commit_hash", None),
               "steps": steps, "batch_size": batch_size, "lr": lr, "loss": loss,
               "seed": seed, "max_length": max_length, "calibration": "none",

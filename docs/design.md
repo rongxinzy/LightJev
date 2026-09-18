@@ -1,5 +1,7 @@
 # Model and training design
 
+The standard backbone is `Qwen/Qwen3-0.6B`, pinned to revision `c1899de289a04d12100db370d81485cdf75e47ca`. We use its hidden states with a learned decision head; no text generation or thinking trace is requested. The tiny random BERT model exists only for offline lifecycle tests.
+
 For question x and candidate description c_i, the backbone encodes the complete text path. Take the final active token representation h_i and compute:
 
 ```
