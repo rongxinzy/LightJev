@@ -3,9 +3,14 @@
 **Train small language backbones to make typed decisions.**
 
 [![CI](https://github.com/rongxinzy/LightJev/actions/workflows/ci.yml/badge.svg)](https://github.com/rongxinzy/LightJev/actions/workflows/ci.yml)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-LightJev--0.6B-yellow)](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)
 [简体中文](README.zh-CN.md) · [Data format](docs/data.md) · [Design](docs/design.md) · [Evaluation](docs/evaluation.md)
 
 LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it into a finite-candidate decision model. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. Train the backbone and a small scoring head with cross-entropy or Brier loss.
+
+## Release progress
+
+**2026-09-18:** Completed Qwen3-0.6B full-parameter CE/Brier training and published the first model checkpoint on Hugging Face. The accompanying [v0.1.1 code release](https://github.com/rongxinzy/LightJev/releases/tag/v0.1.1) passed 46 tests and CI. Public model files were checked against release hashes; anonymous weight-file access was verified.
 
 **[Download LightJev-0.6B-v0.1](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)** — trained Qwen3-0.6B scoring weights, tokenizer, frozen gold-only data, training histories, and both CE/Brier evaluation reports. The published CE checkpoint was selected at step 250 using development CE before held-out results were inspected.
 

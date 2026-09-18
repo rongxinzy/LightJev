@@ -2,9 +2,15 @@
 
 **把语言模型底座训练成可输出候选概率的决策模型。**
 
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-LightJev--0.6B-yellow)](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)
+
 [English](README.md) · [数据格式](docs/data.md) · [架构](docs/design.md) · [评测](docs/evaluation.md)
 
 标准预训练底座采用 **Qwen3-0.6B**。输入上下文、问题和候选描述，输出完整候选分布与选中值。支持 Choice、Boolean 和有序 Score，使用交叉熵或 Brier loss 训练底座与共享评分头。
+
+## 发布进展
+
+**2026-09-18：** 已完成 Qwen3-0.6B 全参数 CE/Brier 两组训练，首个模型 checkpoint 已在 Hugging Face 公开。配套 [v0.1.1 代码发布版](https://github.com/rongxinzy/LightJev/releases/tag/v0.1.1) 通过 46 项测试和 CI，公开模型文件的发布哈希及权重匿名访问已核验。
 
 **[下载 LightJev-0.6B-v0.1](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)**：包含训练后的 Qwen3-0.6B 评分权重、tokenizer、冻结程序真值数据、训练记录及 CE/Brier 两组评测。发布 CE 的第 250 步 checkpoint，在查看最终测试结果前按开发集 CE 选定。
 
