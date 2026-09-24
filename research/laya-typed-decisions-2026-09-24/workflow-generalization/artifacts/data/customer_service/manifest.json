@@ -1,0 +1,68 @@
+{
+  "protocol": "leave-one-workflow-out on the pinned official train split",
+  "seed": 20260925,
+  "heldout_workflow": "customer_service",
+  "training_workflows": [
+    "agent_trace_observability",
+    "invoice_processing",
+    "security_incidents"
+  ],
+  "case_counts": {
+    "train": 816,
+    "dev": 42,
+    "calibration": 42,
+    "test": 300
+  },
+  "workflow_case_counts": {
+    "train": {
+      "agent_trace_observability": 272,
+      "invoice_processing": 272,
+      "security_incidents": 272
+    },
+    "dev": {
+      "agent_trace_observability": 14,
+      "invoice_processing": 14,
+      "security_incidents": 14
+    },
+    "calibration": {
+      "agent_trace_observability": 14,
+      "invoice_processing": 14,
+      "security_incidents": 14
+    },
+    "test": {
+      "customer_service": 300
+    }
+  },
+  "question_counts": {
+    "train": 4080,
+    "dev": 210,
+    "calibration": 210,
+    "test": 1500
+  },
+  "question_type_counts": {
+    "train": {
+      "choice": 1088,
+      "noul": 1360,
+      "score": 1632
+    },
+    "dev": {
+      "choice": 56,
+      "noul": 70,
+      "score": 84
+    },
+    "calibration": {
+      "choice": 56,
+      "noul": 70,
+      "score": 84
+    },
+    "test": {
+      "choice": 600,
+      "score": 600,
+      "noul": 300
+    }
+  },
+  "max_len": 1024,
+  "head_max_len": 256,
+  "case_and_state_disjoint": true,
+  "test_source": "all cases from the held-out workflow in the public train split; public test split is not used"
+}

@@ -1,0 +1,38 @@
+{
+  "label": "laya_base_raw",
+  "mode": "generalist",
+  "calibration": "disabled",
+  "model_dir": "/root/lightjev-laya-study-20260924/model",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.3453333333333333,
+    "soft_accuracy_all_types": 0.3331183652864589,
+    "kl_from_gold_all_types": 0.7283517161750571,
+    "brier_all_types": 0.37079152694601575,
+    "target_cross_entropy_all_types": 1.6143907776726838,
+    "total_variation_all_types": 0.43037940578426886,
+    "ece_15_bins": 0.33858877743631427,
+    "latency_p50_ms_per_case": 43.51400100858882,
+    "latency_p95_ms_per_case": 44.57543550815899,
+    "decisions_per_second": 114.84708295116472,
+    "by_type_accuracy": {
+      "choice": 0.165,
+      "noul": 0.5333333333333333,
+      "score": 0.43166666666666664
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.3453333333333333
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.3453333333333333,
+      "soft_accuracy_choice_noul": 0.33166979564696136,
+      "brier_choice_noul": 0.39090056325959927,
+      "kl_choice_noul": 0.752476722880349,
+      "ece_15_bins": 0.33858877743631427,
+      "score_mae": 0.536700993556994,
+      "score_within_one": 0.845
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/agent_trace_observability/laya_base_raw_predictions.jsonl"
+}

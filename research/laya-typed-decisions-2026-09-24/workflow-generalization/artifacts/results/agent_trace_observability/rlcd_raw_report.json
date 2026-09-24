@@ -1,0 +1,61 @@
+{
+  "label": "rlcd_raw",
+  "mode": "generalist",
+  "calibration": "disabled",
+  "model_dir": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/runs/agent_trace_observability/rlcd",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.44266666666666665,
+    "soft_accuracy_all_types": 0.34371632774699507,
+    "kl_from_gold_all_types": 0.35802247435979695,
+    "brier_all_types": 0.17866015053955375,
+    "target_cross_entropy_all_types": 1.2440615358574236,
+    "total_variation_all_types": 0.307532878896673,
+    "ece_15_bins": 0.08029956207354894,
+    "latency_p50_ms_per_case": 43.38061100861523,
+    "latency_p95_ms_per_case": 44.71007799875224,
+    "decisions_per_second": 114.98870069572376,
+    "by_type_accuracy": {
+      "choice": 0.51,
+      "noul": 0.5366666666666666,
+      "score": 0.3283333333333333
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.14123821213063467,
+        "kl_from_gold": 0.2797698167855797,
+        "soft_accuracy": 0.317073883313984,
+        "target_cross_entropy": 1.2696268170350424,
+        "total_variation": 0.28057758707826
+      },
+      "noul": {
+        "brier": 0.15928403001422,
+        "kl_from_gold": 0.1785397950639137,
+        "soft_accuracy": 0.5158827861966666,
+        "target_cross_entropy": 0.7219979867316475,
+        "total_variation": 0.23136429666666666
+      },
+      "score": {
+        "brier": 0.22577014921113975,
+        "kl_from_gold": 0.5260164715819559,
+        "soft_accuracy": 0.2842755429551704,
+        "target_cross_entropy": 1.4795280292426924,
+        "total_variation": 0.37257246183008924
+      }
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.44266666666666665
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.44266666666666665,
+      "soft_accuracy_choice_noul": 0.38334351760821156,
+      "brier_choice_noul": 0.14725348475849645,
+      "kl_choice_noul": 0.24602647621169105,
+      "ece_15_bins": 0.08029956207354894,
+      "score_mae": 0.6838583231648315,
+      "score_within_one": 0.7816666666666666
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/agent_trace_observability/rlcd_raw_predictions.jsonl"
+}

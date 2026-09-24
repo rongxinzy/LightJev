@@ -18,7 +18,7 @@ Raw hard-label accuracy is **79.57% on test (656 questions)** and **72.44% on so
 
 **2026-09-24 — Typed Decisions transfer study:** LightJev-0.6B scored 0.396 accuracy zero-shot, below the dataset prior (0.470). A Laya specialist soft-CE run scored 0.781, but specialist and generalist results are not comparable, and this control was initiated after inspecting the RLCD test result; it is exploratory, not a leaderboard claim. The [reproducible report and artifacts](research/laya-typed-decisions-2026-09-24/REPORT.zh-CN.md) include splits, code and full prediction distributions. The ~804 MB checkpoints are not published.
 
-**Workflow transfer validation is running:** four leave-one-workflow-out folds compare Laya RLCD, a matched soft-CE control, the pinned Laya checkpoint, and LightJev zero-shot. The [protocol and reproducibility scripts](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md) exclude the official public test split and keep entire cases together. Results are exploratory; prior work has inspected aggregate scores from these workflow families.
+**Workflow transfer validation is complete:** four leave-one-workflow-out folds compare Laya RLCD, a matched soft-CE control, the pinned Laya checkpoint, and LightJev zero-shot. Across 6,000 held-out decisions, accuracy is 45.3% for RLCD, 44.7% for soft-CE, 36.1% for Laya base, and 35.7% for LightJev. The [protocol, reproducibility scripts, and full results](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md) exclude the official public test split. Results are exploratory; earlier work inspected aggregate scores from these workflow families.
 
 ## Use the trained checkpoint
 

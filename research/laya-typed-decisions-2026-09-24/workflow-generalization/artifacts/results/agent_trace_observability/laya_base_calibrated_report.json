@@ -1,0 +1,38 @@
+{
+  "label": "laya_base_calibrated",
+  "mode": "generalist",
+  "calibration": "checkpoint default",
+  "model_dir": "/root/lightjev-laya-study-20260924/model",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.3453333333333333,
+    "soft_accuracy_all_types": 0.3303391027234876,
+    "kl_from_gold_all_types": 0.4924395355497082,
+    "brier_all_types": 0.26406377033502904,
+    "target_cross_entropy_all_types": 1.3784785970473346,
+    "total_variation_all_types": 0.3741195017542191,
+    "ece_15_bins": 0.22748461899734215,
+    "latency_p50_ms_per_case": 43.629506006254815,
+    "latency_p95_ms_per_case": 44.705930004420225,
+    "decisions_per_second": 114.62545222314925,
+    "by_type_accuracy": {
+      "choice": 0.165,
+      "noul": 0.5333333333333333,
+      "score": 0.43166666666666664
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.3453333333333333
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.3453333333333333,
+      "soft_accuracy_choice_noul": 0.33481471307131694,
+      "brier_choice_noul": 0.2533126783726493,
+      "kl_choice_noul": 0.45539342428698526,
+      "ece_15_bins": 0.22748461899734215,
+      "score_mae": 0.5415369799887799,
+      "score_within_one": 0.8466666666666667
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/agent_trace_observability/laya_base_calibrated_predictions.jsonl"
+}

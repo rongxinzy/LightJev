@@ -1,0 +1,67 @@
+{
+  "label": "laya_base_raw",
+  "mode": "generalist",
+  "calibration": "disabled",
+  "applied_temperature_by_type": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "applied_temperature_by_options": {},
+  "model_dir": "/root/lightjev-laya-study-20260924/model",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.36933333333333335,
+    "soft_accuracy_all_types": 0.31376882345807494,
+    "kl_from_gold_all_types": 1.0793956022963205,
+    "brier_all_types": 0.5740768901419921,
+    "target_cross_entropy_all_types": 1.639112573681422,
+    "total_variation_all_types": 0.5259738353520911,
+    "ece_15_bins": 0.2745236384459291,
+    "latency_p50_ms_per_case": 71.21480698697269,
+    "latency_p95_ms_per_case": 76.63019053725293,
+    "decisions_per_second": 70.45395645806029,
+    "by_type_accuracy": {
+      "choice": 0.39666666666666667,
+      "noul": 0.29833333333333334,
+      "score": 0.4266666666666667
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.4210659097599345,
+        "kl_from_gold": 0.8991467195341422,
+        "soft_accuracy": 0.3155972584918722,
+        "target_cross_entropy": 1.667549758721345,
+        "total_variation": 0.4854466774904478
+      },
+      "noul": {
+        "brier": 0.88032296849134,
+        "kl_from_gold": 1.550831321178248,
+        "soft_accuracy": 0.338205743507,
+        "target_cross_entropy": 1.7763647515100054,
+        "total_variation": 0.6017644266666666
+      },
+      "score": {
+        "brier": 0.34433630198367327,
+        "kl_from_gold": 0.6980843247954818,
+        "soft_accuracy": 0.28841768589225125,
+        "target_cross_entropy": 1.487641803332877,
+        "total_variation": 0.4704468229683371
+      }
+    },
+    "by_workflow_accuracy": {
+      "invoice_processing": 0.36933333333333335
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.36933333333333335,
+      "soft_accuracy_choice_noul": 0.33066958183529077,
+      "brier_choice_noul": 0.7272372822475381,
+      "kl_choice_noul": 1.3336031206302128,
+      "ece_15_bins": 0.2745236384459291,
+      "score_mae": 0.8279165744960668,
+      "score_within_one": 0.5783333333333334
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/invoice_processing/laya_base_raw_predictions.jsonl"
+}

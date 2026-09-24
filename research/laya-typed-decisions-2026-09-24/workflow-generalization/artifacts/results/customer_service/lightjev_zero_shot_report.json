@@ -1,0 +1,63 @@
+{
+  "label": "lightjev_zero_shot",
+  "mode": "generalist",
+  "mode_details": "zero-shot on these four benchmark workflows; criteria descriptions are part of candidate text",
+  "checkpoint": "/root/lightjev-laya-study-20260924/lightjev-checkpoint",
+  "max_length": 640,
+  "latency_note": "8-rank evaluation batched two cases at a time; latency is descriptive and not comparable to sequential Laya Agent or leaderboard client timings",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.4033333333333333,
+    "soft_accuracy_all_types": 0.2888693291471689,
+    "kl_from_gold_all_types": 0.6227330966364542,
+    "brier_all_types": 0.30911799825622227,
+    "target_cross_entropy_all_types": 1.3317734339973737,
+    "total_variation_all_types": 0.45097283184846454,
+    "ece_15_bins": 0.08825143106615918,
+    "latency_p50_ms_per_case": 322.1209152470692,
+    "latency_p95_ms_per_case": 1109.4459530671893,
+    "decisions_per_second": 13.141221257560524,
+    "by_type_accuracy": {
+      "choice": 0.325,
+      "noul": 0.6866666666666666,
+      "score": 0.34
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.4287612868645807,
+        "kl_from_gold": 0.9077181714322743,
+        "soft_accuracy": 0.2127128667596387,
+        "target_cross_entropy": 1.563129025325331,
+        "total_variation": 0.5765498878167873
+      },
+      "noul": {
+        "brier": 0.13012502345491753,
+        "kl_from_gold": 0.15156361405369528,
+        "soft_accuracy": 0.5227318411804612,
+        "target_cross_entropy": 0.6874800733036331,
+        "total_variation": 0.21071157121602418
+      },
+      "score": {
+        "brier": 0.27897119704851625,
+        "kl_from_gold": 0.5733327631320134,
+        "soft_accuracy": 0.2480945355180529,
+        "target_cross_entropy": 1.4225645230162869,
+        "total_variation": 0.4455264061963619
+      }
+    },
+    "by_workflow_accuracy": {
+      "customer_service": 0.4033333333333333
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.4033333333333333,
+      "soft_accuracy_choice_noul": 0.31605252489991287,
+      "brier_choice_noul": 0.32921586572802636,
+      "kl_choice_noul": 0.6556666523060813,
+      "ece_15_bins": 0.08825143106615918,
+      "score_mae": 0.6895159020470459,
+      "score_within_one": 0.705
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/customer_service/lightjev_zero_shot_predictions.jsonl"
+}

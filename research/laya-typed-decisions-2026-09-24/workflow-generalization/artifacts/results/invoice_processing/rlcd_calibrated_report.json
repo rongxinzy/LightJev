@@ -1,0 +1,67 @@
+{
+  "label": "rlcd_calibrated",
+  "mode": "generalist",
+  "calibration": "checkpoint default",
+  "applied_temperature_by_type": [
+    1.0469766943001315,
+    1.0854710048927407,
+    0.9355634083374663
+  ],
+  "applied_temperature_by_options": {},
+  "model_dir": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/runs/invoice_processing/rlcd",
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.434,
+    "soft_accuracy_all_types": 0.3639115919243806,
+    "kl_from_gold_all_types": 0.5383767090682421,
+    "brier_all_types": 0.3275473311808392,
+    "target_cross_entropy_all_types": 1.0980936804533439,
+    "total_variation_all_types": 0.4254044019738435,
+    "ece_15_bins": 0.031636628037254276,
+    "latency_p50_ms_per_case": 71.28704700153321,
+    "latency_p95_ms_per_case": 76.81087306409609,
+    "decisions_per_second": 70.44150733176456,
+    "by_type_accuracy": {
+      "choice": 0.37333333333333335,
+      "noul": 0.5316666666666666,
+      "score": 0.36666666666666664
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.3066823097878566,
+        "kl_from_gold": 0.5884824996341493,
+        "soft_accuracy": 0.2646402604891398,
+        "target_cross_entropy": 1.356885538821352,
+        "total_variation": 0.45349503941949476
+      },
+      "noul": {
+        "brier": 0.3706749399760067,
+        "kl_from_gold": 0.47089337907401474,
+        "soft_accuracy": 0.502322263448,
+        "target_cross_entropy": 0.6964268094057721,
+        "total_variation": 0.4059620366666667
+      },
+      "score": {
+        "brier": 0.2948522330821629,
+        "kl_from_gold": 0.5808071437795159,
+        "soft_accuracy": 0.2751365861183816,
+        "target_cross_entropy": 1.3703646223169113,
+        "total_variation": 0.4308014485581947
+      }
+    },
+    "by_workflow_accuracy": {
+      "invoice_processing": 0.434
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.434,
+      "soft_accuracy_choice_noul": 0.4230949291283799,
+      "brier_choice_noul": 0.3493440632466233,
+      "kl_choice_noul": 0.5100897525940596,
+      "ece_15_bins": 0.031636628037254276,
+      "score_mae": 0.7314098825587337,
+      "score_within_one": 0.7466666666666667
+    }
+  },
+  "prediction_path": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/results/invoice_processing/rlcd_calibrated_predictions.jsonl"
+}

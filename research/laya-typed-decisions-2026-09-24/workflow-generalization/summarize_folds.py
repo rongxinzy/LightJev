@@ -29,7 +29,11 @@ def main():
             fold_reports[label][workflow]=json.loads(report.read_text(encoding="utf-8"))["metrics"]
         if len({(r["case_id"], r["qid"]) for r in rows}) != len(rows):
             raise ValueError(f"duplicate case-question rows for {label}")
-        rows_by_model[label]=score_predictions(rows, [])
+        aggregate=score_predictions(rows, [])
+        aggregate["latency_p50_ms_per_case"] = None
+        aggregate["latency_p95_ms_per_case"] = None
+        aggregate["decisions_per_second"] = None
+        rows_by_model[label]=aggregate
     result={
         "protocol":"4-fold leave-one-workflow-out over the pinned public train split",
         "note":"Exploratory: prior aggregate results on these workflow families were inspected. The official public test split was not used here.",
