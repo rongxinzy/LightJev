@@ -1,0 +1,10 @@
+{
+  "case_held_out": true,
+  "temperature_by_type": [
+    1.1072868628723922,
+    1.1019103345569061,
+    1.160863620924552
+  ],
+  "calibration_cases": 120,
+  "calibration_questions": 600
+}

@@ -1,0 +1,41 @@
+{
+  "label": "laya_published_specialist",
+  "mode": "specialist",
+  "model_dir": "/root/lightjev-laya-study-20260924/checkpoints/laya-typed-decisions-1a793eb568e6718f15941d08f85432581df534e3",
+  "metrics": {
+    "cases": 400,
+    "decisions": 2000,
+    "accuracy": 0.769,
+    "soft_accuracy_all_types": 0.47069538493964036,
+    "kl_from_gold_all_types": 0.11702623379084592,
+    "brier_all_types": 0.0614582214830927,
+    "target_cross_entropy_all_types": 0.8843847894151747,
+    "total_variation_all_types": 0.17402692057020847,
+    "ece_15_bins": 0.21614711508033355,
+    "latency_p50_ms_per_case": 64.74045199865941,
+    "latency_p95_ms_per_case": 85.97913601115572,
+    "decisions_per_second": 79.70679276317175,
+    "by_type_accuracy": {
+      "choice": 0.7316666666666667,
+      "noul": 0.8583333333333333,
+      "score": 0.73
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.734,
+      "customer_service": 0.766,
+      "invoice_processing": 0.804,
+      "security_incidents": 0.772
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.769,
+      "soft_accuracy_choice_noul": 0.5087050415071233,
+      "brier_choice_noul": 0.06577295472434991,
+      "kl_choice_noul": 0.12204160121080461,
+      "ece_15_bins": 0.21614711508033355,
+      "score_mae": 0.2423514068113252,
+      "score_within_one": 0.995
+    }
+  },
+  "prediction_path": "results/laya_published_specialist_predictions.jsonl",
+  "mode_details": "fine-tuned on this benchmark training split and these four workflows"
+}

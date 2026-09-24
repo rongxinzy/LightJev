@@ -1,0 +1,72 @@
+{
+  "dataset": {
+    "repo_id": "LocalLLaMA/typed-decisions",
+    "revision": "c76749ec58bd8c3d2ea706b31c333a9059c38f90",
+    "configuration": "all",
+    "files": {
+      "train.parquet": {
+        "path": "all/train-00000-of-00001.parquet",
+        "sha256": "46a58d63edfd86e23229c78afe8b72307bb4ca9fb0e8df180cabb3c67ec9dcd5"
+      },
+      "test.parquet": {
+        "path": "all/test-00000-of-00001.parquet",
+        "sha256": "4f294f218ea1da27f3efef936359389c62ea4d3973a41457732990f1d31b647c"
+      }
+    },
+    "case_counts": {
+      "train": 1200,
+      "test": 400
+    },
+    "questions_per_case": 5
+  },
+  "base_model": {
+    "repo_id": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "weights_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c"
+  },
+  "published_laya_typed_decisions": {
+    "repo_id": "convaiinnovations/laya-typed-decisions",
+    "revision": "1a793eb568e6718f15941d08f85432581df534e3",
+    "weights_sha256": "4fa56de72383a9d3efa9cfa78955733c81b9fc8067a587ca4beb82c78107a24e"
+  },
+  "source_code": {
+    "repo_id": "NandhaKishorM/laya",
+    "revision": "23a17522aa4942da6cce53a995a275760320b691",
+    "notebook": "notebooks/laya_finetune_typed_decisions_2xT4_kaggle.ipynb"
+  },
+  "network": "All dataset/model downloads were made by AGC through the sysadm@172.18.5.188 SOCKS relay using hf-mirror.com.",
+  "lightjev": {
+    "repo_id": "rongxinzy/LightJev-0.6B-v0.1",
+    "revision": "b3d9a281885e3c315b12a22d3602fc627cdba3dd",
+    "weights_sha256": "d654807fe42fdd048d7d55448af9ee90d6ef728e0c18d2995a8f8220dd4ac52f",
+    "training_max_length": 256,
+    "evaluation_max_length": 640,
+    "maximum_observed_candidate_tokens": 525,
+    "evaluation": "generalist zero-shot; full context, no truncation"
+  },
+  "runs": {
+    "rlcd_seed17": {
+      "seed": 17,
+      "world_size": 8,
+      "effective_batch": 64,
+      "epochs": 4,
+      "rl_weight": 1.0,
+      "ce_weight": 1.0,
+      "best_epoch": 4,
+      "dev_soft_nll": 0.8668589826424916,
+      "peak_gpu_gib": 9.3338
+    },
+    "soft_ce_seed19": {
+      "seed": 19,
+      "world_size": 8,
+      "effective_batch": 64,
+      "epochs": 4,
+      "rl_weight": 0.0,
+      "ce_weight": 1.0,
+      "best_epoch": 4,
+      "dev_soft_nll": 0.832540808916092,
+      "peak_gpu_gib": 9.3338,
+      "selection_caveat": "training objective comparison was initiated after the RLCD public-test result was inspected"
+    }
+  }
+}

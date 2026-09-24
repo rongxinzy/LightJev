@@ -1,0 +1,65 @@
+{
+  "seed": 20260924,
+  "case_counts": {
+    "train": 960,
+    "dev": 120,
+    "calibration": 120,
+    "test": 400
+  },
+  "question_counts": {
+    "train": 4800,
+    "dev": 600,
+    "calibration": 600,
+    "test": 2000
+  },
+  "workflow_case_counts": {
+    "train": {
+      "agent_trace_observability": 240,
+      "customer_service": 240,
+      "invoice_processing": 240,
+      "security_incidents": 240
+    },
+    "dev": {
+      "agent_trace_observability": 30,
+      "customer_service": 30,
+      "invoice_processing": 30,
+      "security_incidents": 30
+    },
+    "calibration": {
+      "agent_trace_observability": 30,
+      "customer_service": 30,
+      "invoice_processing": 30,
+      "security_incidents": 30
+    },
+    "test": {
+      "agent_trace_observability": 100,
+      "customer_service": 100,
+      "invoice_processing": 100,
+      "security_incidents": 100
+    }
+  },
+  "max_len": 1024,
+  "head_max_len": 256,
+  "type_counts": {
+    "train": {
+      "choice": 1440,
+      "noul": 1440,
+      "score": 1920
+    },
+    "dev": {
+      "choice": 180,
+      "noul": 180,
+      "score": 240
+    },
+    "calibration": {
+      "choice": 180,
+      "noul": 180,
+      "score": 240
+    },
+    "test": {
+      "choice": 600,
+      "noul": 600,
+      "score": 800
+    }
+  }
+}

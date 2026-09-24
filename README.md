@@ -16,6 +16,8 @@ LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it in
 
 Raw hard-label accuracy is **79.57% on test (656 questions)** and **72.44% on source-defined OOD (352)**. Exact soft-distribution squared L2 is **0.003132 / 0.003964** respectively. These are synthetic-task, single-seed results. Catalog lookup and smart-home rules are stronger than grid and tic-tac-toe judgments; this is not a broadly capable business decision model. [Full results and limitations](docs/results-v0.1.md).
 
+**2026-09-24 — Typed Decisions transfer study:** LightJev-0.6B scored 0.396 accuracy zero-shot, below the dataset prior (0.470). A Laya specialist soft-CE run scored 0.781, but specialist and generalist results are not comparable, and this control was initiated after inspecting the RLCD test result; it is exploratory, not a leaderboard claim. The [reproducible report and artifacts](research/laya-typed-decisions-2026-09-24/REPORT.zh-CN.md) include splits, code and full prediction distributions. The ~804 MB checkpoints are not published.
+
 ## Use the trained checkpoint
 
 ### Installation and first run

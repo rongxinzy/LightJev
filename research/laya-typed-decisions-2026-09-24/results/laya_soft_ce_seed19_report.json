@@ -1,0 +1,41 @@
+{
+  "label": "laya_soft_ce_seed19",
+  "mode": "specialist",
+  "model_dir": "runs/laya-typed-decisions-ce-seed19",
+  "metrics": {
+    "cases": 400,
+    "decisions": 2000,
+    "accuracy": 0.781,
+    "soft_accuracy_all_types": 0.5100180591084919,
+    "kl_from_gold_all_types": 0.08823680369303,
+    "brier_all_types": 0.048774062001752674,
+    "target_cross_entropy_all_types": 0.8555953593173589,
+    "total_variation_all_types": 0.13914844839982182,
+    "ece_15_bins": 0.16159063890392675,
+    "latency_p50_ms_per_case": 64.93632598721888,
+    "latency_p95_ms_per_case": 86.07404748036053,
+    "decisions_per_second": 79.62951340758708,
+    "by_type_accuracy": {
+      "choice": 0.7516666666666667,
+      "noul": 0.855,
+      "score": 0.7475
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.748,
+      "customer_service": 0.774,
+      "invoice_processing": 0.824,
+      "security_incidents": 0.778
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.781,
+      "soft_accuracy_choice_noul": 0.5636222106302448,
+      "brier_choice_noul": 0.047867200393235554,
+      "kl_choice_noul": 0.08199955918518112,
+      "ece_15_bins": 0.16159063890392675,
+      "score_mae": 0.21552939822259098,
+      "score_within_one": 0.995
+    }
+  },
+  "prediction_path": "results/laya_soft_ce_seed19_predictions.jsonl",
+  "mode_details": "fine-tuned on this benchmark training split and these four workflows"
+}

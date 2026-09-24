@@ -1,0 +1,16 @@
+{
+  "selected_by": "minimum case-held-out dev soft-label NLL",
+  "epoch": 4,
+  "dev_soft_nll": 0.832540808916092,
+  "seed": 19,
+  "base_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "dataset_revision": "c76749ec58bd8c3d2ea706b31c333a9059c38f90",
+  "world_size": 8,
+  "effective_batch": 64,
+  "sigma_start": 0.4,
+  "sigma_end": 0.1,
+  "group_size": 4,
+  "ce_weight": 1.0,
+  "rl_weight": 0.0,
+  "checkpoint_sha256": "4e9a5b99b555d22b9e81e624951460f6a8271a6bcf50c0b438eb3b6792c8dda4"
+}

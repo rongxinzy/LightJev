@@ -1,0 +1,43 @@
+{
+  "label": "lightjev_zero_shot",
+  "mode": "generalist",
+  "checkpoint": "/root/lightjev-laya-study-20260924/lightjev-checkpoint",
+  "max_length": 640,
+  "latency_note": "8-rank evaluation batched two cases at a time; latency is descriptive and not comparable to sequential Laya Agent or leaderboard client timings",
+  "metrics": {
+    "cases": 400,
+    "decisions": 2000,
+    "accuracy": 0.3955,
+    "soft_accuracy_all_types": 0.32509294192082583,
+    "kl_from_gold_all_types": 0.47039260032824964,
+    "brier_all_types": 0.2536802752693963,
+    "target_cross_entropy_all_types": 1.2377511559525785,
+    "total_variation_all_types": 0.39045426588555326,
+    "ece_15_bins": 0.06597222862790618,
+    "latency_p50_ms_per_case": 219.7900727551314,
+    "latency_p95_ms_per_case": 465.1835477685373,
+    "decisions_per_second": 21.046398359931807,
+    "by_type_accuracy": {
+      "choice": 0.34833333333333333,
+      "noul": 0.54,
+      "score": 0.3225
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.408,
+      "customer_service": 0.41,
+      "invoice_processing": 0.32,
+      "security_incidents": 0.444
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.3955,
+      "soft_accuracy_choice_noul": 0.37611591249714393,
+      "brier_choice_noul": 0.2634098109680525,
+      "kl_choice_noul": 0.4371939534740437,
+      "ece_15_bins": 0.06597222862790618,
+      "score_mae": 0.6770527886220313,
+      "score_within_one": 0.7525
+    }
+  },
+  "prediction_path": "results/lightjev_zero_shot_predictions.jsonl",
+  "mode_details": "zero-shot on these four benchmark workflows; criteria descriptions are part of candidate text"
+}
