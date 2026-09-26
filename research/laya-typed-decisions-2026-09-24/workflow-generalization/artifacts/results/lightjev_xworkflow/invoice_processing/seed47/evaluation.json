@@ -1,0 +1,117 @@
+{
+  "temperatures": {
+    "choice": 0.9986274429670137,
+    "noul": 0.804782558242723,
+    "score": 0.9694276009791667
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.4013333333333333,
+      "soft_accuracy_all_types": 0.3754839634101374,
+      "kl_from_gold_all_types": 0.5360045244931608,
+      "brier_all_types": 0.32642847358143695,
+      "target_cross_entropy_all_types": 1.0957214958782624,
+      "total_variation_all_types": 0.4181680451246194,
+      "ece_15_bins": 0.07009086889540327,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.44333333333333336,
+        "noul": 0.46166666666666667,
+        "score": 0.32
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.26710483744033825,
+          "kl_from_gold": 0.4907040988391887,
+          "soft_accuracy": 0.31419911789262894,
+          "target_cross_entropy": 1.2591071380263916,
+          "total_variation": 0.4039337640067039
+        },
+        "noul": {
+          "brier": 0.3821362700739544,
+          "kl_from_gold": 0.4822484964639585,
+          "soft_accuracy": 0.49457846438585185,
+          "target_cross_entropy": 0.7077819267957159,
+          "total_variation": 0.4137131521465546
+        },
+        "score": {
+          "brier": 0.30038249515946885,
+          "kl_from_gold": 0.6124107653493491,
+          "soft_accuracy": 0.2870318851931772,
+          "target_cross_entropy": 1.4019682438867445,
+          "total_variation": 0.4297400786616419
+        }
+      },
+      "by_workflow_accuracy": {
+        "invoice_processing": 0.4013333333333333
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.4013333333333333,
+        "soft_accuracy_choice_noul": 0.4344520155547775,
+        "brier_choice_noul": 0.3437924591960823,
+        "kl_choice_noul": 0.4850670305890353,
+        "ece_15_bins": 0.07009086889540327,
+        "score_mae": 0.7254054188798708,
+        "score_within_one": 0.6933333333333334
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.4013333333333333,
+      "soft_accuracy_all_types": 0.37533538871446465,
+      "kl_from_gold_all_types": 0.5399361171740092,
+      "brier_all_types": 0.32883860373922913,
+      "target_cross_entropy_all_types": 1.099653088559111,
+      "total_variation_all_types": 0.4188401302441844,
+      "ece_15_bins": 0.07099449651078624,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.44333333333333336,
+        "noul": 0.46166666666666667,
+        "score": 0.32
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.2671291274319956,
+          "kl_from_gold": 0.4907429236091077,
+          "soft_accuracy": 0.31426528874094756,
+          "target_cross_entropy": 1.2591459627963106,
+          "total_variation": 0.40391233600220855
+        },
+        "noul": {
+          "brier": 0.38670829190810296,
+          "kl_from_gold": 0.4869147857424673,
+          "soft_accuracy": 0.49328419481742863,
+          "target_cross_entropy": 0.7124482160742247,
+          "total_variation": 0.4153096160242804
+        },
+        "score": {
+          "brier": 0.30182365372397196,
+          "kl_from_gold": 0.6175540453880018,
+          "soft_accuracy": 0.28792163259825915,
+          "target_cross_entropy": 1.4071115239253973,
+          "total_variation": 0.42983454158507634
+        }
+      },
+      "by_workflow_accuracy": {
+        "invoice_processing": 0.4013333333333333
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.4013333333333333,
+        "soft_accuracy_choice_noul": 0.4336112261252683,
+        "brier_choice_noul": 0.3468485704160672,
+        "kl_choice_noul": 0.48819083169801414,
+        "ece_15_bins": 0.07099449651078624,
+        "score_mae": 0.726206809375639,
+        "score_within_one": 0.6933333333333334
+      }
+    }
+  }
+}

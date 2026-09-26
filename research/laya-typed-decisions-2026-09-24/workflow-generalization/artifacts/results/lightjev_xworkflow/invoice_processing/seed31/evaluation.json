@@ -1,0 +1,117 @@
+{
+  "temperatures": {
+    "choice": 1.0228142401823543,
+    "noul": 0.8495013703533196,
+    "score": 0.9915697725415087
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.372,
+      "soft_accuracy_all_types": 0.36885146543221314,
+      "kl_from_gold_all_types": 0.5449037279473692,
+      "brier_all_types": 0.3422877667191289,
+      "target_cross_entropy_all_types": 1.1046206993324708,
+      "total_variation_all_types": 0.42247733077182315,
+      "ece_15_bins": 0.10632934580516731,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.44333333333333336,
+        "noul": 0.2966666666666667,
+        "score": 0.4116666666666667
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.2636312438836594,
+          "kl_from_gold": 0.48551271323791617,
+          "soft_accuracy": 0.3169649258893827,
+          "target_cross_entropy": 1.253915752425119,
+          "total_variation": 0.40167189064160835
+        },
+        "noul": {
+          "brier": 0.42470611255057267,
+          "kl_from_gold": 0.5253266593295719,
+          "soft_accuracy": 0.4762850672144855,
+          "target_cross_entropy": 0.7508600896613292,
+          "total_variation": 0.43365096572662243
+        },
+        "score": {
+          "brier": 0.2991976823054199,
+          "kl_from_gold": 0.5941763039198928,
+          "soft_accuracy": 0.287361133421356,
+          "target_cross_entropy": 1.3837337824572882,
+          "total_variation": 0.4217064158821312
+        }
+      },
+      "by_workflow_accuracy": {
+        "invoice_processing": 0.372
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.372,
+        "soft_accuracy_choice_noul": 0.4231783534394512,
+        "brier_choice_noul": 0.37101448966160155,
+        "kl_choice_noul": 0.5120553439656866,
+        "ece_15_bins": 0.10632934580516731,
+        "score_mae": 0.706421467623707,
+        "score_within_one": 0.7283333333333334
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.372,
+      "soft_accuracy_all_types": 0.3670693126137383,
+      "kl_from_gold_all_types": 0.5501917472100315,
+      "brier_all_types": 0.34711404473324303,
+      "target_cross_entropy_all_types": 1.109908718595133,
+      "total_variation_all_types": 0.4244221541004964,
+      "ece_15_bins": 0.11871853803829413,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.44333333333333336,
+        "noul": 0.2966666666666667,
+        "score": 0.4116666666666667
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.263263031649714,
+          "kl_from_gold": 0.4850610960372244,
+          "soft_accuracy": 0.3157849922233514,
+          "target_cross_entropy": 1.2534641352244273,
+          "total_variation": 0.4020965529100275
+        },
+        "noul": {
+          "brier": 0.4365418482168545,
+          "kl_from_gold": 0.5375753772721877,
+          "soft_accuracy": 0.47218306892145495,
+          "target_cross_entropy": 0.7631088076039451,
+          "total_variation": 0.438308159514193
+        },
+        "score": {
+          "brier": 0.29961174779139615,
+          "kl_from_gold": 0.595373442734279,
+          "soft_accuracy": 0.28759771650121524,
+          "target_cross_entropy": 1.3849309212716743,
+          "total_variation": 0.4216989492820341
+        }
+      },
+      "by_workflow_accuracy": {
+        "invoice_processing": 0.372
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.372,
+        "soft_accuracy_choice_noul": 0.4200503766887538,
+        "brier_choice_noul": 0.3787822426944743,
+        "kl_choice_noul": 0.5200706168605334,
+        "ece_15_bins": 0.11871853803829413,
+        "score_mae": 0.70646647485286,
+        "score_within_one": 0.7283333333333334
+      }
+    }
+  }
+}

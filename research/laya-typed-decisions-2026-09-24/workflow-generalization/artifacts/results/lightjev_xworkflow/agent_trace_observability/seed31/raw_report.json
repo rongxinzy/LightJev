@@ -1,0 +1,72 @@
+{
+  "label": "raw",
+  "checkpoint": "artifacts/lightjev_xworkflow/runs/agent_trace_observability/seed31",
+  "mode": "generalist",
+  "calibration_source": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/lightjev_records/agent_trace_observability/records_calibration.jsonl",
+  "calibration_temperatures_by_type": {
+    "choice": 1.024504279645728,
+    "noul": 0.942911145858595,
+    "score": 0.9965816522818048
+  },
+  "calibration_nll_by_type": {
+    "choice": 0.9146510431476198,
+    "noul": 0.45550661735182674,
+    "score": 0.9644917359528223
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.38066666666666665,
+    "soft_accuracy_all_types": 0.33441207380883764,
+    "kl_from_gold_all_types": 0.34159771967829433,
+    "brier_all_types": 0.1702819938044814,
+    "target_cross_entropy_all_types": 1.2276367811759208,
+    "total_variation_all_types": 0.31188830108281684,
+    "ece_15_bins": 0.08396183639095335,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.375,
+      "noul": 0.6,
+      "score": 0.27666666666666667
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.16131997073211043,
+        "kl_from_gold": 0.32197330055644957,
+        "soft_accuracy": 0.2918120264432108,
+        "target_cross_entropy": 1.3118303008059122,
+        "total_variation": 0.31498020256255344
+      },
+      "noul": {
+        "brier": 0.10867348465364426,
+        "kl_from_gold": 0.12519174031420352,
+        "soft_accuracy": 0.520136943576925,
+        "target_cross_entropy": 0.6686499319819373,
+        "total_variation": 0.1973402411451878
+      },
+      "score": {
+        "brier": 0.21004827145227092,
+        "kl_from_gold": 0.4694251284821845,
+        "soft_accuracy": 0.28414968629042076,
+        "target_cross_entropy": 1.4229366861429213,
+        "total_variation": 0.3660704295718948
+      }
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.38066666666666665
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.38066666666666665,
+      "soft_accuracy_choice_noul": 0.36792033215444886,
+      "brier_choice_noul": 0.14377114203928837,
+      "kl_choice_noul": 0.25637944714236754,
+      "ece_15_bins": 0.08396183639095335,
+      "score_mae": 0.6462196169561972,
+      "score_within_one": 0.8233333333333334
+    }
+  },
+  "prediction_path": "artifacts/results/lightjev_xworkflow/agent_trace_observability/seed31/raw_predictions.jsonl"
+}

@@ -1,0 +1,117 @@
+{
+  "temperatures": {
+    "choice": 1.0132186276896045,
+    "noul": 0.9283672416566716,
+    "score": 0.9670890190986096
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.37733333333333335,
+      "soft_accuracy_all_types": 0.34180200093662044,
+      "kl_from_gold_all_types": 0.3314425109833219,
+      "brier_all_types": 0.17054182198483836,
+      "target_cross_entropy_all_types": 1.2174815724809485,
+      "total_variation_all_types": 0.3053539403950439,
+      "ece_15_bins": 0.10223905539681363,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.38333333333333336,
+        "noul": 0.49,
+        "score": 0.315
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.1677059159839981,
+          "kl_from_gold": 0.32143544746671865,
+          "soft_accuracy": 0.2997427420408185,
+          "target_cross_entropy": 1.3112924477161814,
+          "total_variation": 0.31111557484582136
+        },
+        "noul": {
+          "brier": 0.12530956814174568,
+          "kl_from_gold": 0.14165199270906953,
+          "soft_accuracy": 0.5240748244234458,
+          "target_cross_entropy": 0.6851101843768034,
+          "total_variation": 0.20774651151972112
+        },
+        "score": {
+          "brier": 0.19599385490722496,
+          "kl_from_gold": 0.4363448336370514,
+          "soft_accuracy": 0.2927248480890096,
+          "target_cross_entropy": 1.389856391297788,
+          "total_variation": 0.34839602038192774
+        }
+      },
+      "by_workflow_accuracy": {
+        "agent_trace_observability": 0.37733333333333335
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.37733333333333335,
+        "soft_accuracy_choice_noul": 0.3745201028350276,
+        "brier_choice_noul": 0.15357380003658064,
+        "kl_choice_noul": 0.2615076292141689,
+        "ece_15_bins": 0.10223905539681363,
+        "score_mae": 0.5797897368591681,
+        "score_within_one": 0.8716666666666667
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.37733333333333335,
+      "soft_accuracy_all_types": 0.3423340778511141,
+      "kl_from_gold_all_types": 0.3339633164182238,
+      "brier_all_types": 0.17135540767562293,
+      "target_cross_entropy_all_types": 1.2200023779158504,
+      "total_variation_all_types": 0.3056066571505365,
+      "ece_15_bins": 0.10502344509848066,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.38333333333333336,
+        "noul": 0.49,
+        "score": 0.315
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.16688804323699902,
+          "kl_from_gold": 0.32049403526077624,
+          "soft_accuracy": 0.2992530239121596,
+          "target_cross_entropy": 1.310351035510239,
+          "total_variation": 0.3110343301659915
+        },
+        "noul": {
+          "brier": 0.1279218617295559,
+          "kl_from_gold": 0.14450178104554426,
+          "soft_accuracy": 0.5255520557825808,
+          "target_cross_entropy": 0.6879599727132781,
+          "total_variation": 0.2084001148194552
+        },
+        "score": {
+          "brier": 0.19753954508728033,
+          "kl_from_gold": 0.4421633652620112,
+          "soft_accuracy": 0.2938061428243351,
+          "target_cross_entropy": 1.3956749229227479,
+          "total_variation": 0.348782255300622
+        }
+      },
+      "by_workflow_accuracy": {
+        "agent_trace_observability": 0.37733333333333335
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.37733333333333335,
+        "soft_accuracy_choice_noul": 0.3746860345356333,
+        "brier_choice_noul": 0.15389931606785132,
+        "kl_choice_noul": 0.2618299505223656,
+        "ece_15_bins": 0.10502344509848066,
+        "score_mae": 0.5779231227060253,
+        "score_within_one": 0.8716666666666667
+      }
+    }
+  }
+}

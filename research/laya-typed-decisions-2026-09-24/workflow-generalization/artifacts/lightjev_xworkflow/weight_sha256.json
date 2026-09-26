@@ -1,0 +1,38 @@
+{
+  "included_in_git": false,
+  "availability": "checkpoints retained on agc8f-6 training host; weights not copied into this repository",
+  "runs": {
+    "agent_trace_observability/seed31": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/agent_trace_observability/seed31/model.safetensors",
+      "sha256": "61ef5e4b77d755f290c3305856445d75ec519e06e173c7fdb4018918344d0608"
+    },
+    "agent_trace_observability/seed47": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/agent_trace_observability/seed47/model.safetensors",
+      "sha256": "94403c0651155d0e0df4533d22fb0ab4b030bbeefd5c0fdade78111fedaeb9e1"
+    },
+    "customer_service/seed31": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/customer_service/seed31/model.safetensors",
+      "sha256": "98bf000c3f22fc51a045b9468297b5f600057860cc285cc360c7e2935948a906"
+    },
+    "customer_service/seed47": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/customer_service/seed47/model.safetensors",
+      "sha256": "ee3a61407a2f1ad95d9bf4dc62b33d389ad04d33263e80d71a57f37d70ec2191"
+    },
+    "invoice_processing/seed31": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/invoice_processing/seed31/model.safetensors",
+      "sha256": "4d060e0c7047ff08030842452234b15d88348d627a3bd4dfc584995fc0e0d26e"
+    },
+    "invoice_processing/seed47": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/invoice_processing/seed47/model.safetensors",
+      "sha256": "1f04bde991d8a852d1452b24e58aa72a17beaf9d627c0a180b0f0592fc389f7e"
+    },
+    "security_incidents/seed31": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/security_incidents/seed31/model.safetensors",
+      "sha256": "976456edb05d0c5cf8377b18dbdd6624570d12af3bf3b558493650d266ab8827"
+    },
+    "security_incidents/seed47": {
+      "remote_relative_path": "workflow-generalization-20260924/runs/lightjev_xworkflow/security_incidents/seed47/model.safetensors",
+      "sha256": "17235bf85ccc37ae450c0053f14871195762d6ebcd01ee531388f6bb6b1e42ba"
+    }
+  }
+}

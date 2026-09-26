@@ -19,6 +19,7 @@
 **2026-09-24：Typed Decisions 迁移实验。** LightJev-0.6B 零样本准确率为 0.396，低于该数据集 0.470 的先验准确率。Laya 专家模型的 soft-CE 对照为 0.781，但 specialist 与 generalist 不可直接比较；且该对照是在查看 RLCD 测试结果后启动，因此仅作探索性结果，不宣称榜单突破。[可复现报告与产物](research/laya-typed-decisions-2026-09-24/REPORT.zh-CN.md)包含切分、代码和完整逐题概率。约 804 MB 的权重未发布。
 
 **Workflow 留一验证已完成：** 四折留一 workflow 共评估 6,000 个决策，RLCD 准确率 45.3%、配对 soft-CE 44.7%、Laya 基座 36.1%、LightJev 零样本 35.7%。[验证方案、复现脚本和完整结果](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md)未使用官方 public test split。此前实验查看过这些 workflow 的汇总分数，因此本轮仍属探索性结果。
+**LightJev 跨 workflow 微调对照：** 同样四折、每折两个 seed，平均准确率 43.7%；Laya RLCD 为 45.3%，Laya soft-CE 为 44.7%。LightJev 在 security incidents 留出折达到 50.0%，整体超过 Laya 基座，但尚未整体超过 Laya 微调版。[实验方案、配对区间和逐 seed 结果](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md)已公开；本结果仍属探索性验证。
 
 ## 使用训练权重
 

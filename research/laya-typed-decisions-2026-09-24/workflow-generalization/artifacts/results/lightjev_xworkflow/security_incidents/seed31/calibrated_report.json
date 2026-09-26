@@ -1,0 +1,72 @@
+{
+  "label": "calibrated",
+  "checkpoint": "artifacts/lightjev_xworkflow/runs/security_incidents/seed31",
+  "mode": "generalist",
+  "calibration_source": "/root/lightjev-laya-study-20260924/typed-decisions/workflow-generalization-20260924/lightjev_records/security_incidents/records_calibration.jsonl",
+  "calibration_temperatures_by_type": {
+    "choice": 0.9924049316519842,
+    "noul": 1.0020673082947658,
+    "score": 1.0249732168349277
+  },
+  "calibration_nll_by_type": {
+    "choice": 0.9403701166996776,
+    "noul": 0.4435697902963981,
+    "score": 0.9761493854840779
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.5186666666666667,
+    "soft_accuracy_all_types": 0.376428841706392,
+    "kl_from_gold_all_types": 0.26118911588424076,
+    "brier_all_types": 0.1481067870328206,
+    "target_cross_entropy_all_types": 1.0991392356810592,
+    "total_variation_all_types": 0.27123851407103805,
+    "ece_15_bins": 0.07694550616492642,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.61,
+      "noul": 0.5716666666666667,
+      "score": 0.42
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.15649879862403376,
+        "kl_from_gold": 0.3104622220354696,
+        "soft_accuracy": 0.287568043948628,
+        "target_cross_entropy": 1.2989652692813778,
+        "total_variation": 0.3200186425095745
+      },
+      "noul": {
+        "brier": 0.12960114282189872,
+        "kl_from_gold": 0.144421609105222,
+        "soft_accuracy": 0.5144236409375802,
+        "target_cross_entropy": 0.7109505542576708,
+        "total_variation": 0.2029034502070134
+      },
+      "score": {
+        "brier": 0.16241642544813584,
+        "kl_from_gold": 0.35332006958764517,
+        "soft_accuracy": 0.28286444135408584,
+        "target_cross_entropy": 1.3874149003042884,
+        "total_variation": 0.3151835137157945
+      }
+    },
+    "by_workflow_accuracy": {
+      "security_incidents": 0.5186666666666667
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.5186666666666667,
+      "soft_accuracy_choice_noul": 0.43880510860792943,
+      "brier_choice_noul": 0.13856702808927707,
+      "kl_choice_noul": 0.1997684800819712,
+      "ece_15_bins": 0.07694550616492642,
+      "score_mae": 0.5682249034106096,
+      "score_within_one": 0.8483333333333334
+    }
+  },
+  "prediction_path": "artifacts/results/lightjev_xworkflow/security_incidents/seed31/calibrated_predictions.jsonl"
+}

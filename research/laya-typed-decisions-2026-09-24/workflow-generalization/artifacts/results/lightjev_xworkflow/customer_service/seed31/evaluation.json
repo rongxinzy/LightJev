@@ -1,0 +1,117 @@
+{
+  "temperatures": {
+    "choice": 1.0635174336357243,
+    "noul": 0.9630072785625139,
+    "score": 1.0294642079215373
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.498,
+      "soft_accuracy_all_types": 0.32575406322558603,
+      "kl_from_gold_all_types": 0.5212847376639472,
+      "brier_all_types": 0.272733407092799,
+      "target_cross_entropy_all_types": 1.2303250750248669,
+      "total_variation_all_types": 0.39708462956061497,
+      "ece_15_bins": 0.10746440912019471,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.435,
+        "noul": 0.67,
+        "score": 0.475
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.40478044894433274,
+          "kl_from_gold": 0.8435616782457407,
+          "soft_accuracy": 0.23218701923028953,
+          "target_cross_entropy": 1.4989725321387972,
+          "total_variation": 0.5427658050895747
+        },
+        "noul": {
+          "brier": 0.14022975310977823,
+          "kl_from_gold": 0.15803561078643347,
+          "soft_accuracy": 0.525582791270171,
+          "target_cross_entropy": 0.6939520700363713,
+          "total_variation": 0.21266922651698777
+        },
+        "score": {
+          "brier": 0.20693819223277563,
+          "kl_from_gold": 0.38063236052091054,
+          "soft_accuracy": 0.31940674319859,
+          "target_cross_entropy": 1.2298641204051841,
+          "total_variation": 0.34361115555346883
+        }
+      },
+      "by_workflow_accuracy": {
+        "customer_service": 0.498
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.498,
+        "soft_accuracy_choice_noul": 0.32998560991025,
+        "brier_choice_noul": 0.3165968836661479,
+        "kl_choice_noul": 0.6150529890926383,
+        "ece_15_bins": 0.10746440912019471,
+        "score_mae": 0.5027958082849655,
+        "score_within_one": 0.905
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.498,
+      "soft_accuracy_all_types": 0.32476066187974767,
+      "kl_from_gold_all_types": 0.5228163351974031,
+      "brier_all_types": 0.27340452947049015,
+      "target_cross_entropy_all_types": 1.2318566725583227,
+      "total_variation_all_types": 0.39838665405517587,
+      "ece_15_bins": 0.11236290150422411,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.435,
+        "noul": 0.67,
+        "score": 0.475
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.40612795885963027,
+          "kl_from_gold": 0.8470345179220056,
+          "soft_accuracy": 0.23040936307707327,
+          "target_cross_entropy": 1.502445371815062,
+          "total_variation": 0.5451852904871444
+        },
+        "noul": {
+          "brier": 0.14179025866269201,
+          "kl_from_gold": 0.1600865482052972,
+          "soft_accuracy": 0.5264748240382446,
+          "target_cross_entropy": 0.696003007455235,
+          "total_variation": 0.21285420197919477
+        },
+        "score": {
+          "brier": 0.20648823548524914,
+          "kl_from_gold": 0.37996304596885366,
+          "soft_accuracy": 0.3182548796031736,
+          "target_cross_entropy": 1.2291948058531272,
+          "total_variation": 0.34435424366119793
+        }
+      },
+      "by_workflow_accuracy": {
+        "customer_service": 0.498
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.498,
+        "soft_accuracy_choice_noul": 0.32909785006413045,
+        "brier_choice_noul": 0.3180153921273175,
+        "kl_choice_noul": 0.6180518613497694,
+        "ece_15_bins": 0.11236290150422411,
+        "score_mae": 0.5038106211087956,
+        "score_within_one": 0.9033333333333333
+      }
+    }
+  }
+}
