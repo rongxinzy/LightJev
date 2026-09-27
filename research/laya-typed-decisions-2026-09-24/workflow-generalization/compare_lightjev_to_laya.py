@@ -59,6 +59,8 @@ def main():
                    help="workflow-generalization directory containing artifacts/ and results/")
     p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--bootstrap", type=int, default=10000)
+    p.add_argument("--lightjev-subdir", default="lightjev_xworkflow",
+                   help="results/artifacts subdirectory containing LightJev fold outputs")
     args = p.parse_args()
     base = args.experiment_root
     all_metrics = {}
@@ -70,7 +72,7 @@ def main():
         fold = {}
         seed_rows = []
         for seed in SEEDS:
-            result_dir = base / "artifacts" / "results" / "lightjev_xworkflow" / wf / f"seed{seed}"
+            result_dir = base / "artifacts" / "results" / args.lightjev_subdir / wf / f"seed{seed}"
             for mode in ("raw", "calibrated"):
                 rows = read_jsonl(result_dir / f"{mode}_predictions.jsonl")
                 if len(rows) != 1500:
@@ -110,7 +112,7 @@ def main():
         comparisons[f"lightjev_vs_{arm}"] = bootstrap_diff(means, laya_case_acc[arm], args.bootstrap, 20260925)
     all_metrics = {
         "protocol": "four workflow-held-out folds; LightJev two seeds per fold; calibration on source workflows only",
-        "note": "Exploratory. No official public test split used. LightJev was trained/evaluated up to 640 tokens although the released checkpoint was trained to 256; see report caveat.",
+        "note": f"Exploratory. No official public test split used. Result arm: {args.lightjev_subdir}; see its report for architecture and context-window caveats.",
         "decisions_per_seed": 6000,
         "lightjev_two_seed_calibrated_mean": lightjev_metrics,
         "lightjev_two_seed_accuracy": lightjev_acc,
@@ -120,7 +122,7 @@ def main():
     }
     args.output_dir.mkdir(parents=True, exist_ok=True)
     (args.output_dir / "comparison.json").write_text(json.dumps(all_metrics, indent=2, ensure_ascii=False) + "\n")
-    lines = ["# LightJev versus Laya: workflow-held-out comparison", "",
+    lines = [f"# LightJev versus Laya: workflow-held-out comparison ({args.lightjev_subdir})", "",
              "Four folds, two LightJev seeds per fold. Every held-out case is scored once per model/seed; two-seed LightJev metrics are the arithmetic mean of runs, not a probability ensemble.", "",
              "Exploratory: prior work inspected these workflow families and public-test results. The official public test split was not used here. LightJev inputs are run at 640 tokens, above its released 256-token training window.", "",
              "| Model | Accuracy |", "|---|---:|",
