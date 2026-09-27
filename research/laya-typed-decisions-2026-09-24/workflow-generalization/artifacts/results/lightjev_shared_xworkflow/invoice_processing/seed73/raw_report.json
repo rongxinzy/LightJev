@@ -1,0 +1,72 @@
+{
+  "label": "raw",
+  "checkpoint_id": "seed73",
+  "architecture": "shared-context-causal-listwise",
+  "candidate_order_permutations_max": 4,
+  "calibration_temperatures_by_type": {
+    "choice": 0.9815184753302332,
+    "noul": 0.8844680470370054,
+    "score": 0.9928736537038444
+  },
+  "calibration_nll_by_type": {
+    "choice": 0.9614142953592595,
+    "noul": 0.5712421475682351,
+    "score": 1.003728804558754
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.47933333333333333,
+    "soft_accuracy_all_types": 0.38665004547858567,
+    "kl_from_gold_all_types": 0.48692706961446947,
+    "brier_all_types": 0.30016512209804047,
+    "target_cross_entropy_all_types": 1.0466440409995712,
+    "total_variation_all_types": 0.40211322563496243,
+    "ece_15_bins": 0.08947173940719874,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.42333333333333334,
+      "noul": 0.635,
+      "score": 0.3516666666666667
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.26411842001588615,
+        "kl_from_gold": 0.4866623296741999,
+        "soft_accuracy": 0.3110113180853639,
+        "target_cross_entropy": 1.2550653688614029,
+        "total_variation": 0.40641503335959184
+      },
+      "noul": {
+        "brier": 0.34451227179423455,
+        "kl_from_gold": 0.44444685872546974,
+        "soft_accuracy": 0.5128854887037284,
+        "target_cross_entropy": 0.669980289057227,
+        "total_variation": 0.3942204685229473
+      },
+      "score": {
+        "brier": 0.2738413234429236,
+        "kl_from_gold": 0.5295396504736041,
+        "soft_accuracy": 0.2982339659500539,
+        "target_cross_entropy": 1.3190971290109994,
+        "total_variation": 0.40785507888466294
+      }
+    },
+    "by_workflow_accuracy": {
+      "invoice_processing": 0.47933333333333333
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.47933333333333333,
+      "soft_accuracy_choice_noul": 0.44559409849760684,
+      "brier_choice_noul": 0.31771432120145177,
+      "kl_choice_noul": 0.45851868237504645,
+      "ece_15_bins": 0.08947173940719874,
+      "score_mae": 0.7199916629545875,
+      "score_within_one": 0.745
+    }
+  },
+  "prediction_path": "research/laya-typed-decisions-2026-09-24/workflow-generalization/artifacts/results/lightjev_shared_xworkflow/invoice_processing/seed73/raw_predictions.jsonl"
+}

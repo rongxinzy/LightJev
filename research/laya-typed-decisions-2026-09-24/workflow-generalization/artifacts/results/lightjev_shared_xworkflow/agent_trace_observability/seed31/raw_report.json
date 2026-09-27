@@ -1,0 +1,72 @@
+{
+  "label": "raw",
+  "checkpoint": "artifacts/lightjev_shared_xworkflow/runs/agent_trace_observability/seed31",
+  "architecture": "shared-context-causal-listwise",
+  "candidate_order_permutations": 4,
+  "calibration_temperatures_by_type": {
+    "choice": 0.9625523519047537,
+    "noul": 0.9481556562223731,
+    "score": 1.033100068371678
+  },
+  "calibration_nll_by_type": {
+    "choice": 0.9093462131490491,
+    "noul": 0.472814525284688,
+    "score": 0.9890248822174516
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.402,
+    "soft_accuracy_all_types": 0.33416502317089386,
+    "kl_from_gold_all_types": 0.32261777195443353,
+    "brier_all_types": 0.1647014367076863,
+    "target_cross_entropy_all_types": 1.2086568334520602,
+    "total_variation_all_types": 0.3043173607522586,
+    "ece_15_bins": 0.04064260394801484,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.3416666666666667,
+      "noul": 0.5666666666666667,
+      "score": 0.38
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.15738199455377483,
+        "kl_from_gold": 0.3127460670315468,
+        "soft_accuracy": 0.28937788382837576,
+        "target_cross_entropy": 1.3026030672810094,
+        "total_variation": 0.31490129787531995
+      },
+      "noul": {
+        "brier": 0.12721453701738375,
+        "kl_from_gold": 0.14412650109148045,
+        "soft_accuracy": 0.508298783038056,
+        "target_cross_entropy": 0.6875846927592143,
+        "total_variation": 0.21151871591006
+      },
+      "score": {
+        "brier": 0.19076432870674911,
+        "kl_from_gold": 0.42173511230879684,
+        "soft_accuracy": 0.2918852825798309,
+        "target_cross_entropy": 1.3752466699695334,
+        "total_variation": 0.3401327460502967
+      }
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.402
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.402,
+      "soft_accuracy_choice_noul": 0.3623515168982692,
+      "brier_choice_noul": 0.14732617537497777,
+      "kl_choice_noul": 0.2565395450515247,
+      "ece_15_bins": 0.04064260394801484,
+      "score_mae": 0.595139954903312,
+      "score_within_one": 0.865
+    }
+  },
+  "prediction_path": "research/laya-typed-decisions-2026-09-24/workflow-generalization/artifacts/results/lightjev_shared_xworkflow/agent_trace_observability/seed31/raw_predictions.jsonl"
+}

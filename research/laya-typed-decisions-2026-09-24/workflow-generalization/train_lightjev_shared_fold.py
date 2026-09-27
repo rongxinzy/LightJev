@@ -86,7 +86,11 @@ def main():
     initial_sha = hashlib.sha256((args.checkpoint / "model.safetensors").read_bytes()).hexdigest()
     manifest = {
         "format_version": 1, "architecture": "shared-context-causal-listwise",
-        "base_model": base_manifest.get("base_model"), "initialization_sha256": initial_sha,
+        "base_model": "Qwen/Qwen3-0.6B",
+        "base_model_revision": base_manifest.get("requested_revision"),
+        "initialization_checkpoint": "rongxinzy/LightJev-0.6B-v0.1",
+        "initialization_revision": "b3d9a281885e3c315b12a22d3602fc627cdba3dd",
+        "initialization_sha256": initial_sha,
         "seed": args.seed, "steps": args.steps, "batch_size": args.batch_size,
         "grad_accum_steps": args.grad_accum, "effective_batch_size": args.batch_size * args.grad_accum,
         "max_length": args.max_length, "precision": "bf16-autocast-fp32-parameters",

@@ -6,7 +6,7 @@ PYTHON="${PYTHON_ENV:-/root/lightjev-laya-study-20260924/.venv/bin/python}"
 PACKAGE_SRC="${LIGHTJEV_SRC:-/root/lightjev-laya-study-20260924/LightJev/src}"
 CODE="$STUDY_ROOT/code"
 folds=(agent_trace_observability customer_service invoice_processing security_incidents)
-seeds=(31 47)
+read -r -a seeds <<< "${LIGHTJEV_SEEDS:-31 47}"
 mkdir -p "$STUDY_ROOT/runs/lightjev_shared_xworkflow" "$STUDY_ROOT/logs/lightjev_shared_xworkflow"
 declare -a pids=() names=(); gpu=0; status=0
 for fold in "${folds[@]}"; do

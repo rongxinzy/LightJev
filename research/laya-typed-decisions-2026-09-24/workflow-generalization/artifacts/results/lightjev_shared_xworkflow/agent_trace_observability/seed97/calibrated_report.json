@@ -1,0 +1,72 @@
+{
+  "label": "calibrated",
+  "checkpoint_id": "seed97",
+  "architecture": "shared-context-causal-listwise",
+  "candidate_order_permutations_max": 4,
+  "calibration_temperatures_by_type": {
+    "choice": 1.0109631056314812,
+    "noul": 0.8739564131869838,
+    "score": 0.9539438141908276
+  },
+  "calibration_nll_by_type": {
+    "choice": 0.9018969844013897,
+    "noul": 0.46246118249015017,
+    "score": 0.9701584077466767
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.376,
+    "soft_accuracy_all_types": 0.33206320658520944,
+    "kl_from_gold_all_types": 0.3448572182935853,
+    "brier_all_types": 0.1731604672759852,
+    "target_cross_entropy_all_types": 1.2308962797912117,
+    "total_variation_all_types": 0.3183082074444425,
+    "ece_15_bins": 0.07681047525778806,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.35833333333333334,
+      "noul": 0.6133333333333333,
+      "score": 0.275
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.16679616615773932,
+        "kl_from_gold": 0.32915944664162167,
+        "soft_accuracy": 0.2872443969139878,
+        "target_cross_entropy": 1.3190164468910843,
+        "total_variation": 0.3267981289658385
+      },
+      "noul": {
+        "brier": 0.10875238549993026,
+        "kl_from_gold": 0.12523211345513802,
+        "soft_accuracy": 0.5228444346218794,
+        "target_cross_entropy": 0.6686903051228719,
+        "total_variation": 0.19833304677038913
+      },
+      "score": {
+        "brier": 0.21172880928225846,
+        "kl_from_gold": 0.4703675423647726,
+        "soft_accuracy": 0.28149140223809616,
+        "target_cross_entropy": 1.423879100025509,
+        "total_variation": 0.3698058662600731
+      }
+    },
+    "by_workflow_accuracy": {
+      "agent_trace_observability": 0.376
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.376,
+      "soft_accuracy_choice_noul": 0.36577774281661835,
+      "brier_choice_noul": 0.14744823927180298,
+      "kl_choice_noul": 0.26118366891279376,
+      "ece_15_bins": 0.07681047525778806,
+      "score_mae": 0.6366253222925818,
+      "score_within_one": 0.83
+    }
+  },
+  "prediction_path": "research/laya-typed-decisions-2026-09-24/workflow-generalization/artifacts/results/lightjev_shared_xworkflow/agent_trace_observability/seed97/calibrated_predictions.jsonl"
+}

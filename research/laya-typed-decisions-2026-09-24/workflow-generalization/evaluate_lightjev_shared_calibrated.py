@@ -67,17 +67,17 @@ def main():
         metrics["latency_p50_ms_per_case"] = None
         metrics["latency_p95_ms_per_case"] = None
         metrics["decisions_per_second"] = None
-        report = {"label": mode, "checkpoint": str(args.checkpoint),
+        report = {"label": mode, "checkpoint_id": args.checkpoint.name,
                   "architecture": "shared-context-causal-listwise",
-                  "candidate_order_permutations": args.permutations,
+                  "candidate_order_permutations_max": args.permutations,
                   "calibration_temperatures_by_type": temperatures,
                   "calibration_nll_by_type": {k: mean_nll([r for r in calibration if r["kind"] == k], temperatures[k]) for k in kinds},
                   "max_length": max_length, "metrics": metrics,
-                  "prediction_path": str(pred)}
+                  "prediction_path": pred.name}
         (args.output_dir / f"{mode}_report.json").write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
         reports[mode] = metrics
     (args.output_dir / "evaluation.json").write_text(json.dumps({"temperatures": temperatures,
-                      "reports": reports, "candidate_order_permutations": args.permutations}, indent=2) + "\n")
+                      "reports": reports, "candidate_order_permutations_max": args.permutations}, indent=2) + "\n")
     print(json.dumps({"checkpoint": str(args.checkpoint), "temperatures": temperatures,
                       "accuracy_raw": reports["raw"]["accuracy"],
                       "accuracy_calibrated": reports["calibrated"]["accuracy"]}), flush=True)
