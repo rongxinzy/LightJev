@@ -1,0 +1,11 @@
+
+Additional fine-tuning data attribution for LightJev-0.6B-typed-decisions:
+
+LocalLLaMA / typed-decisions
+https://huggingface.co/datasets/LocalLLaMA/typed-decisions
+Revision: c76749ec58bd8c3d2ea706b31c333a9059c38f90
+Dataset license: Apache-2.0
+
+The model card documents the exact data split, training procedure, evaluation
+protocol, and limitations. The fine-tuned checkpoint does not reproduce Laya's
+implementation or make a claim of winning its official benchmark.

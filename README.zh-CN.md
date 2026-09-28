@@ -2,7 +2,7 @@
 
 **把语言模型底座训练成可输出候选概率的决策模型。**
 
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-LightJev--0.6B-yellow)](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)
+[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-LightJev--0.6B-yellow)](https://huggingface.co/rongxinzy/LightJev-0.6B-typed-decisions)
 
 [English](README.md) · [数据格式](docs/data.md) · [架构](docs/design.md) · [评测](docs/evaluation.md)
 
@@ -11,6 +11,8 @@
 ## 发布进展
 
 **2026-09-18：** 已完成 Qwen3-0.6B 全参数 CE/Brier 两组训练，首个模型 checkpoint 已在 Hugging Face 公开。配套 [v0.1.1 代码发布版](https://github.com/rongxinzy/LightJev/releases/tag/v0.1.1) 通过 46 项测试和 CI，公开模型文件的发布哈希及权重匿名访问已核验。
+
+**2026-09-28 — Typed Decisions v0.2：** 已发布 [LightJev-0.6B-typed-decisions](https://huggingface.co/rongxinzy/LightJev-0.6B-typed-decisions)，这是基于 Qwen3-0.6B 的共享上下文候选评分模型。在官方 400 个测试 case（2,000 条决策）上，准确率为 **78.60%**。这是四类合成 workflow 上的探索性结果，不是官方榜单成绩，也不能直接与 Laya 比较。[完整报告](docs/results-typed-decisions-v0.2.md)说明了数据切分、指标、校准和局限。该 checkpoint 需要 LightJev Python 评分接口，不是聊天模型，也未支持 `vllm serve`。
 
 **[下载 LightJev-0.6B-v0.1](https://huggingface.co/rongxinzy/LightJev-0.6B-v0.1)**：包含训练后的 Qwen3-0.6B 评分权重、tokenizer、冻结程序真值数据、训练记录及 CE/Brier 两组评测。发布 CE 的第 250 步 checkpoint，在查看最终测试结果前按开发集 CE 选定。
 
