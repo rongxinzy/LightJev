@@ -23,6 +23,8 @@ Raw hard-label accuracy is **79.57% on test (656 questions)** and **72.44% on so
 
 **Shared-context LightJev follow-up:** after extending the run to four seeds across the same four folds, listwise candidate scoring averages **45.74%**, versus 45.30% for Laya RLCD and 44.72% for Laya soft-CE. The seed-and-case bootstrap difference is +0.44 points versus RLCD (95% CI −2.15 to +3.14) and +1.03 points versus soft-CE (−1.58 to +3.73); both intervals include zero. The result is close to Laya but does not establish an overall win. It beats the pinned Laya base (36.12%) and the independent-candidate LightJev arm (43.73%) in this protocol. This remains exploratory evidence from four workflow families in the public training split, with a 640-token cap above the released model's 256-token training window; it is not an official leaderboard claim. [Protocol, per-seed results, intervals, and limits](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md).
 
+**CE vs. RLCD objective ablation:** on the same four folds and four seeds, CE averages 46.18% accuracy and CE + RLCD averages 46.55% (+0.38 points). The paired seed-and-case 95% CI is −1.74 to +2.35 points, so the accuracy gain is not conclusive; RLCD also trades slightly worse target CE/Brier for slightly better ECE. [Full results and artifacts](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md).
+
 ## Use the trained checkpoint
 
 ### Installation and first run

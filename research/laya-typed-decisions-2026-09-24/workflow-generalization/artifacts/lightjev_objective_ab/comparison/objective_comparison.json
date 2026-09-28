@@ -1,0 +1,111 @@
+{
+  "protocol": "paired four-workflow comparison; matched seeds [31, 47, 73, 97]; calibrated probabilities; 1,200 held-out cases",
+  "note": "Exploratory; same public training split and four folds as prior study; official public test split unused.",
+  "ce_metrics": {
+    "accuracy": 0.46175,
+    "soft_accuracy_all_types": 0.3561882436768924,
+    "target_cross_entropy_all_types": 1.154548134672703,
+    "brier_all_types": 0.22742017906110115,
+    "ece_15_bins": 0.07955569086009427
+  },
+  "rlcd_metrics": {
+    "accuracy": 0.4655,
+    "soft_accuracy_all_types": 0.3569615568238058,
+    "target_cross_entropy_all_types": 1.162404923880376,
+    "brier_all_types": 0.23047996015859853,
+    "ece_15_bins": 0.07868992534249865
+  },
+  "difference_rlcd_minus_ce": 0.003749999999999999,
+  "case_bootstrap": {
+    "ci95_low": -0.0042499999999999994,
+    "ci95_high": 0.011666666666666665,
+    "probability_rlcd_better": 0.8212,
+    "resamples": 10000
+  },
+  "seed_and_case_bootstrap": {
+    "ci95_low": -0.017416666666666667,
+    "ci95_high": 0.023499999999999997,
+    "probability_rlcd_better": 0.6519,
+    "resamples": 10000
+  },
+  "seed_macro_accuracy": {
+    "ce": {
+      "31": 0.4538333333333333,
+      "47": 0.4656666666666667,
+      "73": 0.4693333333333333,
+      "97": 0.45816666666666667
+    },
+    "rlcd": {
+      "31": 0.47633333333333333,
+      "47": 0.4405,
+      "73": 0.4721666666666667,
+      "97": 0.473
+    }
+  },
+  "per_workflow": {
+    "agent_trace_observability": {
+      "ce": {
+        "accuracy": 0.41766666666666663,
+        "soft_accuracy_all_types": 0.33974043757279393,
+        "target_cross_entropy_all_types": 1.197680930329913,
+        "brier_all_types": 0.15899551781505447,
+        "ece_15_bins": 0.04863107766065173
+      },
+      "rlcd": {
+        "accuracy": 0.42633333333333334,
+        "soft_accuracy_all_types": 0.34130065500201817,
+        "target_cross_entropy_all_types": 1.2133379408717169,
+        "brier_all_types": 0.1700003474414713,
+        "ece_15_bins": 0.05625191814431426
+      }
+    },
+    "customer_service": {
+      "ce": {
+        "accuracy": 0.426,
+        "soft_accuracy_all_types": 0.31446843226770493,
+        "target_cross_entropy_all_types": 1.2709593978735896,
+        "brier_all_types": 0.2936964887820442,
+        "ece_15_bins": 0.10189291932744668
+      },
+      "rlcd": {
+        "accuracy": 0.43633333333333335,
+        "soft_accuracy_all_types": 0.3171725132686208,
+        "target_cross_entropy_all_types": 1.2649074233222195,
+        "brier_all_types": 0.2898970201690325,
+        "ece_15_bins": 0.0922441393686168
+      }
+    },
+    "invoice_processing": {
+      "ce": {
+        "accuracy": 0.49833333333333335,
+        "soft_accuracy_all_types": 0.38976693501365495,
+        "target_cross_entropy_all_types": 1.052032709165184,
+        "brier_all_types": 0.30170051466933917,
+        "ece_15_bins": 0.07602661673117604
+      },
+      "rlcd": {
+        "accuracy": 0.48983333333333334,
+        "soft_accuracy_all_types": 0.39025042578639674,
+        "target_cross_entropy_all_types": 1.0732854256891868,
+        "brier_all_types": 0.30876642507672175,
+        "ece_15_bins": 0.06141765390074844
+      }
+    },
+    "security_incidents": {
+      "ce": {
+        "accuracy": 0.505,
+        "soft_accuracy_all_types": 0.38077716985341564,
+        "target_cross_entropy_all_types": 1.0975195013221246,
+        "brier_all_types": 0.15528819497796675,
+        "ece_15_bins": 0.09167214972110262
+      },
+      "rlcd": {
+        "accuracy": 0.5095,
+        "soft_accuracy_all_types": 0.3791226332381875,
+        "target_cross_entropy_all_types": 1.0980889056383811,
+        "brier_all_types": 0.1532560479471686,
+        "ece_15_bins": 0.10484598995631507
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "temperatures": {
+    "choice": 0.9569151507070942,
+    "noul": 1.0054045106955467,
+    "score": 1.0610192200295918
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.488,
+      "soft_accuracy_all_types": 0.37481409941395216,
+      "kl_from_gold_all_types": 0.25979618591696646,
+      "brier_all_types": 0.15135401614357527,
+      "target_cross_entropy_all_types": 1.0977463057137848,
+      "total_variation_all_types": 0.2758041994279054,
+      "ece_15_bins": 0.07758816946820282,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.48333333333333334,
+        "noul": 0.5516666666666666,
+        "score": 0.4266666666666667
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.171127796227898,
+          "kl_from_gold": 0.3304817268834356,
+          "soft_accuracy": 0.27778297083433134,
+          "target_cross_entropy": 1.3189847741293437,
+          "total_variation": 0.33684636387105416
+        },
+        "noul": {
+          "brier": 0.13286000310802046,
+          "kl_from_gold": 0.1473333645676113,
+          "soft_accuracy": 0.5080873229446613,
+          "target_cross_entropy": 0.71386230972006,
+          "total_variation": 0.21323498964743226
+        },
+        "score": {
+          "brier": 0.15996113913696872,
+          "kl_from_gold": 0.336916236783087,
+          "soft_accuracy": 0.2900564401730534,
+          "target_cross_entropy": 1.3710110674997302,
+          "total_variation": 0.30785232698680415
+        }
+      },
+      "by_workflow_accuracy": {
+        "security_incidents": 0.488
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.488,
+        "soft_accuracy_choice_noul": 0.4313192055745513,
+        "brier_choice_noul": 0.14561593414797963,
+        "kl_choice_noul": 0.20838281867288608,
+        "ece_15_bins": 0.07758816946820282,
+        "score_mae": 0.5167350458112595,
+        "score_within_one": 0.89
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.488,
+      "soft_accuracy_all_types": 0.3741351115097943,
+      "kl_from_gold_all_types": 0.2575508798767318,
+      "brier_all_types": 0.15047240037363213,
+      "target_cross_entropy_all_types": 1.09550099967355,
+      "total_variation_all_types": 0.27563273222740253,
+      "ece_15_bins": 0.07284205509145879,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.48333333333333334,
+        "noul": 0.5516666666666666,
+        "score": 0.4266666666666667
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.17081709554058164,
+          "kl_from_gold": 0.32962804772013315,
+          "soft_accuracy": 0.278937376288505,
+          "target_cross_entropy": 1.3181310949660414,
+          "total_variation": 0.335427717530074
+        },
+        "noul": {
+          "brier": 0.13261317049865542,
+          "kl_from_gold": 0.1470315057463793,
+          "soft_accuracy": 0.508050488673722,
+          "target_cross_entropy": 0.713560450898828,
+          "total_variation": 0.2131064541711511
+        },
+        "score": {
+          "brier": 0.1581592826651341,
+          "kl_from_gold": 0.3320316700853836,
+          "soft_accuracy": 0.2878186019565112,
+          "target_cross_entropy": 1.3661265008020267,
+          "total_variation": 0.3082615176323182
+        }
+      },
+      "by_workflow_accuracy": {
+        "security_incidents": 0.488
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.488,
+        "soft_accuracy_choice_noul": 0.43167945121198303,
+        "brier_choice_noul": 0.1453478121792975,
+        "kl_choice_noul": 0.2078970197376306,
+        "ece_15_bins": 0.07284205509145879,
+        "score_mae": 0.5198454530631308,
+        "score_within_one": 0.89
+      }
+    }
+  },
+  "candidate_order_permutations_max": 4
+}

@@ -1,0 +1,118 @@
+{
+  "temperatures": {
+    "choice": 0.9718241935281964,
+    "noul": 0.8962078206670216,
+    "score": 1.0256223205649735
+  },
+  "reports": {
+    "raw": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.5213333333333333,
+      "soft_accuracy_all_types": 0.38004240288915053,
+      "kl_from_gold_all_types": 0.25174280111240394,
+      "brier_all_types": 0.15032812089933242,
+      "target_cross_entropy_all_types": 1.0896929209092223,
+      "total_variation_all_types": 0.26873389295352584,
+      "ece_15_bins": 0.09143015242416522,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.68,
+        "noul": 0.5633333333333334,
+        "score": 0.4
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.13242587165383887,
+          "kl_from_gold": 0.26132755704212196,
+          "soft_accuracy": 0.30407791528229505,
+          "target_cross_entropy": 1.24983060428803,
+          "total_variation": 0.29004760412011116
+        },
+        "noul": {
+          "brier": 0.15404711668036544,
+          "kl_from_gold": 0.17146627604526218,
+          "soft_accuracy": 0.5117170095131485,
+          "target_cross_entropy": 0.737995221197711,
+          "total_variation": 0.21778177152296208
+        },
+        "score": {
+          "brier": 0.15556024974104626,
+          "kl_from_gold": 0.3272269482146867,
+          "soft_accuracy": 0.2863500400685804,
+          "target_cross_entropy": 1.3613217789313299,
+          "total_variation": 0.30902915880079695
+        }
+      },
+      "by_workflow_accuracy": {
+        "security_incidents": 0.5213333333333333
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.5213333333333333,
+        "soft_accuracy_choice_noul": 0.442503978102864,
+        "brier_choice_noul": 0.14684003500485657,
+        "kl_choice_noul": 0.20142003637754877,
+        "ece_15_bins": 0.09143015242416522,
+        "score_mae": 0.5192715800651677,
+        "score_within_one": 0.8883333333333333
+      }
+    },
+    "calibrated": {
+      "cases": 300,
+      "decisions": 1500,
+      "accuracy": 0.5213333333333333,
+      "soft_accuracy_all_types": 0.38032815736962877,
+      "kl_from_gold_all_types": 0.2564083623808045,
+      "brier_all_types": 0.1540839439729647,
+      "target_cross_entropy_all_types": 1.0943584821776229,
+      "total_variation_all_types": 0.2709496366141926,
+      "ece_15_bins": 0.09850446991843209,
+      "latency_p50_ms_per_case": null,
+      "latency_p95_ms_per_case": null,
+      "decisions_per_second": null,
+      "by_type_accuracy": {
+        "choice": 0.68,
+        "noul": 0.5633333333333334,
+        "score": 0.4
+      },
+      "by_type_metrics": {
+        "choice": {
+          "brier": 0.13142904505422384,
+          "kl_from_gold": 0.25953909007515763,
+          "soft_accuracy": 0.30561079979111233,
+          "target_cross_entropy": 1.2480421373210657,
+          "total_variation": 0.28788588064109194
+        },
+        "noul": {
+          "brier": 0.1645836258994638,
+          "kl_from_gold": 0.18499107673357523,
+          "soft_accuracy": 0.512756554679071,
+          "target_cross_entropy": 0.751520021886024,
+          "total_variation": 0.22392821910925284
+        },
+        "score": {
+          "brier": 0.15491171150583607,
+          "kl_from_gold": 0.32626028418085723,
+          "soft_accuracy": 0.2852584388494449,
+          "target_cross_entropy": 1.3603551148975004,
+          "total_variation": 0.30950293210568264
+        }
+      },
+      "by_workflow_accuracy": {
+        "security_incidents": 0.5213333333333333
+      },
+      "laya_notebook_metrics": {
+        "accuracy": 0.5213333333333333,
+        "soft_accuracy_choice_noul": 0.4437079697164181,
+        "brier_choice_noul": 0.1535320989510505,
+        "kl_choice_noul": 0.2098404145141027,
+        "ece_15_bins": 0.09850446991843209,
+        "score_mae": 0.5205396244638092,
+        "score_within_one": 0.89
+      }
+    }
+  },
+  "candidate_order_permutations_max": 4
+}

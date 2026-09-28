@@ -23,6 +23,8 @@
 
 **共享上下文 LightJev 后续实验：** 扩展到四折、四个 seed 后，候选联合打分平均准确率为 **45.74%**，Laya RLCD 为 45.30%，Laya soft-CE 为 44.72%。同时重采样训练 seed 与 held-out case 的 bootstrap 差值：相对 RLCD 为 +0.44 个百分点（95% CI −2.15 至 +3.14），相对 soft-CE 为 +1.03 个百分点（−1.58 至 +3.73），区间均包含零。因此结果与 Laya 接近，但尚不能证明整体超过 Laya。该版本高于本协议的 Laya base（36.12%）及独立候选打分 LightJev（43.73%）。实验来自公开训练集中的四类 workflow，仍属探索性；640-token 上限高于发布模型原有 256-token 训练长度，不能视为官方榜单成绩。[完整方案、逐 seed 指标、区间和限制](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md)。
 
+**CE 与 RLCD 目标函数对照：** 同样四折、四个 seed 下，CE 平均准确率为 46.18%，CE + RLCD 为 46.55%（+0.38 个百分点）。配对 seed 与 case 联合 bootstrap 的 95% CI 为 −1.74 至 +2.35 个百分点，准确率提升尚不确定；RLCD 的 target CE/Brier 略差，ECE 略好。[完整结果和产物](research/laya-typed-decisions-2026-09-24/workflow-generalization/README.md)。
+
 ## 使用训练权重
 
 ### 安装与首次运行

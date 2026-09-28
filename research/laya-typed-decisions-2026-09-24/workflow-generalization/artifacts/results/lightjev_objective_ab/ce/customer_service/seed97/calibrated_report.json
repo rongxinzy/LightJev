@@ -1,0 +1,72 @@
+{
+  "label": "calibrated",
+  "checkpoint_id": "seed97",
+  "architecture": "shared-context-causal-listwise",
+  "candidate_order_permutations_max": 4,
+  "calibration_temperatures_by_type": {
+    "choice": 1.034005683597437,
+    "noul": 0.9944854138403904,
+    "score": 0.9930478744445984
+  },
+  "calibration_nll_by_type": {
+    "choice": 1.0293045404022998,
+    "noul": 0.468384039936524,
+    "score": 1.0048025448762932
+  },
+  "max_length": 640,
+  "metrics": {
+    "cases": 300,
+    "decisions": 1500,
+    "accuracy": 0.422,
+    "soft_accuracy_all_types": 0.31231859066978107,
+    "kl_from_gold_all_types": 0.5605250106608605,
+    "brier_all_types": 0.29174493404335583,
+    "target_cross_entropy_all_types": 1.2695653480217801,
+    "total_variation_all_types": 0.41548654733684576,
+    "ece_15_bins": 0.07767803548391605,
+    "latency_p50_ms_per_case": null,
+    "latency_p95_ms_per_case": null,
+    "decisions_per_second": null,
+    "by_type_accuracy": {
+      "choice": 0.385,
+      "noul": 0.4866666666666667,
+      "score": 0.4266666666666667
+    },
+    "by_type_metrics": {
+      "choice": {
+        "brier": 0.4136139087677593,
+        "kl_from_gold": 0.8681929417520496,
+        "soft_accuracy": 0.22538239524056308,
+        "target_cross_entropy": 1.523603795645106,
+        "total_variation": 0.5544168277919588
+      },
+      "noul": {
+        "brier": 0.15708009008938079,
+        "kl_from_gold": 0.1726685003889315,
+        "soft_accuracy": 0.4977198609579689,
+        "target_cross_entropy": 0.7085849596388694,
+        "total_variation": 0.2446305829872767
+      },
+      "score": {
+        "brier": 0.23720838129593985,
+        "kl_from_gold": 0.44678533470563564,
+        "soft_accuracy": 0.3065541509549052,
+        "target_cross_entropy": 1.2960170945899092,
+        "total_variation": 0.3619842490565173
+      }
+    },
+    "by_workflow_accuracy": {
+      "customer_service": 0.422
+    },
+    "laya_notebook_metrics": {
+      "accuracy": 0.422,
+      "soft_accuracy_choice_noul": 0.3161615504796983,
+      "brier_choice_noul": 0.3281026358749665,
+      "kl_choice_noul": 0.636351461297677,
+      "ece_15_bins": 0.07767803548391605,
+      "score_mae": 0.5524797909746695,
+      "score_within_one": 0.8483333333333334
+    }
+  },
+  "prediction_path": "calibrated_predictions.jsonl"
+}

@@ -1,0 +1,2514 @@
+{
+  "protocol": "four workflow-held-out folds; LightJev seeds [31, 47, 73, 97] per fold; calibration on source workflows only",
+  "note": "Exploratory. No official public test split used. Result arm: lightjev_objective_ab/ce; see its report for architecture and context-window caveats.",
+  "decisions_per_seed": 6000,
+  "lightjev_seeds": [
+    31,
+    47,
+    73,
+    97
+  ],
+  "independent_baseline_matched_seeds": [],
+  "lightjev_mean_seed_calibrated_metrics": {
+    "accuracy": 0.46175,
+    "soft_accuracy_all_types": 0.3561882436768924,
+    "kl_from_gold_all_types": 0.40636151216258626,
+    "brier_all_types": 0.22742017906110115,
+    "target_cross_entropy_all_types": 1.154548134672703,
+    "total_variation_all_types": 0.3477278743478439,
+    "ece_15_bins": 0.07955569086009427,
+    "cases_per_seed": 1200,
+    "decisions_per_seed": 6000,
+    "cases_scored_once": 1200,
+    "seed_repetitions": 4
+  },
+  "lightjev_mean_seed_accuracy": 0.46175,
+  "lightjev_seed_macro_accuracy": {
+    "31": 0.4538333333333333,
+    "47": 0.4656666666666667,
+    "73": 0.4693333333333333,
+    "97": 0.45816666666666667
+  },
+  "independent_candidate_lightjev_mean_seed_accuracy": null,
+  "independent_candidate_lightjev_mean_seed_metrics": null,
+  "laya_accuracy_by_arm": {
+    "laya_base": {
+      "accuracy": 0.36116666666666664,
+      "soft_accuracy_all_types": 0.32928168119776335,
+      "kl_from_gold_all_types": 0.8213850373516018,
+      "brier_all_types": 0.4192231765817546,
+      "target_cross_entropy_all_types": 1.5695716598617184,
+      "total_variation_all_types": 0.45583515302937316,
+      "ece_15_bins": 0.26940798610094535
+    },
+    "laya_rlcd": {
+      "accuracy": 0.453,
+      "soft_accuracy_all_types": 0.35676552771566317,
+      "kl_from_gold_all_types": 0.412129070841356,
+      "brier_all_types": 0.22797394005711258,
+      "target_cross_entropy_all_types": 1.1603156933514724,
+      "total_variation_all_types": 0.34847392001580735,
+      "ece_15_bins": 0.08272067968197477
+    },
+    "laya_soft_ce": {
+      "accuracy": 0.44716666666666666,
+      "soft_accuracy_all_types": 0.3574037059915367,
+      "kl_from_gold_all_types": 0.41738905615619726,
+      "brier_all_types": 0.22597932171823357,
+      "target_cross_entropy_all_types": 1.1655756786663138,
+      "total_variation_all_types": 0.35079493716177806,
+      "ece_15_bins": 0.07385419797565515
+    }
+  },
+  "paired_case_bootstrap": {
+    "lightjev_vs_laya_base": {
+      "difference": 0.10058333333333334,
+      "ci95_low": 0.08420833333333334,
+      "ci95_high": 0.11674999999999999,
+      "bootstrap_probability_lightjev_better": 1.0,
+      "resamples": 10000,
+      "unit": "case-clustered and stratified by workflow; conditional on 4 observed LightJev seeds"
+    },
+    "lightjev_vs_laya_rlcd": {
+      "difference": 0.008750000000000008,
+      "ci95_low": -0.0063749999999999935,
+      "ci95_high": 0.023833333333333335,
+      "bootstrap_probability_lightjev_better": 0.8791,
+      "resamples": 10000,
+      "unit": "case-clustered and stratified by workflow; conditional on 4 observed LightJev seeds"
+    },
+    "lightjev_vs_laya_soft_ce": {
+      "difference": 0.014583333333333337,
+      "ci95_low": -0.000749999999999992,
+      "ci95_high": 0.030000000000000006,
+      "bootstrap_probability_lightjev_better": 0.9695,
+      "resamples": 10000,
+      "unit": "case-clustered and stratified by workflow; conditional on 4 observed LightJev seeds"
+    }
+  },
+  "seed_and_case_bootstrap": {
+    "lightjev_vs_laya_base": {
+      "difference": 0.10058333333333334,
+      "ci95_low": 0.082875,
+      "ci95_high": 0.11812500000000001,
+      "bootstrap_probability_lightjev_better": 1.0,
+      "resamples": 10000,
+      "unit": "training-seed and case-cluster bootstrap, stratified by workflow; Laya seed uncertainty not sampled"
+    },
+    "lightjev_vs_laya_rlcd": {
+      "difference": 0.008750000000000008,
+      "ci95_low": -0.007541666666666667,
+      "ci95_high": 0.025000000000000005,
+      "bootstrap_probability_lightjev_better": 0.855,
+      "resamples": 10000,
+      "unit": "training-seed and case-cluster bootstrap, stratified by workflow; Laya seed uncertainty not sampled"
+    },
+    "lightjev_vs_laya_soft_ce": {
+      "difference": 0.014583333333333337,
+      "ci95_low": -0.0022083333333333295,
+      "ci95_high": 0.031125000000000007,
+      "bootstrap_probability_lightjev_better": 0.9538,
+      "resamples": 10000,
+      "unit": "training-seed and case-cluster bootstrap, stratified by workflow; Laya seed uncertainty not sampled"
+    }
+  },
+  "per_workflow": {
+    "agent_trace_observability": {
+      "lightjev_seed31_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42333333333333334,
+        "soft_accuracy_all_types": 0.3374251732555102,
+        "kl_from_gold_all_types": 0.3170687253900027,
+        "brier_all_types": 0.15822849562977712,
+        "target_cross_entropy_all_types": 1.2031077868876292,
+        "total_variation_all_types": 0.2989056267578325,
+        "ece_15_bins": 0.03330243607655224,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.36833333333333335,
+          "noul": 0.6033333333333334,
+          "score": 0.3883333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.14375462704192932,
+            "kl_from_gold": 0.28826534885191435,
+            "soft_accuracy": 0.2936155881550512,
+            "target_cross_entropy": 1.2781223491013771,
+            "total_variation": 0.30304147694971173
+          },
+          "noul": {
+            "brier": 0.12000447106210513,
+            "kl_from_gold": 0.13697033733345276,
+            "soft_accuracy": 0.5119881031703089,
+            "target_cross_entropy": 0.6804285290011867,
+            "total_variation": 0.2075446528498398
+          },
+          "score": {
+            "brier": 0.19181437650146088,
+            "kl_from_gold": 0.435921295956366,
+            "soft_accuracy": 0.2939532933985699,
+            "target_cross_entropy": 1.3894328536171028,
+            "total_variation": 0.34045026351994967
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42333333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42333333333333334,
+          "soft_accuracy_choice_noul": 0.3664064264934704,
+          "brier_choice_noul": 0.13583790838198792,
+          "kl_choice_noul": 0.2378336783457605,
+          "ece_15_bins": 0.03330243607655224,
+          "score_mae": 0.5990396089896812,
+          "score_within_one": 0.865
+        }
+      },
+      "lightjev_seed31_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42333333333333334,
+        "soft_accuracy_all_types": 0.33761247663102406,
+        "kl_from_gold_all_types": 0.31575330322031003,
+        "brier_all_types": 0.15803610476705895,
+        "target_cross_entropy_all_types": 1.2017923647179365,
+        "total_variation_all_types": 0.29864595947754036,
+        "ece_15_bins": 0.029679031552655624,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.36833333333333335,
+          "noul": 0.6033333333333334,
+          "score": 0.3883333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.1438494427136483,
+            "kl_from_gold": 0.2876519725712022,
+            "soft_accuracy": 0.29464305095325455,
+            "target_cross_entropy": 1.277508972820665,
+            "total_variation": 0.3022949668933609
+          },
+          "noul": {
+            "brier": 0.1199913072715298,
+            "kl_from_gold": 0.13696101259521407,
+            "soft_accuracy": 0.5120724243070628,
+            "target_cross_entropy": 0.6804192042629479,
+            "total_variation": 0.20753646592266695
+          },
+          "score": {
+            "brier": 0.1912451655682342,
+            "kl_from_gold": 0.43325077918196586,
+            "soft_accuracy": 0.29335192847077424,
+            "target_cross_entropy": 1.3867623368427027,
+            "total_variation": 0.34055169883915654
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42333333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42333333333333334,
+          "soft_accuracy_choice_noul": 0.3671195087378573,
+          "brier_choice_noul": 0.1358967308996088,
+          "kl_choice_noul": 0.2374216525792061,
+          "ece_15_bins": 0.029679031552655624,
+          "score_mae": 0.6000669308617468,
+          "score_within_one": 0.865
+        }
+      },
+      "lightjev_seed47_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42866666666666664,
+        "soft_accuracy_all_types": 0.3411922505411018,
+        "kl_from_gold_all_types": 0.29043055171827054,
+        "brier_all_types": 0.14835373289797985,
+        "target_cross_entropy_all_types": 1.176469613215897,
+        "total_variation_all_types": 0.2938908870657232,
+        "ece_15_bins": 0.052471434463512906,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.39,
+          "noul": 0.6733333333333333,
+          "score": 0.345
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.13417913906879275,
+            "kl_from_gold": 0.2674103029943331,
+            "soft_accuracy": 0.29948179209801024,
+            "target_cross_entropy": 1.2572673032437958,
+            "total_variation": 0.29605348663027686
+          },
+          "noul": {
+            "brier": 0.10974790263197484,
+            "kl_from_gold": 0.12627503647961802,
+            "soft_accuracy": 0.5191765716260085,
+            "target_cross_entropy": 0.6697332281473518,
+            "total_variation": 0.19891108289347056
+          },
+          "score": {
+            "brier": 0.1818312418601694,
+            "kl_from_gold": 0.39552855806153414,
+            "soft_accuracy": 0.29391054844174,
+            "target_cross_entropy": 1.349040115722271,
+            "total_variation": 0.3392181895872959
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42866666666666664
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42866666666666664,
+          "soft_accuracy_choice_noul": 0.3727133852740096,
+          "brier_choice_noul": 0.12603539358985344,
+          "kl_choice_noul": 0.22036521415609475,
+          "ece_15_bins": 0.052471434463512906,
+          "score_mae": 0.5737293572510987,
+          "score_within_one": 0.8883333333333333
+        }
+      },
+      "lightjev_seed47_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42866666666666664,
+        "soft_accuracy_all_types": 0.3434374617008584,
+        "kl_from_gold_all_types": 0.289107911110699,
+        "brier_all_types": 0.14819457026527402,
+        "target_cross_entropy_all_types": 1.1751469726083255,
+        "total_variation_all_types": 0.2926409765821617,
+        "ece_15_bins": 0.04457955595384279,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.39,
+          "noul": 0.6733333333333333,
+          "score": 0.345
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.134130564164626,
+            "kl_from_gold": 0.2642297195073539,
+            "soft_accuracy": 0.30338489227571547,
+            "target_cross_entropy": 1.2540867197568166,
+            "total_variation": 0.2934842367137774
+          },
+          "noul": {
+            "brier": 0.10887845055871667,
+            "kl_from_gold": 0.1253427047761957,
+            "soft_accuracy": 0.5223656255306469,
+            "target_cross_entropy": 0.6688008964439296,
+            "total_variation": 0.19783078509195343
+          },
+          "score": {
+            "brier": 0.1819166362192008,
+            "kl_from_gold": 0.3958687058812958,
+            "soft_accuracy": 0.2940259492111071,
+            "target_cross_entropy": 1.3493802635420327,
+            "total_variation": 0.3392028121956502
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42866666666666664
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42866666666666664,
+          "soft_accuracy_choice_noul": 0.37637847002735925,
+          "brier_choice_noul": 0.1257131929626562,
+          "kl_choice_noul": 0.21793404793030116,
+          "ece_15_bins": 0.04457955595384279,
+          "score_mae": 0.5735073916347153,
+          "score_within_one": 0.8883333333333333
+        }
+      },
+      "lightjev_seed73_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.3913333333333333,
+        "soft_accuracy_all_types": 0.33634927691456445,
+        "kl_from_gold_all_types": 0.32157466516997296,
+        "brier_all_types": 0.1652923029756333,
+        "target_cross_entropy_all_types": 1.2076137266675995,
+        "total_variation_all_types": 0.30861227033533234,
+        "ece_15_bins": 0.07289678504290713,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.37333333333333335,
+          "noul": 0.6,
+          "score": 0.305
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.15302760783930183,
+            "kl_from_gold": 0.2995649479242866,
+            "soft_accuracy": 0.2942352655028108,
+            "target_cross_entropy": 1.2894219481737492,
+            "total_variation": 0.31103976671575934
+          },
+          "noul": {
+            "brier": 0.13162547242979541,
+            "kl_from_gold": 0.15023125639454588,
+            "soft_accuracy": 0.5155206141280196,
+            "target_cross_entropy": 0.6936894480622797,
+            "total_variation": 0.21653491916899378
+          },
+          "score": {
+            "brier": 0.1943904133848837,
+            "kl_from_gold": 0.4292560868033728,
+            "soft_accuracy": 0.2888776197195905,
+            "target_cross_entropy": 1.3827676444641095,
+            "total_variation": 0.3522234495380747
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.3913333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.3913333333333333,
+          "soft_accuracy_choice_noul": 0.36799704837788044,
+          "brier_choice_noul": 0.14589356270279968,
+          "kl_choice_noul": 0.24978705074770638,
+          "ece_15_bins": 0.07289678504290713,
+          "score_mae": 0.6134363598799203,
+          "score_within_one": 0.85
+        }
+      },
+      "lightjev_seed73_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.3913333333333333,
+        "soft_accuracy_all_types": 0.33672552084722734,
+        "kl_from_gold_all_types": 0.3229579348810981,
+        "brier_all_types": 0.16586807034138396,
+        "target_cross_entropy_all_types": 1.2089969963787246,
+        "total_variation_all_types": 0.30883580425828705,
+        "ece_15_bins": 0.07250134928958489,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.37333333333333335,
+          "noul": 0.6,
+          "score": 0.305
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.15300919291766332,
+            "kl_from_gold": 0.2995600154519367,
+            "soft_accuracy": 0.29420940182485705,
+            "target_cross_entropy": 1.2894170157013995,
+            "total_variation": 0.3110453820157
+          },
+          "noul": {
+            "brier": 0.1332746743365176,
+            "kl_from_gold": 0.15240557096199533,
+            "soft_accuracy": 0.5164559963169344,
+            "target_cross_entropy": 0.6958637626297292,
+            "total_variation": 0.21744993029162415
+          },
+          "score": {
+            "brier": 0.19502364576753778,
+            "kl_from_gold": 0.4316320362698107,
+            "soft_accuracy": 0.289376402134744,
+            "target_cross_entropy": 1.3851435939305474,
+            "total_variation": 0.3523191634842056
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.3913333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.3913333333333333,
+          "soft_accuracy_choice_noul": 0.36829159998888283,
+          "brier_choice_noul": 0.14643102005728142,
+          "kl_choice_noul": 0.2505085339552896,
+          "ece_15_bins": 0.07250134928958489,
+          "score_mae": 0.6126905957159678,
+          "score_within_one": 0.85
+        }
+      },
+      "lightjev_seed97_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42733333333333334,
+        "soft_accuracy_all_types": 0.3397177908121505,
+        "kl_from_gold_all_types": 0.3168679015846721,
+        "brier_all_types": 0.16301211575698313,
+        "target_cross_entropy_all_types": 1.2029069630822986,
+        "total_variation_all_types": 0.30470127191209023,
+        "ece_15_bins": 0.04008234835271241,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.3883333333333333,
+          "noul": 0.63,
+          "score": 0.365
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.1638022300984869,
+            "kl_from_gold": 0.3228064099506486,
+            "soft_accuracy": 0.29177837163738246,
+            "target_cross_entropy": 1.3126634102001113,
+            "total_variation": 0.3230446191954899
+          },
+          "noul": {
+            "brier": 0.10528373183655125,
+            "kl_from_gold": 0.1216520896052009,
+            "soft_accuracy": 0.5271997116890067,
+            "target_cross_entropy": 0.6651102812729348,
+            "total_variation": 0.19325641457845938
+          },
+          "score": {
+            "brier": 0.19108619337569532,
+            "kl_from_gold": 0.4085372992084313,
+            "soft_accuracy": 0.2939162495484904,
+            "target_cross_entropy": 1.362048856869168,
+            "total_variation": 0.34208035329550607
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42733333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42733333333333334,
+          "soft_accuracy_choice_noul": 0.3702521516545906,
+          "brier_choice_noul": 0.14429606401117503,
+          "kl_choice_noul": 0.25575496983549934,
+          "ece_15_bins": 0.04008234835271241,
+          "score_mae": 0.5725712814481367,
+          "score_within_one": 0.8883333333333333
+        }
+      },
+      "lightjev_seed97_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42733333333333334,
+        "soft_accuracy_all_types": 0.3411862911120659,
+        "kl_from_gold_all_types": 0.31874832611703896,
+        "brier_all_types": 0.16388332588650095,
+        "target_cross_entropy_all_types": 1.2047873876146655,
+        "total_variation_all_types": 0.3048112331987135,
+        "ece_15_bins": 0.047764373846523614,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.3883333333333333,
+          "noul": 0.63,
+          "score": 0.365
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.1644098245207336,
+            "kl_from_gold": 0.3233524996406652,
+            "soft_accuracy": 0.29228900372904093,
+            "target_cross_entropy": 1.313209499890128,
+            "total_variation": 0.32309315678844935
+          },
+          "noul": {
+            "brier": 0.10592846281163788,
+            "kl_from_gold": 0.1223472016147178,
+            "soft_accuracy": 0.5316022600727199,
+            "target_cross_entropy": 0.6658053932824516,
+            "total_variation": 0.19344516341763188
+          },
+          "score": {
+            "brier": 0.1923342587896999,
+            "kl_from_gold": 0.41234471484457325,
+            "soft_accuracy": 0.2948755940147638,
+            "target_cross_entropy": 1.3658562725053098,
+            "total_variation": 0.3422123444995185
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.42733333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42733333333333334,
+          "soft_accuracy_choice_noul": 0.3720600891769339,
+          "brier_choice_noul": 0.14491603728436836,
+          "kl_choice_noul": 0.2563507336320161,
+          "ece_15_bins": 0.047764373846523614,
+          "score_mae": 0.5711298562591856,
+          "score_within_one": 0.89
+        }
+      },
+      "laya_base": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.3453333333333333,
+        "soft_accuracy_all_types": 0.3331183652864589,
+        "kl_from_gold_all_types": 0.7283517161750571,
+        "brier_all_types": 0.37079152694601575,
+        "target_cross_entropy_all_types": 1.6143907776726838,
+        "total_variation_all_types": 0.43037940578426886,
+        "ece_15_bins": 0.33858877743631427,
+        "latency_p50_ms_per_case": 43.51400100858882,
+        "latency_p95_ms_per_case": 44.57543550815899,
+        "decisions_per_second": 114.84708295116472,
+        "by_type_accuracy": {
+          "choice": 0.165,
+          "noul": 0.5333333333333333,
+          "score": 0.43166666666666664
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.3453333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.3453333333333333,
+          "soft_accuracy_choice_noul": 0.33166979564696136,
+          "brier_choice_noul": 0.39090056325959927,
+          "kl_choice_noul": 0.752476722880349,
+          "ece_15_bins": 0.33858877743631427,
+          "score_mae": 0.536700993556994,
+          "score_within_one": 0.845
+        }
+      },
+      "laya_rlcd": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.44266666666666665,
+        "soft_accuracy_all_types": 0.34371632774699507,
+        "kl_from_gold_all_types": 0.35802247435979695,
+        "brier_all_types": 0.17866015053955375,
+        "target_cross_entropy_all_types": 1.2440615358574236,
+        "total_variation_all_types": 0.307532878896673,
+        "ece_15_bins": 0.08029956207354894,
+        "latency_p50_ms_per_case": 43.38061100861523,
+        "latency_p95_ms_per_case": 44.71007799875224,
+        "decisions_per_second": 114.98870069572376,
+        "by_type_accuracy": {
+          "choice": 0.51,
+          "noul": 0.5366666666666666,
+          "score": 0.3283333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.14123821213063467,
+            "kl_from_gold": 0.2797698167855797,
+            "soft_accuracy": 0.317073883313984,
+            "target_cross_entropy": 1.2696268170350424,
+            "total_variation": 0.28057758707826
+          },
+          "noul": {
+            "brier": 0.15928403001422,
+            "kl_from_gold": 0.1785397950639137,
+            "soft_accuracy": 0.5158827861966666,
+            "target_cross_entropy": 0.7219979867316475,
+            "total_variation": 0.23136429666666666
+          },
+          "score": {
+            "brier": 0.22577014921113975,
+            "kl_from_gold": 0.5260164715819559,
+            "soft_accuracy": 0.2842755429551704,
+            "target_cross_entropy": 1.4795280292426924,
+            "total_variation": 0.37257246183008924
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.44266666666666665
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.44266666666666665,
+          "soft_accuracy_choice_noul": 0.38334351760821156,
+          "brier_choice_noul": 0.14725348475849645,
+          "kl_choice_noul": 0.24602647621169105,
+          "ece_15_bins": 0.08029956207354894,
+          "score_mae": 0.6838583231648315,
+          "score_within_one": 0.7816666666666666
+        }
+      },
+      "laya_soft_ce": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.44466666666666665,
+        "soft_accuracy_all_types": 0.34136366095131054,
+        "kl_from_gold_all_types": 0.3692793366806947,
+        "brier_all_types": 0.16996852389021444,
+        "target_cross_entropy_all_types": 1.2553183981783211,
+        "total_variation_all_types": 0.3061808029386689,
+        "ece_15_bins": 0.04563761814099157,
+        "latency_p50_ms_per_case": 43.65451600460801,
+        "latency_p95_ms_per_case": 44.760297995526344,
+        "decisions_per_second": 114.51652881074534,
+        "by_type_accuracy": {
+          "choice": 0.3933333333333333,
+          "noul": 0.7033333333333334,
+          "score": 0.36666666666666664
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.14629817446553137,
+            "kl_from_gold": 0.28388075227736814,
+            "soft_accuracy": 0.30886529462801154,
+            "target_cross_entropy": 1.2737377525268307,
+            "total_variation": 0.29395339348829663
+          },
+          "noul": {
+            "brier": 0.10855326025822,
+            "kl_from_gold": 0.12527862628093892,
+            "soft_accuracy": 0.5185546356746668,
+            "target_cross_entropy": 0.6687368179486728,
+            "total_variation": 0.19719208333333335
+          },
+          "score": {
+            "brier": 0.22434650513089474,
+            "kl_from_gold": 0.576678276283899,
+            "soft_accuracy": 0.28526653991293144,
+            "target_cross_entropy": 1.5301898339446358,
+            "total_variation": 0.3729025721917089
+          }
+        },
+        "by_workflow_accuracy": {
+          "agent_trace_observability": 0.44466666666666665
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.44466666666666665,
+          "soft_accuracy_choice_noul": 0.37876174164356324,
+          "brier_choice_noul": 0.13371653639642758,
+          "kl_choice_noul": 0.23101337694522506,
+          "ece_15_bins": 0.04563761814099157,
+          "score_mae": 0.6921518993007345,
+          "score_within_one": 0.7916666666666666
+        }
+      },
+      "lightjev_mean_seeds_calibrated": {
+        "accuracy": 0.41766666666666663,
+        "soft_accuracy_all_types": 0.33974043757279393,
+        "kl_from_gold_all_types": 0.3116418688322865,
+        "brier_all_types": 0.15899551781505447,
+        "target_cross_entropy_all_types": 1.197680930329913,
+        "total_variation_all_types": 0.30123349337917565,
+        "ece_15_bins": 0.04863107766065173
+      }
+    },
+    "customer_service": {
+      "lightjev_seed31_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.4693333333333333,
+        "soft_accuracy_all_types": 0.32475538983565344,
+        "kl_from_gold_all_types": 0.5332758621184149,
+        "brier_all_types": 0.2806697464040369,
+        "target_cross_entropy_all_types": 1.2423161994793346,
+        "total_variation_all_types": 0.4033228281367577,
+        "ece_15_bins": 0.10634823599853804,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.48333333333333334,
+          "noul": 0.4633333333333333,
+          "score": 0.4583333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.37944167410531343,
+            "kl_from_gold": 0.7840938077816714,
+            "soft_accuracy": 0.24628410856477193,
+            "target_cross_entropy": 1.4395046616747278,
+            "total_variation": 0.526047531897856
+          },
+          "noul": {
+            "brier": 0.1773115741617921,
+            "kl_from_gold": 0.194506325791023,
+            "soft_accuracy": 0.4979715252283767,
+            "target_cross_entropy": 0.7304227850409608,
+            "total_variation": 0.25499381368482865
+          },
+          "score": {
+            "brier": 0.2335769048238828,
+            "kl_from_gold": 0.45184268461885435,
+            "soft_accuracy": 0.3166186034101733,
+            "target_cross_entropy": 1.301074444503128,
+            "total_variation": 0.35476263160162386
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.4693333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.4693333333333333,
+          "soft_accuracy_choice_noul": 0.33017991411930686,
+          "brier_choice_noul": 0.3120649741241397,
+          "kl_choice_noul": 0.5875646471181218,
+          "ece_15_bins": 0.10634823599853804,
+          "score_mae": 0.5548542389578085,
+          "score_within_one": 0.8466666666666667
+        }
+      },
+      "lightjev_seed31_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.4693333333333333,
+        "soft_accuracy_all_types": 0.3246532959387708,
+        "kl_from_gold_all_types": 0.5315570224786759,
+        "brier_all_types": 0.280398737732067,
+        "target_cross_entropy_all_types": 1.2405973598395954,
+        "total_variation_all_types": 0.40323263970743256,
+        "ece_15_bins": 0.1047832160851418,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.48333333333333334,
+          "noul": 0.4633333333333333,
+          "score": 0.4583333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.3785410551919761,
+            "kl_from_gold": 0.7818271922196115,
+            "soft_accuracy": 0.24721677740561443,
+            "target_cross_entropy": 1.4372380461126681,
+            "total_variation": 0.5248987498313481
+          },
+          "noul": {
+            "brier": 0.18075152785733556,
+            "kl_from_gold": 0.19844883621215975,
+            "soft_accuracy": 0.4978422401557675,
+            "target_cross_entropy": 0.7343652954620975,
+            "total_variation": 0.25671623133882066
+          },
+          "score": {
+            "brier": 0.23208002520952375,
+            "kl_from_gold": 0.44784094587099815,
+            "soft_accuracy": 0.31549534236342885,
+            "target_cross_entropy": 1.2970727057552716,
+            "total_variation": 0.3548247337678229
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.4693333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.4693333333333333,
+          "soft_accuracy_choice_noul": 0.33075859832233206,
+          "brier_choice_noul": 0.3126112127470959,
+          "kl_choice_noul": 0.5873677402171277,
+          "ece_15_bins": 0.1047832160851418,
+          "score_mae": 0.5548353520573116,
+          "score_within_one": 0.8466666666666667
+        }
+      },
+      "lightjev_seed47_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.366,
+        "soft_accuracy_all_types": 0.3053681458681247,
+        "kl_from_gold_all_types": 0.6071231383451644,
+        "brier_all_types": 0.3143827392128771,
+        "target_cross_entropy_all_types": 1.3161634757060838,
+        "total_variation_all_types": 0.434615812073303,
+        "ece_15_bins": 0.11612310912654118,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.365,
+          "noul": 0.38333333333333336,
+          "score": 0.35833333333333334
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.4174628146695227,
+            "kl_from_gold": 0.8801175923807043,
+            "soft_accuracy": 0.22182529157255534,
+            "target_cross_entropy": 1.5355284462737608,
+            "total_variation": 0.5628455891417198
+          },
+          "noul": {
+            "brier": 0.1907772784994954,
+            "kl_from_gold": 0.20834492113172995,
+            "soft_accuracy": 0.4875283766044247,
+            "target_cross_entropy": 0.7442613803816678,
+            "total_variation": 0.27169252711554326
+          },
+          "score": {
+            "brier": 0.2731053941129225,
+            "kl_from_gold": 0.5335177929163416,
+            "soft_accuracy": 0.2978308847955441,
+            "target_cross_entropy": 1.382749552800615,
+            "total_variation": 0.3878476774837661
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.366
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.366,
+          "soft_accuracy_choice_noul": 0.31039298658317843,
+          "brier_choice_noul": 0.3419009692795136,
+          "kl_choice_noul": 0.6561933686310462,
+          "ece_15_bins": 0.11612310912654118,
+          "score_mae": 0.6097915422307398,
+          "score_within_one": 0.7916666666666666
+        }
+      },
+      "lightjev_seed47_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.366,
+        "soft_accuracy_all_types": 0.3056538592262981,
+        "kl_from_gold_all_types": 0.610277576463768,
+        "brier_all_types": 0.3158759174977089,
+        "target_cross_entropy_all_types": 1.3193179138246878,
+        "total_variation_all_types": 0.4351409693006558,
+        "ece_15_bins": 0.1178419473990758,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.365,
+          "noul": 0.38333333333333336,
+          "score": 0.35833333333333334
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.41764378302552935,
+            "kl_from_gold": 0.8805415547051255,
+            "soft_accuracy": 0.22160300630747845,
+            "target_cross_entropy": 1.535952408598182,
+            "total_variation": 0.5631074765052473
+          },
+          "noul": {
+            "brier": 0.19136300188465777,
+            "kl_from_gold": 0.20900971443734054,
+            "soft_accuracy": 0.48742337196368407,
+            "target_cross_entropy": 0.7449261736872783,
+            "total_variation": 0.27209458252449276
+          },
+          "score": {
+            "brier": 0.27636450977641397,
+            "kl_from_gold": 0.5406475292356244,
+            "soft_accuracy": 0.29881995577642473,
+            "target_cross_entropy": 1.3898792891198979,
+            "total_variation": 0.38869765548414587
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.366
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.366,
+          "soft_accuracy_choice_noul": 0.31020979485954703,
+          "brier_choice_noul": 0.3422168559785721,
+          "kl_choice_noul": 0.6566976079491972,
+          "ece_15_bins": 0.1178419473990758,
+          "score_mae": 0.6095580377498189,
+          "score_within_one": 0.7933333333333333
+        }
+      },
+      "lightjev_seed73_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.44666666666666666,
+        "soft_accuracy_all_types": 0.3149780223889729,
+        "kl_from_gold_all_types": 0.543661501054653,
+        "brier_all_types": 0.2858529585546653,
+        "target_cross_entropy_all_types": 1.2527018384155726,
+        "total_variation_all_types": 0.4142256494401867,
+        "ece_15_bins": 0.09773534011319852,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.465,
+          "noul": 0.49,
+          "score": 0.4066666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.39535392126239266,
+            "kl_from_gold": 0.8263256436691038,
+            "soft_accuracy": 0.23590540416425132,
+            "target_cross_entropy": 1.48173649756216,
+            "total_variation": 0.5412390067492017
+          },
+          "noul": {
+            "brier": 0.18228475201209052,
+            "kl_from_gold": 0.20100738089732156,
+            "soft_accuracy": 0.49581743611113827,
+            "target_cross_entropy": 0.7369238401472593,
+            "total_variation": 0.2585558645898692
+          },
+          "score": {
+            "brier": 0.22813609911822544,
+            "kl_from_gold": 0.43232441851886827,
+            "soft_accuracy": 0.3036309337526117,
+            "target_cross_entropy": 1.2815561784031417,
+            "total_variation": 0.36504718455633045
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.44666666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.44666666666666666,
+          "soft_accuracy_choice_noul": 0.322542748146547,
+          "brier_choice_noul": 0.3243308648456253,
+          "kl_choice_noul": 0.6178862227451764,
+          "ece_15_bins": 0.09773534011319852,
+          "score_mae": 0.5516894003825293,
+          "score_within_one": 0.845
+        }
+      },
+      "lightjev_seed73_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.44666666666666666,
+        "soft_accuracy_all_types": 0.31524798323596975,
+        "kl_from_gold_all_types": 0.5453166324473757,
+        "brier_all_types": 0.286766365855045,
+        "target_cross_entropy_all_types": 1.2543569698082953,
+        "total_variation_all_types": 0.414416552179921,
+        "ece_15_bins": 0.10726847834165307,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.465,
+          "noul": 0.49,
+          "score": 0.4066666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.39587416195246133,
+            "kl_from_gold": 0.8276052733233333,
+            "soft_accuracy": 0.23534084407042746,
+            "target_cross_entropy": 1.4830161272163898,
+            "total_variation": 0.541928661358341
+          },
+          "noul": {
+            "brier": 0.18345356863856513,
+            "kl_from_gold": 0.20241185376084755,
+            "soft_accuracy": 0.4957550808724751,
+            "target_cross_entropy": 0.7383283130107854,
+            "total_variation": 0.259093556455976
+          },
+          "score": {
+            "brier": 0.2293149683658685,
+            "kl_from_gold": 0.4344803809146821,
+            "soft_accuracy": 0.30490157358325937,
+            "target_cross_entropy": 1.2837121407989556,
+            "total_variation": 0.3645659408634735
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.44666666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.44666666666666666,
+          "soft_accuracy_choice_noul": 0.32214558967111,
+          "brier_choice_noul": 0.325067297514496,
+          "kl_choice_noul": 0.6192074668025047,
+          "ece_15_bins": 0.10726847834165307,
+          "score_mae": 0.5511514891576638,
+          "score_within_one": 0.8483333333333334
+        }
+      },
+      "lightjev_seed97_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.422,
+        "soft_accuracy_all_types": 0.3125747722694297,
+        "kl_from_gold_all_types": 0.5596185940058048,
+        "brier_all_types": 0.2913704019578333,
+        "target_cross_entropy_all_types": 1.2686589313667245,
+        "total_variation_all_types": 0.4150630224688046,
+        "ece_15_bins": 0.07799302610144966,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.385,
+          "noul": 0.4866666666666667,
+          "score": 0.4266666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.4130609323391369,
+            "kl_from_gold": 0.8666734695955696,
+            "soft_accuracy": 0.22623574131102467,
+            "target_cross_entropy": 1.522084323488626,
+            "total_variation": 0.5533492460254846
+          },
+          "noul": {
+            "brier": 0.15694793927308692,
+            "kl_from_gold": 0.17252603827974644,
+            "soft_accuracy": 0.4977314189341371,
+            "target_cross_entropy": 0.7084424975296841,
+            "total_variation": 0.24456024790733788
+          },
+          "score": {
+            "brier": 0.23689110291890297,
+            "kl_from_gold": 0.4461099962790694,
+            "soft_accuracy": 0.30633547989548104,
+            "target_cross_entropy": 1.295341756163343,
+            "total_variation": 0.36202818619285804
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.422
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.422,
+          "soft_accuracy_choice_noul": 0.3167343005187288,
+          "brier_choice_noul": 0.32768993465045354,
+          "kl_choice_noul": 0.6352909924902952,
+          "ece_15_bins": 0.07799302610144966,
+          "score_mae": 0.5526473236768029,
+          "score_within_one": 0.8466666666666667
+        }
+      },
+      "lightjev_seed97_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.422,
+        "soft_accuracy_all_types": 0.31231859066978107,
+        "kl_from_gold_all_types": 0.5605250106608605,
+        "brier_all_types": 0.29174493404335583,
+        "target_cross_entropy_all_types": 1.2695653480217801,
+        "total_variation_all_types": 0.41548654733684576,
+        "ece_15_bins": 0.07767803548391605,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.385,
+          "noul": 0.4866666666666667,
+          "score": 0.4266666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.4136139087677593,
+            "kl_from_gold": 0.8681929417520496,
+            "soft_accuracy": 0.22538239524056308,
+            "target_cross_entropy": 1.523603795645106,
+            "total_variation": 0.5544168277919588
+          },
+          "noul": {
+            "brier": 0.15708009008938079,
+            "kl_from_gold": 0.1726685003889315,
+            "soft_accuracy": 0.4977198609579689,
+            "target_cross_entropy": 0.7085849596388694,
+            "total_variation": 0.2446305829872767
+          },
+          "score": {
+            "brier": 0.23720838129593985,
+            "kl_from_gold": 0.44678533470563564,
+            "soft_accuracy": 0.3065541509549052,
+            "target_cross_entropy": 1.2960170945899092,
+            "total_variation": 0.3619842490565173
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.422
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.422,
+          "soft_accuracy_choice_noul": 0.3161615504796983,
+          "brier_choice_noul": 0.3281026358749665,
+          "kl_choice_noul": 0.636351461297677,
+          "ece_15_bins": 0.07767803548391605,
+          "score_mae": 0.5524797909746695,
+          "score_within_one": 0.8483333333333334
+        }
+      },
+      "laya_base": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.4013333333333333,
+        "soft_accuracy_all_types": 0.3369454290514001,
+        "kl_from_gold_all_types": 0.7414780685005544,
+        "brier_all_types": 0.3648031099092225,
+        "target_cross_entropy_all_types": 1.4505184058614742,
+        "total_variation_all_types": 0.4381026382435759,
+        "ece_15_bins": 0.1599943346886382,
+        "latency_p50_ms_per_case": 72.39276649488602,
+        "latency_p95_ms_per_case": 97.65676651004469,
+        "decisions_per_second": 68.32167147543173,
+        "by_type_accuracy": {
+          "choice": 0.2683333333333333,
+          "noul": 0.6733333333333333,
+          "score": 0.3983333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.5388182450161355,
+            "kl_from_gold": 1.179624098000681,
+            "soft_accuracy": 0.2704683665654054,
+            "target_cross_entropy": 1.8350349518937374,
+            "total_variation": 0.5720069300781991
+          },
+          "noul": {
+            "brier": 0.13784339253777333,
+            "kl_from_gold": 0.15545107852056564,
+            "soft_accuracy": 0.526667218946,
+            "target_cross_entropy": 0.6913675377705035,
+            "total_variation": 0.21290803333333333
+          },
+          "score": {
+            "brier": 0.30426783348803405,
+            "kl_from_gold": 0.5963455339904224,
+            "soft_accuracy": 0.30856159659009486,
+            "target_cross_entropy": 1.445577293874696,
+            "total_variation": 0.4167956488640741
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.4013333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.4013333333333333,
+          "soft_accuracy_choice_noul": 0.35586798402560355,
+          "brier_choice_noul": 0.4051599608566815,
+          "kl_choice_noul": 0.8382330915073091,
+          "ece_15_bins": 0.1599943346886382,
+          "score_mae": 0.6166893954468954,
+          "score_within_one": 0.7983333333333333
+        }
+      },
+      "laya_rlcd": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5393333333333333,
+        "soft_accuracy_all_types": 0.3479670400549678,
+        "kl_from_gold_all_types": 0.45122693025999094,
+        "brier_all_types": 0.23368870659505425,
+        "target_cross_entropy_all_types": 1.1602672676209105,
+        "total_variation_all_types": 0.3692889477552981,
+        "ece_15_bins": 0.11765743535789769,
+        "latency_p50_ms_per_case": 72.62468650878873,
+        "latency_p95_ms_per_case": 102.53153950907294,
+        "decisions_per_second": 67.41759957756315,
+        "by_type_accuracy": {
+          "choice": 0.44666666666666666,
+          "noul": 0.6833333333333333,
+          "score": 0.56
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.35996485035282816,
+            "kl_from_gold": 0.764820162327858,
+            "soft_accuracy": 0.2656957253530966,
+            "target_cross_entropy": 1.4202310162209146,
+            "total_variation": 0.5185464067370146
+          },
+          "noul": {
+            "brier": 0.12013092875777334,
+            "kl_from_gold": 0.13497310794087658,
+            "soft_accuracy": 0.515863570036,
+            "target_cross_entropy": 0.6708895671908144,
+            "total_variation": 0.21037758666666667
+          },
+          "score": {
+            "brier": 0.1641914517559208,
+            "kl_from_gold": 0.2957606093516809,
+            "soft_accuracy": 0.34629008976632303,
+            "target_cross_entropy": 1.1449923692359545,
+            "total_variation": 0.2994871693178971
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.5393333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5393333333333333,
+          "soft_accuracy_choice_noul": 0.3490850069140644,
+          "brier_choice_noul": 0.2800202098211432,
+          "kl_choice_noul": 0.5548711441988642,
+          "ece_15_bins": 0.11765743535789769,
+          "score_mae": 0.4274183014492351,
+          "score_within_one": 0.95
+        }
+      },
+      "laya_soft_ce": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.49466666666666664,
+        "soft_accuracy_all_types": 0.34623136737064625,
+        "kl_from_gold_all_types": 0.4603032745989054,
+        "brier_all_types": 0.2394617066213846,
+        "target_cross_entropy_all_types": 1.169343611959825,
+        "total_variation_all_types": 0.3740222772761362,
+        "ece_15_bins": 0.07436147189386864,
+        "latency_p50_ms_per_case": 72.67682650126517,
+        "latency_p95_ms_per_case": 102.77317450963896,
+        "decisions_per_second": 67.44634436894067,
+        "by_type_accuracy": {
+          "choice": 0.43166666666666664,
+          "noul": 0.5566666666666666,
+          "score": 0.5266666666666666
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.3601952405061593,
+            "kl_from_gold": 0.7680811635495283,
+            "soft_accuracy": 0.2712852584754302,
+            "target_cross_entropy": 1.423492017442585,
+            "total_variation": 0.51152822778422
+          },
+          "noul": {
+            "brier": 0.13930988750844,
+            "kl_from_gold": 0.15430201814356792,
+            "soft_accuracy": 0.504510615794,
+            "target_cross_entropy": 0.6902184773935057,
+            "total_variation": 0.23333558000000001
+          },
+          "score": {
+            "brier": 0.16880408229308222,
+            "kl_from_gold": 0.3055260138759512,
+            "soft_accuracy": 0.34203785205418547,
+            "target_cross_entropy": 1.1547577737602246,
+            "total_variation": 0.3068596754061204
+          }
+        },
+        "by_workflow_accuracy": {
+          "customer_service": 0.49466666666666664
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.49466666666666664,
+          "soft_accuracy_choice_noul": 0.3490270442482868,
+          "brier_choice_noul": 0.28656678950691955,
+          "kl_choice_noul": 0.5634881150808748,
+          "ece_15_bins": 0.07436147189386864,
+          "score_mae": 0.4266405286940919,
+          "score_within_one": 0.9483333333333334
+        }
+      },
+      "lightjev_mean_seeds_calibrated": {
+        "accuracy": 0.426,
+        "soft_accuracy_all_types": 0.31446843226770493,
+        "kl_from_gold_all_types": 0.56191906051267,
+        "brier_all_types": 0.2936964887820442,
+        "target_cross_entropy_all_types": 1.2709593978735896,
+        "total_variation_all_types": 0.4170691771312138,
+        "ece_15_bins": 0.10189291932744668
+      }
+    },
+    "invoice_processing": {
+      "lightjev_seed31_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.49733333333333335,
+        "soft_accuracy_all_types": 0.3899856781398255,
+        "kl_from_gold_all_types": 0.4799493227044145,
+        "brier_all_types": 0.2963184268317627,
+        "target_cross_entropy_all_types": 1.0396662940895163,
+        "total_variation_all_types": 0.39986512317892964,
+        "ece_15_bins": 0.0778300308225722,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.41333333333333333,
+          "noul": 0.6383333333333333,
+          "score": 0.3983333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.26797059864894857,
+            "kl_from_gold": 0.4933199744254628,
+            "soft_accuracy": 0.3118652466304236,
+            "target_cross_entropy": 1.2617230136126658,
+            "total_variation": 0.4096453691529204
+          },
+          "noul": {
+            "brier": 0.342097635076582,
+            "kl_from_gold": 0.44197138433945554,
+            "soft_accuracy": 0.5158369382645152,
+            "target_cross_entropy": 0.6675048146712129,
+            "total_variation": 0.39175078724585305
+          },
+          "score": {
+            "brier": 0.2647131326783505,
+            "kl_from_gold": 0.5112419352088492,
+            "soft_accuracy": 0.3031946337698368,
+            "target_cross_entropy": 1.3007994137462446,
+            "total_variation": 0.40308933612501086
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.49733333333333335
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.49733333333333335,
+          "soft_accuracy_choice_noul": 0.44784637438648467,
+          "brier_choice_noul": 0.3173886229340375,
+          "kl_choice_noul": 0.4590875810347913,
+          "ece_15_bins": 0.0778300308225722,
+          "score_mae": 0.7096980741924641,
+          "score_within_one": 0.7116666666666667
+        }
+      },
+      "lightjev_seed31_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.49733333333333335,
+        "soft_accuracy_all_types": 0.3916744123162129,
+        "kl_from_gold_all_types": 0.4787851427641442,
+        "brier_all_types": 0.295012119212268,
+        "target_cross_entropy_all_types": 1.0385021141492459,
+        "total_variation_all_types": 0.39847412176025,
+        "ece_15_bins": 0.08532027683825956,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.41333333333333333,
+          "noul": 0.6383333333333333,
+          "score": 0.3983333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.26807410191999936,
+            "kl_from_gold": 0.4933719570913604,
+            "soft_accuracy": 0.3121144962720662,
+            "target_cross_entropy": 1.2617749962785632,
+            "total_variation": 0.40955983955156533
+          },
+          "noul": {
+            "brier": 0.3383580706459921,
+            "kl_from_gold": 0.43814361698991056,
+            "soft_accuracy": 0.5191162530030007,
+            "target_cross_entropy": 0.6636770473216679,
+            "total_variation": 0.3885890367746844
+          },
+          "score": {
+            "brier": 0.26513517642467826,
+            "kl_from_gold": 0.5121332613747698,
+            "soft_accuracy": 0.3040125296514984,
+            "target_cross_entropy": 1.301690739912165,
+            "total_variation": 0.40281634785015785
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.49733333333333335
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.49733333333333335,
+          "soft_accuracy_choice_noul": 0.45011566742602255,
+          "brier_choice_noul": 0.3149300810706611,
+          "kl_choice_noul": 0.45655306369039383,
+          "ece_15_bins": 0.08532027683825956,
+          "score_mae": 0.7099442631013172,
+          "score_within_one": 0.7116666666666667
+        }
+      },
+      "lightjev_seed47_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5373333333333333,
+        "soft_accuracy_all_types": 0.3950924117981781,
+        "kl_from_gold_all_types": 0.4745669027487261,
+        "brier_all_types": 0.28931106745038343,
+        "target_cross_entropy_all_types": 1.0342838741338278,
+        "total_variation_all_types": 0.3922486515192422,
+        "ece_15_bins": 0.06471482399415993,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.43333333333333335,
+          "noul": 0.6883333333333334,
+          "score": 0.43833333333333335
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2613165661049232,
+            "kl_from_gold": 0.4815410589308627,
+            "soft_accuracy": 0.3173620243725873,
+            "target_cross_entropy": 1.2499440981180656,
+            "total_variation": 0.40075075125481463
+          },
+          "noul": {
+            "brier": 0.3242317872841641,
+            "kl_from_gold": 0.4239510120250228,
+            "soft_accuracy": 0.5344420905377327,
+            "target_cross_entropy": 0.6494844423567802,
+            "total_variation": 0.37604121392241385
+          },
+          "score": {
+            "brier": 0.26838759828933284,
+            "kl_from_gold": 0.5216957153813611,
+            "soft_accuracy": 0.2946079267714188,
+            "target_cross_entropy": 1.3112531939187564,
+            "total_variation": 0.40420503924828444
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.5373333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5373333333333333,
+          "soft_accuracy_choice_noul": 0.46208206848268435,
+          "brier_choice_noul": 0.3032600468910838,
+          "kl_choice_noul": 0.44314769432696943,
+          "ece_15_bins": 0.06471482399415993,
+          "score_mae": 0.7106973409506362,
+          "score_within_one": 0.7466666666666667
+        }
+      },
+      "lightjev_seed47_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5373333333333333,
+        "soft_accuracy_all_types": 0.39728831565256406,
+        "kl_from_gold_all_types": 0.47424968814037366,
+        "brier_all_types": 0.28862620893638513,
+        "target_cross_entropy_all_types": 1.0339666595254753,
+        "total_variation_all_types": 0.39061295771783594,
+        "ece_15_bins": 0.05983353968912404,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.43333333333333335,
+          "noul": 0.6883333333333334,
+          "score": 0.43833333333333335
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2612859668982406,
+            "kl_from_gold": 0.48152593225721896,
+            "soft_accuracy": 0.31726631287413265,
+            "target_cross_entropy": 1.249928971444422,
+            "total_variation": 0.40079835650433643
+          },
+          "noul": {
+            "brier": 0.3222285278726901,
+            "kl_from_gold": 0.42199812604482145,
+            "soft_accuracy": 0.538879214706817,
+            "target_cross_entropy": 0.6475315563765788,
+            "total_variation": 0.3726534361258818
+          },
+          "score": {
+            "brier": 0.26869401101915247,
+            "kl_from_gold": 0.522863128177503,
+            "soft_accuracy": 0.29570841798752684,
+            "target_cross_entropy": 1.3124206067148985,
+            "total_variation": 0.4034797799165398
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.5373333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5373333333333333,
+          "soft_accuracy_choice_noul": 0.46500824742925556,
+          "brier_choice_noul": 0.301914340881207,
+          "kl_choice_noul": 0.44184072811562064,
+          "ece_15_bins": 0.05983353968912404,
+          "score_mae": 0.7110565278287772,
+          "score_within_one": 0.745
+        }
+      },
+      "lightjev_seed73_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.49666666666666665,
+        "soft_accuracy_all_types": 0.38948517977046315,
+        "kl_from_gold_all_types": 0.49503111908822045,
+        "brier_all_types": 0.30266995485468956,
+        "target_cross_entropy_all_types": 1.0547480904733222,
+        "total_variation_all_types": 0.4022234343112248,
+        "ece_15_bins": 0.06817492413351064,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.44333333333333336,
+          "noul": 0.6583333333333333,
+          "score": 0.3616666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.266087002086074,
+            "kl_from_gold": 0.48557720294553763,
+            "soft_accuracy": 0.31362249941542664,
+            "target_cross_entropy": 1.2539802421327404,
+            "total_variation": 0.4037237925599316
+          },
+          "noul": {
+            "brier": 0.33723485411368853,
+            "kl_from_gold": 0.4370605410735466,
+            "soft_accuracy": 0.5176639724416074,
+            "target_cross_entropy": 0.662593971405304,
+            "total_variation": 0.38954485073229006
+          },
+          "score": {
+            "brier": 0.2863965319799983,
+            "kl_from_gold": 0.5577286551742358,
+            "soft_accuracy": 0.2992377272768372,
+            "target_cross_entropy": 1.347286133711631,
+            "total_variation": 0.41415183876580625
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.49666666666666665
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.49666666666666665,
+          "soft_accuracy_choice_noul": 0.4496501480995472,
+          "brier_choice_noul": 0.313518903437817,
+          "kl_choice_noul": 0.45323276169754356,
+          "ece_15_bins": 0.06817492413351064,
+          "score_mae": 0.7450712469866577,
+          "score_within_one": 0.7166666666666667
+        }
+      },
+      "lightjev_seed73_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.49666666666666665,
+        "soft_accuracy_all_types": 0.3903286895829465,
+        "kl_from_gold_all_types": 0.49439160455416503,
+        "brier_all_types": 0.3018678955333495,
+        "target_cross_entropy_all_types": 1.0541085759392668,
+        "total_variation_all_types": 0.4014921297473305,
+        "ece_15_bins": 0.06692402338224278,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.44333333333333336,
+          "noul": 0.6583333333333333,
+          "score": 0.3616666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2661780381398407,
+            "kl_from_gold": 0.48565434009958525,
+            "soft_accuracy": 0.31386331043352156,
+            "target_cross_entropy": 1.2540573792867882,
+            "total_variation": 0.4036330133109098
+          },
+          "noul": {
+            "brier": 0.33480413567084943,
+            "kl_from_gold": 0.4345730899491789,
+            "soft_accuracy": 0.5193880271995787,
+            "target_cross_entropy": 0.6601065202809363,
+            "total_variation": 0.38779382114253497
+          },
+          "score": {
+            "brier": 0.2867765840926039,
+            "kl_from_gold": 0.558578751386441,
+            "soft_accuracy": 0.29950204154102666,
+            "target_cross_entropy": 1.3481362299238364,
+            "total_variation": 0.41411999657033643
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.49666666666666665
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.49666666666666665,
+          "soft_accuracy_choice_noul": 0.45087978827755965,
+          "brier_choice_noul": 0.3119287698271799,
+          "kl_choice_noul": 0.45160017333264774,
+          "ece_15_bins": 0.06692402338224278,
+          "score_mae": 0.7453330617866195,
+          "score_within_one": 0.715
+        }
+      },
+      "lightjev_seed97_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.462,
+        "soft_accuracy_all_types": 0.3793480689835066,
+        "kl_from_gold_all_types": 0.5195827397136363,
+        "brier_all_types": 0.3201412274093621,
+        "target_cross_entropy_all_types": 1.0792997110987381,
+        "total_variation_all_types": 0.4132961556267171,
+        "ece_15_bins": 0.10059811108021753,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.4066666666666667,
+          "noul": 0.5433333333333333,
+          "score": 0.4083333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2739229507209105,
+            "kl_from_gold": 0.49705840592507267,
+            "soft_accuracy": 0.3118884626621354,
+            "target_cross_entropy": 1.2654614451122754,
+            "total_variation": 0.4077008972372126
+          },
+          "noul": {
+            "brier": 0.37670242995953857,
+            "kl_from_gold": 0.4767674815287551,
+            "soft_accuracy": 0.5008655633936009,
+            "target_cross_entropy": 0.7023009118605125,
+            "total_variation": 0.4077580900900796
+          },
+          "score": {
+            "brier": 0.2866891632034114,
+            "kl_from_gold": 0.5736601647927994,
+            "soft_accuracy": 0.29156037773409793,
+            "target_cross_entropy": 1.3632176433301948,
+            "total_variation": 0.42163185035810696
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.462
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.462,
+          "soft_accuracy_choice_noul": 0.4378731964831124,
+          "brier_choice_noul": 0.34244260354666256,
+          "kl_choice_noul": 0.4835311229941944,
+          "ece_15_bins": 0.10059811108021753,
+          "score_mae": 0.7334377060240144,
+          "score_within_one": 0.6916666666666667
+        }
+      },
+      "lightjev_seed97_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.462,
+        "soft_accuracy_all_types": 0.3797763225028964,
+        "kl_from_gold_all_types": 0.5218365156616461,
+        "brier_all_types": 0.321295834995354,
+        "target_cross_entropy_all_types": 1.0815534870467478,
+        "total_variation_all_types": 0.41331160083642293,
+        "ece_15_bins": 0.09202862701507779,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.4066666666666667,
+          "noul": 0.5433333333333333,
+          "score": 0.4083333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2737603892451106,
+            "kl_from_gold": 0.4968925304807498,
+            "soft_accuracy": 0.3116508855960951,
+            "target_cross_entropy": 1.2652955696679526,
+            "total_variation": 0.40775818217894805
+          },
+          "noul": {
+            "brier": 0.3785269475087093,
+            "kl_from_gold": 0.47862984893734695,
+            "soft_accuracy": 0.500924750990877,
+            "target_cross_entropy": 0.7041632792691043,
+            "total_variation": 0.4079595804582137
+          },
+          "score": {
+            "brier": 0.2878324453571204,
+            "kl_from_gold": 0.5775151749763935,
+            "soft_accuracy": 0.29269061246831657,
+            "target_cross_entropy": 1.367072653513789,
+            "total_variation": 0.42144033054336966
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.462
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.462,
+          "soft_accuracy_choice_noul": 0.4378334625259496,
+          "brier_choice_noul": 0.34360476142084306,
+          "kl_choice_noul": 0.4847174094518145,
+          "ece_15_bins": 0.09202862701507779,
+          "score_mae": 0.7341636921458041,
+          "score_within_one": 0.6916666666666667
+        }
+      },
+      "laya_base": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.36933333333333335,
+        "soft_accuracy_all_types": 0.31376882345807494,
+        "kl_from_gold_all_types": 1.0793956022963205,
+        "brier_all_types": 0.5740768901419921,
+        "target_cross_entropy_all_types": 1.639112573681422,
+        "total_variation_all_types": 0.5259738353520911,
+        "ece_15_bins": 0.2745236384459291,
+        "latency_p50_ms_per_case": 71.21480698697269,
+        "latency_p95_ms_per_case": 76.63019053725293,
+        "decisions_per_second": 70.45395645806029,
+        "by_type_accuracy": {
+          "choice": 0.39666666666666667,
+          "noul": 0.29833333333333334,
+          "score": 0.4266666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.4210659097599345,
+            "kl_from_gold": 0.8991467195341422,
+            "soft_accuracy": 0.3155972584918722,
+            "target_cross_entropy": 1.667549758721345,
+            "total_variation": 0.4854466774904478
+          },
+          "noul": {
+            "brier": 0.88032296849134,
+            "kl_from_gold": 1.550831321178248,
+            "soft_accuracy": 0.338205743507,
+            "target_cross_entropy": 1.7763647515100054,
+            "total_variation": 0.6017644266666666
+          },
+          "score": {
+            "brier": 0.34433630198367327,
+            "kl_from_gold": 0.6980843247954818,
+            "soft_accuracy": 0.28841768589225125,
+            "target_cross_entropy": 1.487641803332877,
+            "total_variation": 0.4704468229683371
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.36933333333333335
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.36933333333333335,
+          "soft_accuracy_choice_noul": 0.33066958183529077,
+          "brier_choice_noul": 0.7272372822475381,
+          "kl_choice_noul": 1.3336031206302128,
+          "ece_15_bins": 0.2745236384459291,
+          "score_mae": 0.8279165744960668,
+          "score_within_one": 0.5783333333333334
+        }
+      },
+      "laya_rlcd": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.434,
+        "soft_accuracy_all_types": 0.36470453779195144,
+        "kl_from_gold_all_types": 0.5405369535395389,
+        "brier_all_types": 0.3280378566062133,
+        "target_cross_entropy_all_types": 1.1002539249246406,
+        "total_variation_all_types": 0.4249708665513186,
+        "ece_15_bins": 0.03497067639765888,
+        "latency_p50_ms_per_case": 71.27272200887091,
+        "latency_p95_ms_per_case": 76.55154999374645,
+        "decisions_per_second": 70.40452742782307,
+        "by_type_accuracy": {
+          "choice": 0.37333333333333335,
+          "noul": 0.5316666666666666,
+          "score": 0.36666666666666664
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.3065585639251146,
+            "kl_from_gold": 0.5883449607983353,
+            "soft_accuracy": 0.26537567426073394,
+            "target_cross_entropy": 1.356747999985538,
+            "total_variation": 0.45314696692255513
+          },
+          "noul": {
+            "brier": 0.37003288354667335,
+            "kl_from_gold": 0.470207755500768,
+            "soft_accuracy": 0.5021737977793334,
+            "target_cross_entropy": 0.6957411858325254,
+            "total_variation": 0.40599653666666663
+          },
+          "score": {
+            "brier": 0.29678247600630264,
+            "kl_from_gold": 0.5869621479489116,
+            "soft_accuracy": 0.2768997095701783,
+            "target_cross_entropy": 1.3765196264863069,
+            "total_variation": 0.42985714625035226
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.434
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.434,
+          "soft_accuracy_choice_noul": 0.4232410899398002,
+          "brier_choice_noul": 0.34887477700615377,
+          "kl_choice_noul": 0.5095868239332905,
+          "ece_15_bins": 0.03497067639765888,
+          "score_mae": 0.7333131819988434,
+          "score_within_one": 0.7416666666666667
+        }
+      },
+      "laya_soft_ce": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.47533333333333333,
+        "soft_accuracy_all_types": 0.37946555356301215,
+        "kl_from_gold_all_types": 0.5200107219811164,
+        "brier_all_types": 0.3096561685318223,
+        "target_cross_entropy_all_types": 1.079727693366218,
+        "total_variation_all_types": 0.41761380020516453,
+        "ece_15_bins": 0.060944459075616665,
+        "latency_p50_ms_per_case": 71.2400664924644,
+        "latency_p95_ms_per_case": 76.40179348672973,
+        "decisions_per_second": 70.37848115801135,
+        "by_type_accuracy": {
+          "choice": 0.4,
+          "noul": 0.615,
+          "score": 0.37333333333333335
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.304233287463316,
+            "kl_from_gold": 0.5735159435438248,
+            "soft_accuracy": 0.2859451739268465,
+            "target_cross_entropy": 1.3419189827310276,
+            "total_variation": 0.44716116440302045
+          },
+          "noul": {
+            "brier": 0.32813802431067335,
+            "kl_from_gold": 0.4272541599600722,
+            "soft_accuracy": 0.5256745728973333,
+            "target_cross_entropy": 0.6527875902918294,
+            "total_variation": 0.38283231333333334
+          },
+          "score": {
+            "brier": 0.2938857532872246,
+            "kl_from_gold": 0.5860146732208065,
+            "soft_accuracy": 0.28001672404677375,
+            "target_cross_entropy": 1.3755721517582016,
+            "total_variation": 0.4376216049780677
+          }
+        },
+        "by_workflow_accuracy": {
+          "invoice_processing": 0.47533333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.47533333333333333,
+          "soft_accuracy_choice_noul": 0.44576477324050434,
+          "brier_choice_noul": 0.32016977869488755,
+          "kl_choice_noul": 0.4760080878213231,
+          "ece_15_bins": 0.060944459075616665,
+          "score_mae": 0.7368323307776977,
+          "score_within_one": 0.6833333333333333
+        }
+      },
+      "lightjev_mean_seeds_calibrated": {
+        "accuracy": 0.49833333333333335,
+        "soft_accuracy_all_types": 0.38976693501365495,
+        "kl_from_gold_all_types": 0.49231573778008225,
+        "brier_all_types": 0.30170051466933917,
+        "target_cross_entropy_all_types": 1.052032709165184,
+        "total_variation_all_types": 0.40097270251545986,
+        "ece_15_bins": 0.07602661673117604
+      }
+    },
+    "security_incidents": {
+      "lightjev_seed31_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42533333333333334,
+        "soft_accuracy_all_types": 0.36618385533301195,
+        "kl_from_gold_all_types": 0.2929950205196196,
+        "brier_all_types": 0.17375711687037002,
+        "target_cross_entropy_all_types": 1.1309451403164381,
+        "total_variation_all_types": 0.29330310478278454,
+        "ece_15_bins": 0.0893863581649541,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.31,
+          "noul": 0.48833333333333334,
+          "score": 0.42
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.19759626901061664,
+            "kl_from_gold": 0.385550860473497,
+            "soft_accuracy": 0.2625276079950614,
+            "target_cross_entropy": 1.3740539077194052,
+            "total_variation": 0.3675751637175512
+          },
+          "noul": {
+            "brier": 0.17877278257990323,
+            "kl_from_gold": 0.19985801766715536,
+            "soft_accuracy": 0.4967673828280531,
+            "target_cross_entropy": 0.7663869628196042,
+            "total_variation": 0.2394419199214572
+          },
+          "score": {
+            "brier": 0.1568218750907135,
+            "kl_from_gold": 0.33985410339514527,
+            "soft_accuracy": 0.2874284515069459,
+            "target_cross_entropy": 1.3739489341117885,
+            "total_variation": 0.3100282601767285
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.42533333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42533333333333334,
+          "soft_accuracy_choice_noul": 0.41868745788372264,
+          "brier_choice_noul": 0.1850472780568077,
+          "kl_choice_noul": 0.26175563193593593,
+          "ece_15_bins": 0.0893863581649541,
+          "score_mae": 0.541958338243507,
+          "score_within_one": 0.87
+        }
+      },
+      "lightjev_seed31_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.42533333333333334,
+        "soft_accuracy_all_types": 0.3661972827321781,
+        "kl_from_gold_all_types": 0.30124652813900504,
+        "brier_all_types": 0.1797796574269101,
+        "target_cross_entropy_all_types": 1.1391966479358233,
+        "total_variation_all_types": 0.29653500231277297,
+        "ece_15_bins": 0.09032907766109699,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.31,
+          "noul": 0.48833333333333334,
+          "score": 0.42
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.19794180282611237,
+            "kl_from_gold": 0.3862945389260409,
+            "soft_accuracy": 0.2628294364285716,
+            "target_cross_entropy": 1.374797586171949,
+            "total_variation": 0.3675233307726531
+          },
+          "noul": {
+            "brier": 0.19353321575311114,
+            "kl_from_gold": 0.21982971425932352,
+            "soft_accuracy": 0.4964433914479245,
+            "target_cross_entropy": 0.7863586594117724,
+            "total_variation": 0.2476388419857345
+          },
+          "score": {
+            "brier": 0.15694502640110797,
+            "kl_from_gold": 0.3401393366251686,
+            "soft_accuracy": 0.287635097168235,
+            "target_cross_entropy": 1.3742341673418117,
+            "total_variation": 0.30993699840987143
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.42533333333333334
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.42533333333333334,
+          "soft_accuracy_choice_noul": 0.4185720731081402,
+          "brier_choice_noul": 0.19500274477744486,
+          "kl_choice_noul": 0.2753179891482293,
+          "ece_15_bins": 0.09032907766109699,
+          "score_mae": 0.5416380657438373,
+          "score_within_one": 0.87
+        }
+      },
+      "lightjev_seed47_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5306666666666666,
+        "soft_accuracy_all_types": 0.3868026301299052,
+        "kl_from_gold_all_types": 0.23700283874429467,
+        "brier_all_types": 0.14049387807370642,
+        "target_cross_entropy_all_types": 1.074952958541113,
+        "total_variation_all_types": 0.25847509689548737,
+        "ece_15_bins": 0.08297148788238486,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.7066666666666667,
+          "noul": 0.5716666666666667,
+          "score": 0.40166666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.12469123408075736,
+            "kl_from_gold": 0.2534254961228209,
+            "soft_accuracy": 0.32354029616957336,
+            "target_cross_entropy": 1.241928543368729,
+            "total_variation": 0.26758062030384805
+          },
+          "noul": {
+            "brier": 0.1451568089484685,
+            "kl_from_gold": 0.16154328054543543,
+            "soft_accuracy": 0.5117579346068605,
+            "target_cross_entropy": 0.7280722256978842,
+            "total_variation": 0.21586329536093402
+          },
+          "score": {
+            "brier": 0.14373226919541887,
+            "kl_from_gold": 0.30425106825389087,
+            "soft_accuracy": 0.29347849263311565,
+            "target_cross_entropy": 1.338345898970534,
+            "total_variation": 0.2965341367258604
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5306666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5306666666666666,
+          "soft_accuracy_choice_noul": 0.4490187217944315,
+          "brier_choice_noul": 0.13833495065923146,
+          "kl_choice_noul": 0.19217068573789725,
+          "ece_15_bins": 0.08297148788238486,
+          "score_mae": 0.4980273341132584,
+          "score_within_one": 0.8966666666666666
+        }
+      },
+      "lightjev_seed47_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5306666666666666,
+        "soft_accuracy_all_types": 0.39001106507915523,
+        "kl_from_gold_all_types": 0.24851157018391826,
+        "brier_all_types": 0.14907391676966156,
+        "target_cross_entropy_all_types": 1.0864616899807367,
+        "total_variation_all_types": 0.261804163859113,
+        "ece_15_bins": 0.08938756547392247,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.7066666666666667,
+          "noul": 0.5716666666666667,
+          "score": 0.40166666666666667
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.12402107363524568,
+            "kl_from_gold": 0.2528298074218525,
+            "soft_accuracy": 0.3306790320827523,
+            "target_cross_entropy": 1.2413328546677607,
+            "total_variation": 0.26093061299847836
+          },
+          "noul": {
+            "brier": 0.1660241130438926,
+            "kl_from_gold": 0.18909254208900503,
+            "soft_accuracy": 0.5141501170784193,
+            "target_cross_entropy": 0.7556214872414538,
+            "total_variation": 0.22843962197515447
+          },
+          "score": {
+            "brier": 0.14465014206263846,
+            "kl_from_gold": 0.30577147965986434,
+            "soft_accuracy": 0.29553802957809255,
+            "target_cross_entropy": 1.3398663103765076,
+            "total_variation": 0.29560548117338875
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5306666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5306666666666666,
+          "soft_accuracy_choice_noul": 0.4529930887465302,
+          "brier_choice_noul": 0.15202309990767696,
+          "kl_choice_noul": 0.21033829719995417,
+          "ece_15_bins": 0.08938756547392247,
+          "score_mae": 0.4957707807180166,
+          "score_within_one": 0.8966666666666666
+        }
+      },
+      "lightjev_seed73_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5426666666666666,
+        "soft_accuracy_all_types": 0.3851987553398566,
+        "kl_from_gold_all_types": 0.22958622069859955,
+        "brier_all_types": 0.13607777630428675,
+        "target_cross_entropy_all_types": 1.067536340495418,
+        "total_variation_all_types": 0.25679644162550613,
+        "ece_15_bins": 0.08632300849143931,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.6133333333333333,
+          "noul": 0.6016666666666667,
+          "score": 0.4483333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.14803787858147158,
+            "kl_from_gold": 0.2889853266514724,
+            "soft_accuracy": 0.292848814995696,
+            "target_cross_entropy": 1.2774883738973806,
+            "total_variation": 0.31085682167811973
+          },
+          "noul": {
+            "brier": 0.13292171031604447,
+            "kl_from_gold": 0.14803413344629335,
+            "soft_accuracy": 0.5187004392948296,
+            "target_cross_entropy": 0.7145630785987421,
+            "total_variation": 0.20189268230096924
+          },
+          "score": {
+            "brier": 0.13325379115393662,
+            "kl_from_gold": 0.2814387549744693,
+            "soft_accuracy": 0.29787204155696395,
+            "target_cross_entropy": 1.3155335856911123,
+            "total_variation": 0.2846700109237363
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5426666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5426666666666666,
+          "soft_accuracy_choice_noul": 0.44341656452845163,
+          "brier_choice_noul": 0.13796043307118683,
+          "kl_choice_noul": 0.1950178645146864,
+          "ece_15_bins": 0.08632300849143931,
+          "score_mae": 0.48403915027752153,
+          "score_within_one": 0.93
+        }
+      },
+      "lightjev_seed73_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5426666666666666,
+        "soft_accuracy_all_types": 0.3865721742327004,
+        "kl_from_gold_all_types": 0.2321110653974972,
+        "brier_all_types": 0.1382152617423307,
+        "target_cross_entropy_all_types": 1.0700611851943156,
+        "total_variation_all_types": 0.25725569467602677,
+        "ece_15_bins": 0.0884674858309589,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.6133333333333333,
+          "noul": 0.6016666666666667,
+          "score": 0.4483333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.1466513329089139,
+            "kl_from_gold": 0.28646904766222775,
+            "soft_accuracy": 0.29512978114391764,
+            "target_cross_entropy": 1.2749720949081358,
+            "total_variation": 0.3077421733853253
+          },
+          "noul": {
+            "brier": 0.13885962752511927,
+            "kl_from_gold": 0.1554201818771028,
+            "soft_accuracy": 0.5200542667143215,
+            "target_cross_entropy": 0.7219491270295516,
+            "total_variation": 0.20521961749542736
+          },
+          "score": {
+            "brier": 0.1333528603762505,
+            "kl_from_gold": 0.2816229577855264,
+            "soft_accuracy": 0.2988112782954708,
+            "target_cross_entropy": 1.3157177885021696,
+            "total_variation": 0.284048532501977
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5426666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5426666666666666,
+          "soft_accuracy_choice_noul": 0.44507943819085355,
+          "brier_choice_noul": 0.14145686265305082,
+          "kl_choice_noul": 0.19910313713881111,
+          "ece_15_bins": 0.0884674858309589,
+          "score_mae": 0.4823496570707752,
+          "score_within_one": 0.9316666666666666
+        }
+      },
+      "lightjev_seed97_raw": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5213333333333333,
+        "soft_accuracy_all_types": 0.38004240288915053,
+        "kl_from_gold_all_types": 0.25174280111240394,
+        "brier_all_types": 0.15032812089933242,
+        "target_cross_entropy_all_types": 1.0896929209092223,
+        "total_variation_all_types": 0.26873389295352584,
+        "ece_15_bins": 0.09143015242416522,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.68,
+          "noul": 0.5633333333333334,
+          "score": 0.4
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.13242587165383887,
+            "kl_from_gold": 0.26132755704212196,
+            "soft_accuracy": 0.30407791528229505,
+            "target_cross_entropy": 1.24983060428803,
+            "total_variation": 0.29004760412011116
+          },
+          "noul": {
+            "brier": 0.15404711668036544,
+            "kl_from_gold": 0.17146627604526218,
+            "soft_accuracy": 0.5117170095131485,
+            "target_cross_entropy": 0.737995221197711,
+            "total_variation": 0.21778177152296208
+          },
+          "score": {
+            "brier": 0.15556024974104626,
+            "kl_from_gold": 0.3272269482146867,
+            "soft_accuracy": 0.2863500400685804,
+            "target_cross_entropy": 1.3613217789313299,
+            "total_variation": 0.30902915880079695
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5213333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5213333333333333,
+          "soft_accuracy_choice_noul": 0.442503978102864,
+          "brier_choice_noul": 0.14684003500485657,
+          "kl_choice_noul": 0.20142003637754877,
+          "ece_15_bins": 0.09143015242416522,
+          "score_mae": 0.5192715800651677,
+          "score_within_one": 0.8883333333333333
+        }
+      },
+      "lightjev_seed97_calibrated": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.5213333333333333,
+        "soft_accuracy_all_types": 0.38032815736962877,
+        "kl_from_gold_all_types": 0.2564083623808045,
+        "brier_all_types": 0.1540839439729647,
+        "target_cross_entropy_all_types": 1.0943584821776229,
+        "total_variation_all_types": 0.2709496366141926,
+        "ece_15_bins": 0.09850446991843209,
+        "latency_p50_ms_per_case": null,
+        "latency_p95_ms_per_case": null,
+        "decisions_per_second": null,
+        "by_type_accuracy": {
+          "choice": 0.68,
+          "noul": 0.5633333333333334,
+          "score": 0.4
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.13142904505422384,
+            "kl_from_gold": 0.25953909007515763,
+            "soft_accuracy": 0.30561079979111233,
+            "target_cross_entropy": 1.2480421373210657,
+            "total_variation": 0.28788588064109194
+          },
+          "noul": {
+            "brier": 0.1645836258994638,
+            "kl_from_gold": 0.18499107673357523,
+            "soft_accuracy": 0.512756554679071,
+            "target_cross_entropy": 0.751520021886024,
+            "total_variation": 0.22392821910925284
+          },
+          "score": {
+            "brier": 0.15491171150583607,
+            "kl_from_gold": 0.32626028418085723,
+            "soft_accuracy": 0.2852584388494449,
+            "target_cross_entropy": 1.3603551148975004,
+            "total_variation": 0.30950293210568264
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.5213333333333333
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.5213333333333333,
+          "soft_accuracy_choice_noul": 0.4437079697164181,
+          "brier_choice_noul": 0.1535320989510505,
+          "kl_choice_noul": 0.2098404145141027,
+          "ece_15_bins": 0.09850446991843209,
+          "score_mae": 0.5205396244638092,
+          "score_within_one": 0.89
+        }
+      },
+      "laya_base": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.32866666666666666,
+        "soft_accuracy_all_types": 0.3332941069951194,
+        "kl_from_gold_all_types": 0.7363147624344755,
+        "brier_all_types": 0.36722117932978804,
+        "target_cross_entropy_all_types": 1.574264882231294,
+        "total_variation_all_types": 0.4288847327375569,
+        "ece_15_bins": 0.30452519383289994,
+        "latency_p50_ms_per_case": 62.795566496788524,
+        "latency_p95_ms_per_case": 70.52924503514078,
+        "decisions_per_second": 79.43140639529955,
+        "by_type_accuracy": {
+          "choice": 0.1,
+          "noul": 0.5083333333333333,
+          "score": 0.2633333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.47708693958679355,
+            "kl_from_gold": 1.1018780739627303,
+            "soft_accuracy": 0.17813634660680897,
+            "target_cross_entropy": 2.0903811212086385,
+            "total_variation": 0.5589952494594547
+          },
+          "noul": {
+            "brier": 0.31768181666200335,
+            "kl_from_gold": 0.5315111011956551,
+            "soft_accuracy": 0.49506983681166666,
+            "target_cross_entropy": 1.098040046348104,
+            "total_variation": 0.32775526833333335
+          },
+          "score": {
+            "brier": 0.36182766186907006,
+            "kl_from_gold": 0.7583367679091684,
+            "soft_accuracy": 0.24909725737272737,
+            "target_cross_entropy": 1.7924315986258115,
+            "total_variation": 0.46495893878083167
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.32866666666666666
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.32866666666666666,
+          "soft_accuracy_choice_noul": 0.3894253400767141,
+          "brier_choice_noul": 0.3708168576369334,
+          "kl_choice_noul": 0.7216334254513468,
+          "ece_15_bins": 0.30452519383289994,
+          "score_mae": 0.7920612923434821,
+          "score_within_one": 0.6816666666666666
+        }
+      },
+      "laya_rlcd": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.396,
+        "soft_accuracy_all_types": 0.37067420526873823,
+        "kl_from_gold_all_types": 0.29872992520609726,
+        "brier_all_types": 0.17150904648762905,
+        "target_cross_entropy_all_types": 1.1366800450029155,
+        "total_variation_all_types": 0.29210298685993963,
+        "ece_15_bins": 0.09795504489879361,
+        "latency_p50_ms_per_case": 62.801936495816335,
+        "latency_p95_ms_per_case": 70.68877193523804,
+        "decisions_per_second": 79.37337497936757,
+        "by_type_accuracy": {
+          "choice": 0.19333333333333333,
+          "noul": 0.5583333333333333,
+          "score": 0.335
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2180086737348803,
+            "kl_from_gold": 0.40945542829781983,
+            "soft_accuracy": 0.26409852458157695,
+            "target_cross_entropy": 1.397958475543728,
+            "total_variation": 0.37593152223898346
+          },
+          "noul": {
+            "brier": 0.1379259386820033,
+            "kl_from_gold": 0.15981964304507676,
+            "soft_accuracy": 0.5189422106516667,
+            "target_cross_entropy": 0.7263485881975256,
+            "total_variation": 0.21114310833333336
+          },
+          "score": {
+            "brier": 0.18184234066962915,
+            "kl_from_gold": 0.3822774558212564,
+            "soft_accuracy": 0.2756940402293904,
+            "target_cross_entropy": 1.4163722865378996,
+            "total_variation": 0.33114859769702404
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.396
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.396,
+          "soft_accuracy_choice_noul": 0.43399431529497007,
+          "brier_choice_noul": 0.164620183699629,
+          "kl_choice_noul": 0.2430315714626578,
+          "ece_15_bins": 0.09795504489879361,
+          "score_mae": 0.5662709189209821,
+          "score_within_one": 0.875
+        }
+      },
+      "laya_soft_ce": {
+        "cases": 300,
+        "decisions": 1500,
+        "accuracy": 0.374,
+        "soft_accuracy_all_types": 0.3625542420811779,
+        "kl_from_gold_all_types": 0.31996289136407247,
+        "brier_all_types": 0.18483088782951293,
+        "target_cross_entropy_all_types": 1.1579130111608908,
+        "total_variation_all_types": 0.3053628682271426,
+        "ece_15_bins": 0.1144732427921437,
+        "latency_p50_ms_per_case": 62.986466495203786,
+        "latency_p95_ms_per_case": 70.55254654987948,
+        "decisions_per_second": 79.37125659039134,
+        "by_type_accuracy": {
+          "choice": 0.23,
+          "noul": 0.4866666666666667,
+          "score": 0.3333333333333333
+        },
+        "by_type_metrics": {
+          "choice": {
+            "brier": 0.2145524579642752,
+            "kl_from_gold": 0.41115683828195393,
+            "soft_accuracy": 0.2615390914407215,
+            "target_cross_entropy": 1.399659885527862,
+            "total_variation": 0.3775408493940963
+          },
+          "noul": {
+            "brier": 0.15570055363533666,
+            "kl_from_gold": 0.17499079629857678,
+            "soft_accuracy": 0.505378525325,
+            "target_cross_entropy": 0.7415197414510256,
+            "total_variation": 0.23113738833333333
+          },
+          "score": {
+            "brier": 0.1991004369563081,
+            "kl_from_gold": 0.41933801297062745,
+            "soft_accuracy": 0.27023753415758417,
+            "target_cross_entropy": 1.4534328436872705,
+            "total_variation": 0.343499357537475
+          }
+        },
+        "by_workflow_accuracy": {
+          "security_incidents": 0.374
+        },
+        "laya_notebook_metrics": {
+          "accuracy": 0.374,
+          "soft_accuracy_choice_noul": 0.4240987140302405,
+          "brier_choice_noul": 0.17531785507831618,
+          "kl_choice_noul": 0.25371281029303583,
+          "ece_15_bins": 0.1144732427921437,
+          "score_mae": 0.5980362000758849,
+          "score_within_one": 0.835
+        }
+      },
+      "lightjev_mean_seeds_calibrated": {
+        "accuracy": 0.505,
+        "soft_accuracy_all_types": 0.38077716985341564,
+        "kl_from_gold_all_types": 0.25956938152530623,
+        "brier_all_types": 0.15528819497796675,
+        "target_cross_entropy_all_types": 1.0975195013221246,
+        "total_variation_all_types": 0.2716361243655263,
+        "ece_15_bins": 0.09167214972110262
+      }
+    }
+  }
+}
