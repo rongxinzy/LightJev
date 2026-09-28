@@ -1,0 +1,18 @@
+{
+  "model_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+  "data_manifest_sha256": "d90b845a6842a0574088ce0a308aef68c67f6b32db4c8c4a41aa98d6082cefbc",
+  "locked_test_read": false,
+  "corrupted_input_controls": [
+    "no_state",
+    "no_criteria"
+  ],
+  "semantics_preserving_controls": [
+    "reverse_options"
+  ],
+  "source_sha256": {
+    "evaluate.py": "61afda6582ef68353180191381f71cf2abd58edba2f72e9d488b7ce508b203e9",
+    "model_io.py": "436b84c6d02d9a57cb57a70a53a1b80f6c4da3e02a1c04059fcbfc9188e529f1",
+    "data.py": "ab9cb836b166c512e6391d58068235488f5590e0304d69bb959c760e146f9f1f",
+    "metrics.py": "0b4bb93b78829ddbbaa4e8d045585f449605d9dc7f5f847a64a6a014e09059d5"
+  }
+}

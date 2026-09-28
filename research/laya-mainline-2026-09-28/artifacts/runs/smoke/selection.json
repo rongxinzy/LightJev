@@ -1,0 +1,6 @@
+{
+  "step": 8,
+  "development_macro_nll": 0.0021319308011342325,
+  "checkpoint": "selected",
+  "locked_test_used": false
+}

@@ -6,7 +6,15 @@
 [![Hugging Face](https://img.shields.io/badge/Hugging%20Face-LightJev--0.6B-yellow)](https://huggingface.co/rongxinzy/LightJev-0.6B-typed-decisions)
 [简体中文](README.zh-CN.md) · [Data format](docs/data.md) · [Design](docs/design.md) · [Evaluation](docs/evaluation.md)
 
-LightJev uses **Qwen3-0.6B as its standard pretrained backbone** and turns it into a finite-candidate decision model. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. Train the backbone and a small scoring head with cross-entropy or Brier loss.
+LightJev trains finite-candidate decision models. Supply context, a question, and candidate descriptions; receive a normalized distribution and a selected value. The published v0.1/v0.2 models use Qwen3-0.6B. **Active research now starts from the ordinary Laya checkpoint**, with a new rule-following protocol described below.
+
+## Active research: Laya mainline
+
+**2026-09-28:** The new [Laya mainline](research/laya-mainline-2026-09-28/README.md) pins upstream weights, code and input encoding, then tests whether CE adaptation follows changed rules and changed facts. It has separate development rule families, a locked test partition, exact checks against token truncation, and a fixed first-pilot budget. This is a synthetic mechanism study; it does not establish broad workflow generalization or an advantage over Laya. Existing release instructions below still refer to the Qwen checkpoints.
+
+The first eight-GPU pilot is complete: new-rule development accuracy rose from 53.13% to 83.20%, but raw NLL worsened from 1.385 to 2.311 because remaining errors were overconfident. The selected checkpoint is step 32 of 128; final test remains unopened. [Results and limitations](research/laya-mainline-2026-09-28/RESULTS.zh-CN.md).
+
+The preceding [experiment audit](research/laya-typed-decisions-2026-09-24/strategy-audit-2026-09-28/REPORT.zh-CN.md) found dropped criteria in some Boolean inputs and an ordinal-reward ordering error in the old LightJev RLCD path. Historical results remain available, but their interpretation must account for these defects. The new mainline uses native Laya inputs and CE; it does not reuse that reward implementation.
 
 ## Release progress
 

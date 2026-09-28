@@ -1,0 +1,43 @@
+{
+  "args": {
+    "base": "/root/lightjev-laya-study-20260924/model",
+    "data": "/root/lightjev-laya-mainline-20260928/data",
+    "output": "/root/lightjev-laya-mainline-20260928/runs/smoke",
+    "seed": 31,
+    "steps": 64,
+    "micro_batch": 1,
+    "grad_accum": 1,
+    "eval_batch": 8,
+    "eval_every": 8,
+    "encoder_lr": 3e-05,
+    "head_lr": 0.0003,
+    "smoke": true
+  },
+  "base_sha256": "891102d372688fc2a094dac56a384bc537b87c63f21f9f3dac0be2b7cbc8d86c",
+  "data_manifest_sha256": "d90b845a6842a0574088ce0a308aef68c67f6b32db4c8c4a41aa98d6082cefbc",
+  "world_size": 8,
+  "effective_batch": 8,
+  "torch": "2.14.0+cu130",
+  "transformers": "5.17.0",
+  "laya_common_sha256": "67274dc3115d8b9fc2dcd4228e66a09271cfd081f4e2fd09bab3b85549a5e001",
+  "runtime_lock": {
+    "model_repo": "convaiinnovations/laya",
+    "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "runtime_repo": "NandhaKishorM/laya",
+    "runtime_revision": "23a17522aa4942da6cce53a995a275760320b691",
+    "laya_common_sha256": "67274dc3115d8b9fc2dcd4228e66a09271cfd081f4e2fd09bab3b85549a5e001",
+    "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+    "encoder_config_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979"
+  },
+  "code_sha256": {
+    "data.py": "ab9cb836b166c512e6391d58068235488f5590e0304d69bb959c760e146f9f1f",
+    "evaluate.py": "154435f8eb6f01f6273f99c8f85c2151d8fa8f1bbe26abe8227520c98bde11d5",
+    "metrics.py": "0b4bb93b78829ddbbaa4e8d045585f449605d9dc7f5f847a64a6a014e09059d5",
+    "model_io.py": "436b84c6d02d9a57cb57a70a53a1b80f6c4da3e02a1c04059fcbfc9188e529f1",
+    "rules.py": "05fea0fde0284c313d2aa1919187e3e01c41cf5f097f31147064cc0e0aaa8b47",
+    "test_mainline.py": "538b345eaea5d14766974e2d221913f0aa70d28a0e5ef23cb48d283ed90bc3c2",
+    "train.py": "6dd06b0f16650d8a5052a31d43b227f7cf4384a4eb54959e47b1cae767297c5f"
+  },
+  "selection": "minimum family-macro raw development NLL including step-zero base",
+  "locked_test_read": false
+}

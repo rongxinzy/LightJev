@@ -1,0 +1,9 @@
+{
+  "model_repo": "convaiinnovations/laya",
+  "model_revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "runtime_repo": "NandhaKishorM/laya",
+  "runtime_revision": "23a17522aa4942da6cce53a995a275760320b691",
+  "laya_common_sha256": "67274dc3115d8b9fc2dcd4228e66a09271cfd081f4e2fd09bab3b85549a5e001",
+  "tokenizer_sha256": "6c8aaa9a542084f2457eab775d4eeb51f92a70c0fd9de28d5edb0ddec3c08d30",
+  "encoder_config_sha256": "bf3ab80598fdccf414855a2ce80f22859e4492d06ca8a62ddd1cfb63972f8979"
+}

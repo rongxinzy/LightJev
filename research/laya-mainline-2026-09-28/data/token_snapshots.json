@@ -1,0 +1,65 @@
+{
+  "noul": {
+    "id": "train/threshold/0000/base",
+    "question": {
+      "type": "noul",
+      "instructions": "Does this case satisfy the acceptance condition?",
+      "criteria": {
+        "false": "The following acceptance condition does NOT hold: amount is at least 78.",
+        "true": "The following acceptance condition holds: amount is at least 78."
+      }
+    },
+    "decoded": "[CLS]noul question: Does this case satisfy the acceptance condition?[SEP][MASK] false: The following acceptance condition does NOT hold: amount is at least 78.[MASK] true: The following acceptance condition holds: amount is at least 78.[SEP]{\"amount\": 26, \"age\": 47, \"category\": \"cedar\", \"flag\": false, \"reference\": \"case-fd731fd5ffaf\"}[SEP]",
+    "markers": [
+      14,
+      31
+    ],
+    "target": [
+      1.0,
+      0.0
+    ]
+  },
+  "choice": {
+    "id": "train/threshold/0002/base",
+    "question": {
+      "type": "choice",
+      "instructions": "Select the candidate matching this case.",
+      "criteria": {
+        "A": "The following acceptance condition holds: amount is at least 62.",
+        "B": "The following acceptance condition does NOT hold: amount is at least 62."
+      }
+    },
+    "decoded": "[CLS]choice question: Select the candidate matching this case.[SEP][MASK] A: The following acceptance condition holds: amount is at least 62.[MASK] B: The following acceptance condition does NOT hold: amount is at least 62.[SEP]{\"amount\": 60, \"age\": 57, \"category\": \"dahlia\", \"flag\": false, \"reference\": \"case-798538363ce5\"}[SEP]",
+    "markers": [
+      12,
+      27
+    ],
+    "target": [
+      0.0,
+      1.0
+    ]
+  },
+  "score": {
+    "id": "train/bands/0000/base",
+    "question": {
+      "type": "score",
+      "instructions": "Assign the level defined by the supplied criteria.",
+      "criteria": [
+        "amount is less than 61",
+        "amount is at least 61 and less than 82",
+        "amount is at least 82"
+      ]
+    },
+    "decoded": "[CLS]score question: Assign the level defined by the supplied criteria.[SEP][MASK] level 0: amount is less than 61[MASK] level 1: amount is at least 61 and less than 82[MASK] level 2: amount is at least 82[SEP]{\"amount\": 55, \"age\": 28, \"category\": \"dahlia\", \"flag\": false, \"reference\": \"case-032a115c2916\"}[SEP]",
+    "markers": [
+      15,
+      24,
+      37
+    ],
+    "target": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  }
+}

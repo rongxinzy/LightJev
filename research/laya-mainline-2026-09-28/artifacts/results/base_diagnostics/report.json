@@ -1,0 +1,668 @@
+{
+  "dev_seen": {
+    "normal": {
+      "rows": 256,
+      "families": {
+        "bands": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5625,
+          "nll": 0.9090253487554912,
+          "brier": 0.5870306682383168,
+          "ece_15": 0.21188161568716168,
+          "predicted_semantic_counts": {
+            "0": 18,
+            "1": 46
+          },
+          "gold_semantic_counts": {
+            "0": 21,
+            "2": 23,
+            "1": 20
+          },
+          "policy_both_correct": 0.1875,
+          "policy_semantic_consistency": 0.6875,
+          "fact_both_correct": 0.1875,
+          "fact_semantic_consistency": 0.3125,
+          "irrelevant_both_correct": 0.6875,
+          "irrelevant_semantic_consistency": 1
+        },
+        "conjunction": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5625,
+          "nll": 1.0777877892206018,
+          "brier": 0.6510062818633201,
+          "ece_15": 0.2632434135302901,
+          "predicted_semantic_counts": {
+            "0": 40,
+            "1": 24
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.25,
+          "policy_semantic_consistency": 0.75,
+          "fact_both_correct": 0.125,
+          "fact_semantic_consistency": 0.875,
+          "irrelevant_both_correct": 0.4375,
+          "irrelevant_semantic_consistency": 0.875
+        },
+        "membership": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.78125,
+          "nll": 0.48373712901051735,
+          "brier": 0.32198097332828934,
+          "ece_15": 0.13516427390277386,
+          "predicted_semantic_counts": {
+            "0": 24,
+            "1": 40
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.5625,
+          "policy_semantic_consistency": 0.4375,
+          "fact_both_correct": 0.5625,
+          "fact_semantic_consistency": 0.4375,
+          "irrelevant_both_correct": 0.875,
+          "irrelevant_semantic_consistency": 1
+        },
+        "threshold": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.6875,
+          "nll": 1.091953213240623,
+          "brier": 0.5821788368465209,
+          "ece_15": 0.30259187798947096,
+          "predicted_semantic_counts": {
+            "1": 18,
+            "0": 46
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.3125,
+          "policy_semantic_consistency": 0.6875,
+          "fact_both_correct": 0.375,
+          "fact_semantic_consistency": 0.625,
+          "irrelevant_both_correct": 0.625,
+          "irrelevant_semantic_consistency": 0.9375
+        }
+      },
+      "macro": {
+        "accuracy": 0.6484375,
+        "nll": 0.8906258700568084,
+        "brier": 0.5355491900691118,
+        "ece_15": 0.22822029527742416,
+        "policy_both_correct": 0.328125,
+        "fact_both_correct": 0.3125,
+        "irrelevant_both_correct": 0.65625,
+        "irrelevant_semantic_consistency": 0.953125,
+        "counterfactual_both_correct": 0.3203125
+      }
+    },
+    "reverse_options": {
+      "rows": 256,
+      "families": {
+        "bands": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.6875,
+          "nll": 0.7043638709660806,
+          "brier": 0.4214917002300053,
+          "ece_15": 0.11281236028298736,
+          "predicted_semantic_counts": {
+            "0": 12,
+            "2": 17,
+            "1": 35
+          },
+          "gold_semantic_counts": {
+            "0": 21,
+            "2": 23,
+            "1": 20
+          },
+          "policy_both_correct": 0.4375,
+          "policy_semantic_consistency": 0.3125,
+          "fact_both_correct": 0.4375,
+          "fact_semantic_consistency": 0.25,
+          "irrelevant_both_correct": 0.6875,
+          "irrelevant_semantic_consistency": 0.8125
+        },
+        "conjunction": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.578125,
+          "nll": 0.9290015209167396,
+          "brier": 0.5878675870921629,
+          "ece_15": 0.2695052167400718,
+          "predicted_semantic_counts": {
+            "0": 47,
+            "1": 17
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.125,
+          "policy_semantic_consistency": 0.8125,
+          "fact_both_correct": 0.25,
+          "fact_semantic_consistency": 0.6875,
+          "irrelevant_both_correct": 0.4375,
+          "irrelevant_semantic_consistency": 0.8125
+        },
+        "membership": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.6875,
+          "nll": 0.45698656627249445,
+          "brier": 0.31375618574127173,
+          "ece_15": 0.12025690264999866,
+          "predicted_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.5,
+          "policy_semantic_consistency": 0.375,
+          "fact_both_correct": 0.4375,
+          "fact_semantic_consistency": 0.5625,
+          "irrelevant_both_correct": 0.6875,
+          "irrelevant_semantic_consistency": 0.9375
+        },
+        "threshold": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.59375,
+          "nll": 1.1951740708336338,
+          "brier": 0.6419397875713084,
+          "ece_15": 0.2763085337355733,
+          "predicted_semantic_counts": {
+            "0": 50,
+            "1": 14
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0.125,
+          "policy_semantic_consistency": 0.875,
+          "fact_both_correct": 0.25,
+          "fact_semantic_consistency": 0.6875,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 0.8125
+        }
+      },
+      "macro": {
+        "accuracy": 0.63671875,
+        "nll": 0.8213815072472371,
+        "brier": 0.4912638151586871,
+        "ece_15": 0.19472075335215777,
+        "policy_both_correct": 0.296875,
+        "fact_both_correct": 0.34375,
+        "irrelevant_both_correct": 0.578125,
+        "irrelevant_semantic_consistency": 0.84375,
+        "counterfactual_both_correct": 0.3203125
+      },
+      "same_prediction_as_normal": 0.79296875
+    },
+    "no_state": {
+      "rows": 256,
+      "families": {
+        "bands": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.3125,
+          "nll": 1.640046499943707,
+          "brier": 0.9290837317334101,
+          "ece_15": 0.4163580723106861,
+          "predicted_semantic_counts": {
+            "1": 64
+          },
+          "gold_semantic_counts": {
+            "0": 21,
+            "2": 23,
+            "1": 20
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.3125,
+          "irrelevant_semantic_consistency": 1
+        },
+        "conjunction": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 1.7163452186696146,
+          "brier": 0.9166026326398424,
+          "ece_15": 0.4578901259228587,
+          "predicted_semantic_counts": {
+            "1": 64
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        },
+        "membership": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 2.6330804318415013,
+          "brier": 0.9885055677906479,
+          "ece_15": 0.49401796516031027,
+          "predicted_semantic_counts": {
+            "1": 64
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        },
+        "threshold": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 1.2207193566952856,
+          "brier": 0.7791872817135279,
+          "ece_15": 0.3556937361136079,
+          "predicted_semantic_counts": {
+            "1": 64
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        }
+      },
+      "macro": {
+        "accuracy": 0.453125,
+        "nll": 1.8025478767875271,
+        "brier": 0.9033448034693571,
+        "ece_15": 0.43098997487686574,
+        "policy_both_correct": 0,
+        "fact_both_correct": 0,
+        "irrelevant_both_correct": 0.453125,
+        "irrelevant_semantic_consistency": 1,
+        "counterfactual_both_correct": 0
+      },
+      "same_prediction_as_normal": 0.5
+    },
+    "no_criteria": {
+      "rows": 256,
+      "families": {
+        "bands": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.40625,
+          "nll": 1.1794878204083403,
+          "brier": 0.6984837181272104,
+          "ece_15": 0.10338125796988606,
+          "predicted_semantic_counts": {
+            "2": 52,
+            "1": 11,
+            "0": 1
+          },
+          "gold_semantic_counts": {
+            "0": 21,
+            "2": 23,
+            "1": 20
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 0.8125,
+          "irrelevant_both_correct": 0.375,
+          "irrelevant_semantic_consistency": 0.9375
+        },
+        "conjunction": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 0.8477161566565548,
+          "brier": 0.6175373793822538,
+          "ece_15": 0.22961371019482613,
+          "predicted_semantic_counts": {
+            "0": 50,
+            "1": 14
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0.0625,
+          "fact_semantic_consistency": 0.9375,
+          "irrelevant_both_correct": 0.5625,
+          "irrelevant_semantic_consistency": 0.9375
+        },
+        "membership": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 0.8223613228111893,
+          "brier": 0.6031169590225154,
+          "ece_15": 0.20924099069088697,
+          "predicted_semantic_counts": {
+            "0": 64
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        },
+        "threshold": {
+          "rows": 64,
+          "groups": 16,
+          "accuracy": 0.5,
+          "nll": 0.8203615574101131,
+          "brier": 0.6079296945450526,
+          "ece_15": 0.23684786818921566,
+          "predicted_semantic_counts": {
+            "1": 16,
+            "0": 48
+          },
+          "gold_semantic_counts": {
+            "0": 32,
+            "1": 32
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.625,
+          "irrelevant_semantic_consistency": 1
+        }
+      },
+      "macro": {
+        "accuracy": 0.4765625,
+        "nll": 0.9174817143215493,
+        "brier": 0.6317669377692581,
+        "ece_15": 0.1947709567612037,
+        "policy_both_correct": 0,
+        "fact_both_correct": 0.015625,
+        "irrelevant_both_correct": 0.515625,
+        "irrelevant_semantic_consistency": 0.96875,
+        "counterfactual_both_correct": 0.0078125
+      },
+      "same_prediction_as_normal": 0.51171875
+    }
+  },
+  "dev_new": {
+    "normal": {
+      "rows": 256,
+      "families": {
+        "disjunction": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.515625,
+          "nll": 1.225701039519941,
+          "brier": 0.7184224515108754,
+          "ece_15": 0.31515853432938457,
+          "predicted_semantic_counts": {
+            "0": 108,
+            "1": 20
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0.0625,
+          "policy_semantic_consistency": 0.875,
+          "fact_both_correct": 0.15625,
+          "fact_semantic_consistency": 0.75,
+          "irrelevant_both_correct": 0.40625,
+          "irrelevant_semantic_consistency": 0.9375
+        },
+        "veto": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.546875,
+          "nll": 1.544635087036146,
+          "brier": 0.795632867730801,
+          "ece_15": 0.4056781413964927,
+          "predicted_semantic_counts": {
+            "0": 120,
+            "1": 8
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0.09375,
+          "policy_semantic_consistency": 0.90625,
+          "fact_both_correct": 0.09375,
+          "fact_semantic_consistency": 0.875,
+          "irrelevant_both_correct": 0.5625,
+          "irrelevant_semantic_consistency": 0.96875
+        }
+      },
+      "macro": {
+        "accuracy": 0.53125,
+        "nll": 1.3851680632780434,
+        "brier": 0.7570276596208382,
+        "ece_15": 0.36041833786293864,
+        "policy_both_correct": 0.078125,
+        "fact_both_correct": 0.125,
+        "irrelevant_both_correct": 0.484375,
+        "irrelevant_semantic_consistency": 0.953125,
+        "counterfactual_both_correct": 0.1015625
+      }
+    },
+    "reverse_options": {
+      "rows": 256,
+      "families": {
+        "disjunction": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.5546875,
+          "nll": 1.0671928402569748,
+          "brier": 0.6738702050912116,
+          "ece_15": 0.2694314857944846,
+          "predicted_semantic_counts": {
+            "0": 111,
+            "1": 17
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0.1875,
+          "policy_semantic_consistency": 0.71875,
+          "fact_both_correct": 0.15625,
+          "fact_semantic_consistency": 0.8125,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 0.9375
+        },
+        "veto": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.5390625,
+          "nll": 1.540855211658306,
+          "brier": 0.7997721403340133,
+          "ece_15": 0.3972611613571644,
+          "predicted_semantic_counts": {
+            "0": 123,
+            "1": 5
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0.09375,
+          "policy_semantic_consistency": 0.90625,
+          "fact_both_correct": 0.0625,
+          "fact_semantic_consistency": 0.9375,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        }
+      },
+      "macro": {
+        "accuracy": 0.546875,
+        "nll": 1.3040240259576406,
+        "brier": 0.7368211727126125,
+        "ece_15": 0.3333463235758245,
+        "policy_both_correct": 0.140625,
+        "fact_both_correct": 0.109375,
+        "irrelevant_both_correct": 0.5,
+        "irrelevant_semantic_consistency": 0.96875,
+        "counterfactual_both_correct": 0.125
+      },
+      "same_prediction_as_normal": 0.890625
+    },
+    "no_state": {
+      "rows": 256,
+      "families": {
+        "disjunction": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.484375,
+          "nll": 1.2021796491801668,
+          "brier": 0.7379387730826011,
+          "ece_15": 0.34791627153754234,
+          "predicted_semantic_counts": {
+            "1": 122,
+            "0": 6
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 0.9375,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.4375,
+          "irrelevant_semantic_consistency": 1
+        },
+        "veto": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.5,
+          "nll": 1.5508415488078984,
+          "brier": 0.8552331542517502,
+          "ece_15": 0.4001200878992677,
+          "predicted_semantic_counts": {
+            "1": 128
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.5,
+          "irrelevant_semantic_consistency": 1
+        }
+      },
+      "macro": {
+        "accuracy": 0.4921875,
+        "nll": 1.3765105989940327,
+        "brier": 0.7965859636671757,
+        "ece_15": 0.374018179718405,
+        "policy_both_correct": 0,
+        "fact_both_correct": 0,
+        "irrelevant_both_correct": 0.46875,
+        "irrelevant_semantic_consistency": 1,
+        "counterfactual_both_correct": 0
+      },
+      "same_prediction_as_normal": 0.1328125
+    },
+    "no_criteria": {
+      "rows": 256,
+      "families": {
+        "disjunction": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.5,
+          "nll": 0.8654947742329085,
+          "brier": 0.631036646344922,
+          "ece_15": 0.2510110135190189,
+          "predicted_semantic_counts": {
+            "0": 100,
+            "1": 28
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.53125,
+          "irrelevant_semantic_consistency": 1
+        },
+        "veto": {
+          "rows": 128,
+          "groups": 32,
+          "accuracy": 0.5,
+          "nll": 0.9778249593527706,
+          "brier": 0.6995771213967249,
+          "ece_15": 0.2907327706925571,
+          "predicted_semantic_counts": {
+            "0": 100,
+            "1": 28
+          },
+          "gold_semantic_counts": {
+            "0": 64,
+            "1": 64
+          },
+          "policy_both_correct": 0,
+          "policy_semantic_consistency": 1,
+          "fact_both_correct": 0,
+          "fact_semantic_consistency": 1,
+          "irrelevant_both_correct": 0.59375,
+          "irrelevant_semantic_consistency": 1
+        }
+      },
+      "macro": {
+        "accuracy": 0.5,
+        "nll": 0.9216598667928395,
+        "brier": 0.6653068838708234,
+        "ece_15": 0.270871892105788,
+        "policy_both_correct": 0,
+        "fact_both_correct": 0,
+        "irrelevant_both_correct": 0.5625,
+        "irrelevant_semantic_consistency": 1,
+        "counterfactual_both_correct": 0
+      },
+      "same_prediction_as_normal": 0.796875
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "protocol": "paired case-cluster and training-seed bootstrap over four leave-one-workflow-out folds",
+  "exploratory": true,
+  "official_test_used": false,
+  "modes": {
+    "raw": {
+      "baseline_accuracy": 0.46175,
+      "qwen_init_accuracy": 0.4235833333333333,
+      "accuracy_delta": -0.03816666666666667,
+      "paired_two_way_bootstrap_95ci": [
+        -0.062042708333333335,
+        -0.0145
+      ],
+      "cases": 1200,
+      "seeds": [
+        31,
+        47,
+        73,
+        97
+      ],
+      "bootstrap_replicates": 10000
+    },
+    "calibrated": {
+      "baseline_accuracy": 0.46175,
+      "qwen_init_accuracy": 0.4235833333333333,
+      "accuracy_delta": -0.03816666666666667,
+      "paired_two_way_bootstrap_95ci": [
+        -0.06175,
+        -0.015290625000000016
+      ],
+      "cases": 1200,
+      "seeds": [
+        31,
+        47,
+        73,
+        97
+      ],
+      "bootstrap_replicates": 10000
+    }
+  }
+}

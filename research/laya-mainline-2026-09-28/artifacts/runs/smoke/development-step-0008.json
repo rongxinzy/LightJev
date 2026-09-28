@@ -1,0 +1,62 @@
+{
+  "smoke_train": {
+    "rows": 12,
+    "families": {
+      "bands": {
+        "rows": 4,
+        "groups": 1,
+        "accuracy": 1,
+        "nll": 0.00039957287993996893,
+        "brier": 2.579492247956751e-07,
+        "ece_15": 0.00039950013160705566,
+        "predicted_semantic_counts": {
+          "0": 2,
+          "2": 2
+        },
+        "gold_semantic_counts": {
+          "0": 2,
+          "2": 2
+        },
+        "policy_both_correct": 1,
+        "policy_semantic_consistency": 0,
+        "fact_both_correct": 1,
+        "fact_semantic_consistency": 0,
+        "irrelevant_both_correct": 1,
+        "irrelevant_semantic_consistency": 1
+      },
+      "threshold": {
+        "rows": 8,
+        "groups": 2,
+        "accuracy": 1,
+        "nll": 0.003864288722328496,
+        "brier": 0.00022823354067968757,
+        "ece_15": 0.0038060620427131653,
+        "predicted_semantic_counts": {
+          "0": 4,
+          "1": 4
+        },
+        "gold_semantic_counts": {
+          "0": 4,
+          "1": 4
+        },
+        "policy_both_correct": 1,
+        "policy_semantic_consistency": 0,
+        "fact_both_correct": 1,
+        "fact_semantic_consistency": 0,
+        "irrelevant_both_correct": 1,
+        "irrelevant_semantic_consistency": 1
+      }
+    },
+    "macro": {
+      "accuracy": 1,
+      "nll": 0.0021319308011342325,
+      "brier": 0.00011424574495224162,
+      "ece_15": 0.0021027810871601105,
+      "policy_both_correct": 1,
+      "fact_both_correct": 1,
+      "irrelevant_both_correct": 1,
+      "irrelevant_semantic_consistency": 1,
+      "counterfactual_both_correct": 1
+    }
+  }
+}

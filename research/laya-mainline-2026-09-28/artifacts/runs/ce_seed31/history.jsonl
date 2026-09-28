@@ -1,0 +1,17 @@
+{"event": "update", "step": 1, "loss": 0.7839590907096863, "seconds": 8.456056887007435, "peak_gpu_gib": 9.138294219970703}
+{"event": "update", "step": 8, "loss": 0.2812727093696594, "seconds": 29.505132610996952, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 16, "loss": 0.020180704072117805, "seconds": 53.50029012099549, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 24, "loss": 0.01638074219226837, "seconds": 77.21968263099552, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 32, "loss": 0.0003094096900895238, "seconds": 101.27905101599754, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 40, "loss": 0.0006220971117727458, "seconds": 130.31880717500462, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 48, "loss": 0.0004831217520404607, "seconds": 154.31561570600024, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 56, "loss": 1.7931111869984306e-05, "seconds": 178.01324633100012, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 64, "loss": 8.250055543612689e-05, "seconds": 201.98044065199792, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 72, "loss": 1.2268917089386377e-05, "seconds": 228.38851197100303, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 80, "loss": 1.2408664588292595e-05, "seconds": 252.3952270000009, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 88, "loss": 1.3043641956755891e-05, "seconds": 276.0722109000053, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 96, "loss": 2.4068993297987618e-05, "seconds": 300.0681441619963, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 104, "loss": 9.385719749843702e-06, "seconds": 326.52805519600224, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 112, "loss": 6.582467904081568e-06, "seconds": 350.5390349680092, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 120, "loss": 1.2037678970955312e-05, "seconds": 374.2202610210079, "peak_gpu_gib": 9.3316330909729}
+{"event": "update", "step": 128, "loss": 2.3271182726603e-05, "seconds": 398.2344227050053, "peak_gpu_gib": 9.3316330909729}

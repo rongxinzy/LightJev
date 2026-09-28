@@ -1,0 +1,165 @@
+{
+  "data": {
+    "source": "official train partition only; train/dev/calibration combined for descriptive audit",
+    "cases": 1200,
+    "counts": {
+      "decisions": 6000,
+      "noul_with_criteria": 1200,
+      "noul_criteria_dropped": 1200,
+      "argmax_ties": 54
+    },
+    "question_templates_by_workflow": {
+      "agent_trace_observability": 5,
+      "customer_service": 5,
+      "invoice_processing": 5,
+      "security_incidents": 5
+    },
+    "affected_noul_templates": [
+      [
+        "agent_trace_observability",
+        "needs_review"
+      ],
+      [
+        "customer_service",
+        "needs_human"
+      ],
+      [
+        "invoice_processing",
+        "matches_order"
+      ],
+      [
+        "security_incidents",
+        "true_positive"
+      ]
+    ],
+    "fraction_decisions_with_dropped_criteria": 0.2,
+    "fraction_target_margin_below_0_1": 0.12733333333333333
+  },
+  "rps_counterexample": {
+    "canonical_order": [
+      0,
+      1,
+      2
+    ],
+    "presentation_order": [
+      0,
+      2,
+      1
+    ],
+    "canonical_near_error": 0.5,
+    "canonical_far_error": 1.0,
+    "shuffled_near_error": 1.0,
+    "shuffled_far_error": 0.5
+  },
+  "predictions": {
+    "ce": {
+      "accuracy_slices": {
+        "choice": {
+          "n_repeated_across_seeds": 7200,
+          "accuracy": 0.4351388888888889
+        },
+        "margin_at_least_0.1": {
+          "n_repeated_across_seeds": 20928,
+          "accuracy": 0.47477064220183485
+        },
+        "noul": {
+          "n_repeated_across_seeds": 7200,
+          "accuracy": 0.5765277777777778
+        },
+        "margin_below_0.1": {
+          "n_repeated_across_seeds": 3072,
+          "accuracy": 0.373046875
+        },
+        "score": {
+          "n_repeated_across_seeds": 9600,
+          "accuracy": 0.395625
+        }
+      },
+      "prediction_collapse_over_90_percent": [
+        {
+          "workflow": "invoice_processing",
+          "qid": "disposition",
+          "predicted_label": "approve",
+          "predicted_fraction": 0.9483333333333334,
+          "gold_fraction": 0.4,
+          "observations_across_four_seeds": 1200,
+          "unique_cases": 300
+        },
+        {
+          "workflow": "invoice_processing",
+          "qid": "urgency",
+          "predicted_label": "1",
+          "predicted_fraction": 0.9033333333333333,
+          "gold_fraction": 0.43666666666666665,
+          "observations_across_four_seeds": 1200,
+          "unique_cases": 300
+        },
+        {
+          "workflow": "security_incidents",
+          "qid": "credential_compromise",
+          "predicted_label": "true",
+          "predicted_fraction": 0.9025,
+          "gold_fraction": 0.56,
+          "observations_across_four_seeds": 1200,
+          "unique_cases": 300
+        }
+      ],
+      "calibrated_ece_mean_of_16_runs": 0.07955569086009427,
+      "calibrated_ece_pooled_24000_decisions": 0.04125573232639698
+    },
+    "rlcd": {
+      "accuracy_slices": {
+        "choice": {
+          "n_repeated_across_seeds": 7200,
+          "accuracy": 0.43083333333333335
+        },
+        "margin_at_least_0.1": {
+          "n_repeated_across_seeds": 20928,
+          "accuracy": 0.4757262996941896
+        },
+        "noul": {
+          "n_repeated_across_seeds": 7200,
+          "accuracy": 0.5695833333333333
+        },
+        "margin_below_0.1": {
+          "n_repeated_across_seeds": 3072,
+          "accuracy": 0.3958333333333333
+        },
+        "score": {
+          "n_repeated_across_seeds": 9600,
+          "accuracy": 0.4134375
+        }
+      },
+      "prediction_collapse_over_90_percent": [],
+      "calibrated_ece_mean_of_16_runs": 0.07868992534249865,
+      "calibrated_ece_pooled_24000_decisions": 0.04149445551974013
+    }
+  },
+  "training": {
+    "shared_context": {
+      "runs": 16,
+      "best_step_counts": {
+        "256": 12,
+        "192": 3,
+        "64": 1
+      },
+      "sum_single_gpu_run_hours": 13.226334859279444
+    },
+    "ce": {
+      "runs": 16,
+      "best_step_counts": {
+        "256": 11,
+        "192": 5
+      },
+      "sum_single_gpu_run_hours": 13.473589558976112
+    },
+    "rlcd": {
+      "runs": 16,
+      "best_step_counts": {
+        "256": 16
+      },
+      "sum_single_gpu_run_hours": 13.395977802850558
+    }
+  },
+  "scope": "Existing records only. No training, checkpoint edits, or fresh public-test inference."
+}

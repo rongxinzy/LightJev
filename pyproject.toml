@@ -27,4 +27,4 @@ Issues = "https://github.com/rongxinzy/LightJev/issues"
 packages = ["src/lightjev"]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["tests", "research/laya-mainline-2026-09-28/test_mainline.py"]

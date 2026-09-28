@@ -1,0 +1,86 @@
+{
+  "base": {
+    "dev_seen": {
+      "accuracy": 0.6484375,
+      "nll": 0.8906258700568084,
+      "brier": 0.5355491900691118,
+      "ece_15": 0.22822029527742416,
+      "policy_both_correct": 0.328125,
+      "fact_both_correct": 0.3125,
+      "irrelevant_both_correct": 0.65625,
+      "irrelevant_semantic_consistency": 0.953125,
+      "counterfactual_both_correct": 0.3203125
+    },
+    "dev_new": {
+      "accuracy": 0.53125,
+      "nll": 1.3851680632780434,
+      "brier": 0.7570276596208382,
+      "ece_15": 0.36041833786293864,
+      "policy_both_correct": 0.078125,
+      "fact_both_correct": 0.125,
+      "irrelevant_both_correct": 0.484375,
+      "irrelevant_semantic_consistency": 0.953125,
+      "counterfactual_both_correct": 0.1015625
+    }
+  },
+  "selected": {
+    "dev_seen": {
+      "accuracy": 0.99609375,
+      "nll": 0.009518079361252686,
+      "brier": 0.006087029509167135,
+      "ece_15": 0.005070534301921725,
+      "policy_both_correct": 0.984375,
+      "fact_both_correct": 0.984375,
+      "irrelevant_both_correct": 0.984375,
+      "irrelevant_semantic_consistency": 0.984375,
+      "counterfactual_both_correct": 0.984375
+    },
+    "dev_new": {
+      "accuracy": 0.83203125,
+      "nll": 2.3109895184671663,
+      "brier": 0.33705507690744735,
+      "ece_15": 0.17028588824905455,
+      "policy_both_correct": 0.75,
+      "fact_both_correct": 0.578125,
+      "irrelevant_both_correct": 0.875,
+      "irrelevant_semantic_consistency": 1,
+      "counterfactual_both_correct": 0.6640625
+    }
+  },
+  "delta": {
+    "new_family_pair_both_correct": 0.5625,
+    "seen_family_accuracy": 0.34765625,
+    "worst_split_irrelevant_consistency": 0.03125
+  },
+  "gate_checks": {
+    "new_family_pair_gain_at_least_5pp": true,
+    "seen_accuracy_drop_at_most_2pp": true,
+    "irrelevant_consistency_drop_at_most_2pp_each_split": true
+  },
+  "promising_for_second_seed": true,
+  "interpretation": "single-seed synthetic mechanism pilot; development selection; no significance claim",
+  "locked_test_evaluated": false,
+  "automatic_additional_training": false,
+  "selection": {
+    "step": 32,
+    "development_macro_nll": 0.7766752257298906,
+    "checkpoint": "selected",
+    "locked_test_used": false
+  },
+  "completion": {
+    "status": "complete",
+    "selected_step": 32,
+    "best_macro_nll": 0.7766752257298906,
+    "reload_max_logit_delta": 0.0,
+    "elapsed_seconds": 427.82770901599724,
+    "locked_test_read": false
+  },
+  "smoke": {
+    "status": "complete",
+    "selected_step": 8,
+    "best_macro_nll": 0.0021319308011342325,
+    "reload_max_logit_delta": 0.0,
+    "elapsed_seconds": 49.432416858006036,
+    "locked_test_read": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "selected_step": 32,
+  "best_macro_nll": 0.7766752257298906,
+  "reload_max_logit_delta": 0.0,
+  "elapsed_seconds": 427.82770901599724,
+  "locked_test_read": false
+}

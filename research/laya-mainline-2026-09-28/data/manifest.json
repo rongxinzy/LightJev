@@ -1,0 +1,126 @@
+{
+  "generator_seed": 20260928,
+  "scope": "synthetic rule-mechanism pilot",
+  "train_families": [
+    "threshold",
+    "membership",
+    "conjunction",
+    "bands"
+  ],
+  "dev_only_families": [
+    "disjunction",
+    "veto"
+  ],
+  "locked_test_families": [
+    "exclusive_or",
+    "weighted_bands"
+  ],
+  "max_len": 512,
+  "head_max_len": 192,
+  "source_sha256": {
+    "data.py": "ab9cb836b166c512e6391d58068235488f5590e0304d69bb959c760e146f9f1f",
+    "rules.py": "05fea0fde0284c313d2aa1919187e3e01c41cf5f097f31147064cc0e0aaa8b47"
+  },
+  "splits": {
+    "train": {
+      "rows": 1536,
+      "groups": 384,
+      "sha256": "71dc38fb6d921f8a2edb91b03b945cb9680913b4413473fd095a4e3b64103735",
+      "max_tokens": 107,
+      "family_counts": {
+        "threshold": 384,
+        "membership": 384,
+        "conjunction": 384,
+        "bands": 384
+      },
+      "label_counts": {
+        "noul:0": 276,
+        "noul:1": 276,
+        "choice:1": 300,
+        "choice:0": 300,
+        "score:0": 124,
+        "score:2": 120,
+        "score:1": 140
+      }
+    },
+    "dev_seen": {
+      "rows": 256,
+      "groups": 64,
+      "sha256": "04dbca53bebf78d373339aff7874cc79dcf1171a29983bbccff729d92a6af561",
+      "max_tokens": 109,
+      "family_counts": {
+        "threshold": 64,
+        "membership": 64,
+        "conjunction": 64,
+        "bands": 64
+      },
+      "label_counts": {
+        "choice:1": 48,
+        "choice:0": 48,
+        "noul:1": 48,
+        "noul:0": 48,
+        "score:0": 21,
+        "score:2": 23,
+        "score:1": 20
+      }
+    },
+    "dev_new": {
+      "rows": 256,
+      "groups": 64,
+      "sha256": "9d5e333651b0eb9631cded082567083b9056f664e2dc4ca77c612e22482d015d",
+      "max_tokens": 112,
+      "family_counts": {
+        "disjunction": 128,
+        "veto": 128
+      },
+      "label_counts": {
+        "noul:0": 74,
+        "noul:1": 74,
+        "choice:1": 54,
+        "choice:0": 54
+      }
+    },
+    "calibration": {
+      "rows": 288,
+      "groups": 72,
+      "sha256": "b4c21faa512a24a9458f4108a4389af35d1120c538193bcd6975ded3e2060f58",
+      "max_tokens": 111,
+      "family_counts": {
+        "threshold": 48,
+        "membership": 48,
+        "conjunction": 48,
+        "bands": 48,
+        "disjunction": 48,
+        "veto": 48
+      },
+      "label_counts": {
+        "noul:0": 74,
+        "noul:1": 74,
+        "choice:0": 46,
+        "choice:1": 46,
+        "score:0": 17,
+        "score:1": 16,
+        "score:2": 15
+      }
+    },
+    "locked_test": {
+      "rows": 384,
+      "groups": 96,
+      "sha256": "08d1280048b42a830e8c8a96cff32f0d75774311b81236e510de8a27d57f6486",
+      "max_tokens": 116,
+      "family_counts": {
+        "exclusive_or": 192,
+        "weighted_bands": 192
+      },
+      "label_counts": {
+        "noul:0": 40,
+        "noul:1": 40,
+        "choice:0": 56,
+        "choice:1": 56,
+        "score:0": 51,
+        "score:1": 71,
+        "score:2": 70
+      }
+    }
+  }
+}

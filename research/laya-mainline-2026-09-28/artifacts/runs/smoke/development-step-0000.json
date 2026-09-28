@@ -1,0 +1,62 @@
+{
+  "smoke_train": {
+    "rows": 12,
+    "families": {
+      "bands": {
+        "rows": 4,
+        "groups": 1,
+        "accuracy": 0.5,
+        "nll": 0.9605876002322278,
+        "brier": 0.6455886625500995,
+        "ece_15": 0.49746744334697723,
+        "predicted_semantic_counts": {
+          "0": 2,
+          "1": 2
+        },
+        "gold_semantic_counts": {
+          "0": 2,
+          "2": 2
+        },
+        "policy_both_correct": 0,
+        "policy_semantic_consistency": 0,
+        "fact_both_correct": 0,
+        "fact_semantic_consistency": 0,
+        "irrelevant_both_correct": 1,
+        "irrelevant_semantic_consistency": 1
+      },
+      "threshold": {
+        "rows": 8,
+        "groups": 2,
+        "accuracy": 0.625,
+        "nll": 0.6578282847545677,
+        "brier": 0.4707607765514451,
+        "ece_15": 0.30660200864076614,
+        "predicted_semantic_counts": {
+          "0": 7,
+          "1": 1
+        },
+        "gold_semantic_counts": {
+          "0": 4,
+          "1": 4
+        },
+        "policy_both_correct": 0.5,
+        "policy_semantic_consistency": 0.5,
+        "fact_both_correct": 0,
+        "fact_semantic_consistency": 1,
+        "irrelevant_both_correct": 1,
+        "irrelevant_semantic_consistency": 1
+      }
+    },
+    "macro": {
+      "accuracy": 0.5625,
+      "nll": 0.8092079424933978,
+      "brier": 0.5581747195507722,
+      "ece_15": 0.4020347259938717,
+      "policy_both_correct": 0.25,
+      "fact_both_correct": 0,
+      "irrelevant_both_correct": 1,
+      "irrelevant_semantic_consistency": 1,
+      "counterfactual_both_correct": 0.125
+    }
+  }
+}

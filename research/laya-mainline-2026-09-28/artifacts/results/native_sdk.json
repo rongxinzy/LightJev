@@ -1,0 +1,62 @@
+{
+  "status": "pass",
+  "examples": [
+    {
+      "id": "dev_seen/threshold/0000/base",
+      "kind": "choice",
+      "max_probability_delta": 2.753734588623047e-05,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/threshold/0000/policy",
+      "kind": "choice",
+      "max_probability_delta": 5.771920314145973e-06,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/threshold/0000/fact",
+      "kind": "choice",
+      "max_probability_delta": 4.006369272246957e-05,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/threshold/0001/base",
+      "kind": "noul",
+      "max_probability_delta": 1.1920928955078125e-07,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/threshold/0001/policy",
+      "kind": "noul",
+      "max_probability_delta": 9.056076721858375e-11,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/threshold/0001/fact",
+      "kind": "noul",
+      "max_probability_delta": 3.6954447835135795e-10,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/bands/0000/base",
+      "kind": "score",
+      "max_probability_delta": 4.1332048567710444e-05,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/bands/0000/policy",
+      "kind": "score",
+      "max_probability_delta": 4.173984527588992e-05,
+      "same_decision": true
+    },
+    {
+      "id": "dev_seen/bands/0000/fact",
+      "kind": "score",
+      "max_probability_delta": 4.983930587765251e-05,
+      "same_decision": true
+    }
+  ],
+  "fast_path": false,
+  "probability_tolerance": 0.01,
+  "scope": "nine development examples; SDK rounds probabilities"
+}
